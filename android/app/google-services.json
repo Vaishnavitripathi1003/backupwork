@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "604131905321",
+    "project_id": "daksh-app",
+    "storage_bucket": "daksh-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604131905321:android:3c06741adec5c4f2d67138",
+        "android_client_info": {
+          "package_name": "com.daksh.daksh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuk1-dZSHe6a22dNJQTMeBkp6IDE124MI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

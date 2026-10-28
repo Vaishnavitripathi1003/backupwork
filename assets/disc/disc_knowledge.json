@@ -1,0 +1,3742 @@
+{
+ "version": 1,
+ "styles": {
+  "D": "Dominant",
+  "I": "Influential",
+  "S": "Steady",
+  "C": "Compliant"
+ },
+ "quadrants": [
+  {
+   "code": "D",
+   "style": "Dominant",
+   "quadrant": "Dominance",
+   "theme": "Decisive, results-oriented, risk-tolerant, high execution velocity; risk of interpersonal friction",
+   "averages": {
+    "strengths": 36.3,
+    "weaknesses": 23.8,
+    "opportunities": 22.5,
+    "threats": 17.5
+   },
+   "takeaway": {
+    "headline": "Dominance Leads in Speed & Output (Avg S: 36.3%)",
+    "risk": "Highest risk of cultural attrition and derailment under stress (Avg W: 23.8%, T: 17.5%)."
+   },
+   "profiles": [
+    "DD",
+    "DI",
+    "DS",
+    "DC"
+   ]
+  },
+  {
+   "code": "I",
+   "style": "Influential",
+   "quadrant": "Influence",
+   "theme": "Persuasive, highly relational, visionary, optimistic; risk of disorganization and overcommitting",
+   "averages": {
+    "strengths": 33.8,
+    "weaknesses": 25.0,
+    "opportunities": 26.3,
+    "threats": 15.0
+   },
+   "takeaway": {
+    "headline": "Influence Dominates Market Opportunities (Avg O: 26.3%)",
+    "risk": "Highest vulnerability to administrative disorganization and lack of follow-through (Avg W: 25.0%)."
+   },
+   "profiles": [
+    "ID",
+    "II",
+    "IS",
+    "IC"
+   ]
+  },
+  {
+   "code": "S",
+   "style": "Steady",
+   "quadrant": "Steadiness",
+   "theme": "Supportive, loyal, highly consistent, patient team builders; risk of resisting rapid change",
+   "averages": {
+    "strengths": 33.8,
+    "weaknesses": 21.3,
+    "opportunities": 23.8,
+    "threats": 21.3
+   },
+   "takeaway": {
+    "headline": "Steadiness Maximizes Team Retention & Stability (Avg S: 33.8%)",
+    "risk": "Faces greatest threat in hyper-agile or disruptive environments with constant change (Avg T: 21.3%)."
+   },
+   "profiles": [
+    "SD",
+    "SI",
+    "SS",
+    "SC"
+   ]
+  },
+  {
+   "code": "C",
+   "style": "Compliant",
+   "quadrant": "Compliance",
+   "theme": "Analytically rigorous, quality-focused, objective systems designers; risk of perfectionism paralysis",
+   "averages": {
+    "strengths": 35.0,
+    "weaknesses": 23.8,
+    "opportunities": 20.0,
+    "threats": 21.3
+   },
+   "takeaway": {
+    "headline": "Compliance Offers Zero-Defect Operational Governance (Avg S: 35.0%)",
+    "risk": "Vulnerable to decision bottlenecks and analysis paralysis under high uncertainty (Avg T: 21.3%)."
+   },
+   "profiles": [
+    "CD",
+    "CI",
+    "CS",
+    "CC"
+   ]
+  }
+ ],
+ "profiles": [
+  {
+   "code": "DD",
+   "primary": "D",
+   "secondary": "D",
+   "label": "Dominant – Dominant (D/D)",
+   "archetype": "Pure Driver",
+   "swot_name": "Pure Driver",
+   "aliases": [
+    "pure driver"
+   ],
+   "meters": [
+    {
+     "name": "Decisiveness & Drive",
+     "value": 98,
+     "level": "Extremely High"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 96,
+     "level": "Extremely High"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 95,
+     "level": "Extremely High"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 90,
+     "level": "Very High"
+    },
+    {
+     "name": "Consistency & Patience",
+     "value": 25,
+     "level": "Low"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 30,
+     "level": "Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Dominance (D) – Direct, goal-oriented, force of will."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Dominance (D) – Pure intensity; amplifies independence and competitive urgency without softening secondary traits."
+    }
+   },
+   "student": {
+    "group_projects": "Takes immediate control; assigns tasks unilaterally and demands high-speed completion.",
+    "academic_pressure": "Thrives on competition and hard targets; responds well to interactive and engaging teaching methods.",
+    "communication": "Direct, concise, and outcome-focused; prioritizes conclusions over narrative detail.",
+    "learning_environment": "High-stakes, milestone-based challenges with clear autonomy to direct solutions."
+   },
+   "professional": {
+    "workplace_execution": "Strong focus on bottom-line results, rapid iteration, and obstacle elimination.",
+    "leadership": "Decisive, direction-oriented leadership style; sets aggressive targets and expects total accountability.",
+    "stress_response": "Highly directive under pressure; moving quickly and benefiting from considering other perspectives.",
+    "ideal_roles": [
+     "Crisis Management Lead",
+     "Turnaround Executive",
+     "Entrepreneur",
+     "Commercial Director"
+    ]
+   },
+   "personal": {
+    "household": "Assumes directorship of family schedules, financial goals, and major decisions.",
+    "relationships": "Often expresses care through practical support and problem-solving.",
+    "conflict": "Directly confronts issues immediately; seeks decisive wins or actionable compromises."
+   },
+   "mentor": {
+    "guideline": "Frame all guidance in terms of strategic advantage and personal mastery. Offer independence while agreeing on clear outcomes.",
+    "communication_key": "Lead with the bottom line; focus on \"what\" and \"when,\" omitting unnecessary preamble.",
+    "growth_exercise": {
+     "name": "The Strategic Pause",
+     "text": "Require a suggested reflection period before high-stakes decisions before acting on high-stakes contentious decisions."
+    }
+   },
+   "drivers": {
+    "fuels": "Total autonomy, explicit authority, measurable achievement, and competing against tough benchmarks.",
+    "drains": "Bureaucracy, passive decision-making, forced consensus, and granular operational routine."
+   },
+   "summary": {
+    "short_name": "Pure Driver",
+    "student": "Takes control; seeks top competitive targets.",
+    "professional": "Rapid results, obstacle removal, direct control.",
+    "personal": "Direct, protective, problem-solving approach.",
+    "fuel": "Autonomy, clear goals.",
+    "drain": "Bureaucracy, passive delays.",
+    "key": "Lead with bottom-line outcomes.",
+    "exercise": "Strategic Pause"
+   },
+   "swot": {
+    "name": "Pure Driver",
+    "primary_quadrant": "Dominance",
+    "pct": {
+     "strengths": 40,
+     "weaknesses": 25,
+     "opportunities": 20,
+     "threats": 15
+    },
+    "strengths": "Rapid decisive action, bold risk-taking, command presence",
+    "weaknesses": "Steamrolling peers, low empathy, extreme impatience",
+    "opportunities": "Turnarounds, crisis management, executive command",
+    "threats": "Burnout, toxic culture, severe interpersonal blindspots"
+   },
+   "report": {
+    "about": [
+     "You are confident, decisive, and action-oriented.",
+     "You like to take initiative and move work forward.",
+     "You are comfortable taking responsibility and making decisions.",
+     "You prefer working toward clear goals and achieving results.",
+     "You are capable of organizing tasks and guiding others.",
+     "People may see you as strong, determined, and capable of leading group activities."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Strong",
+      "items": [
+       "Maintaining accounts and financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Planning costs, budgets, and profits"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Good",
+      "items": [
+       "Speaking confidently in group meetings",
+       "Explaining plans and instructions clearly",
+       "Communicating with officials, customers, and buyers",
+       "Supporting report writing and documentation"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Good",
+      "items": [
+       "Guiding group members during activities",
+       "Supporting team coordination and cooperation",
+       "Encouraging members to complete tasks",
+       "Maintaining discipline in group work"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products for display in markets or stalls",
+       "Assisting in planning product layout"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Developing",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural programs",
+       "Helping in community mobilisation activities"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Moderate",
+      "items": [
+       "Suggesting new product ideas",
+       "Supporting design and finishing work",
+       "Improving product packaging and presentation",
+       "Helping make products more attractive for customers"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a strong and goal-oriented individual who is comfortable taking responsibility and leading activities.",
+      "You perform best in roles that require decision-making, planning, and leadership."
+     ],
+     "suitable_for": [
+      "Leader or Group Coordinator",
+      "Managing enterprise or production activities",
+      "Planning group work and setting targets",
+      "Connecting with buyers, officials, or markets",
+      "Supervising group operations"
+     ],
+     "closing": "With training in enterprise management, financial planning, and digital tools, you can become a strong leader who helps the organization expand its activities and achieve greater success."
+    },
+    "primary": "Dominant",
+    "secondary": "Dominant"
+   }
+  },
+  {
+   "code": "DI",
+   "primary": "D",
+   "secondary": "I",
+   "label": "Dominant – Influential (D/I)",
+   "archetype": "The Pioneer / Initiator",
+   "swot_name": "Initiator / Pioneer",
+   "aliases": [
+    "initiator",
+    "pioneer"
+   ],
+   "meters": [
+    {
+     "name": "Decisiveness & Drive",
+     "value": 94,
+     "level": "Very High"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 92,
+     "level": "Very High"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 88,
+     "level": "Very High"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 85,
+     "level": "High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 45,
+     "level": "Moderate-Low"
+    },
+    {
+     "name": "Consistency & Patience",
+     "value": 35,
+     "level": "Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Dominance (D) – High-energy direction and result focus."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Influence (I) – Charismatic persuasion, narrative framing, and fast networking."
+    }
+   },
+   "student": {
+    "group_projects": "Rallies team members around a bold vision; leads presentations with enthusiasm.",
+    "academic_pressure": "Chases ambitious goals; may prioritise big-picture ideas and benefit from a clear idea.",
+    "communication": "Persuasive, expressive, and authoritative.",
+    "learning_environment": "Fast-paced, experiential learning environments featuring public presentations and competitive pitches."
+   },
+   "professional": {
+    "workplace_execution": "Drives initiatives forward through persuasive leadership and rapid action.",
+    "leadership": "Inspirational and directive; excels at pitching ideas and initiating change.",
+    "stress_response": "Can become highly expressive and spontaneous, with an opportunity to pause and reflect when challenged.",
+    "ideal_roles": [
+     "Venture Builder",
+     "Growth Officer",
+     "Business Development Executive",
+     "Campaign Director"
+    ]
+   },
+   "personal": {
+    "household": "Dynamic and energetic; orchestrates active family outings and ambitious home projects.",
+    "relationships": "Engaging, charismatic, and enthusiastic, though brings strong energy to conversations and can benefit from making space for others.",
+    "conflict": "Uses persuasive communication to build alignment; addresses conflicts rapidly to clear the air."
+   },
+   "mentor": {
+    "guideline": "Channel their energy into structured milestones while encouraging emotional awareness of others.",
+    "communication_key": "Maintain an energetic, forward-looking tone; connect goals to personal influence and prestige.",
+    "growth_exercise": {
+     "name": "The Active Listening Lap",
+     "text": "In discussions, require them to restate the speaker's core point before responding."
+    }
+   },
+   "drivers": {
+    "fuels": "Big visions, public recognition, high-stakes negotiation, and pioneering new markets.",
+    "drains": "Repetitive detail work, isolated task execution, and conservative administrative constraints."
+   },
+   "summary": {
+    "short_name": "Pioneer",
+    "student": "Charismatic leader; pitches bold project ideas.",
+    "professional": "Growth campaigns, energetic leadership.",
+    "personal": "Expressive, dynamic family coordinator.",
+    "fuel": "Big visions, recognition.",
+    "drain": "Routine work, isolation.",
+    "key": "Energetic, forward-looking tone.",
+    "exercise": "Active Listening Lap"
+   },
+   "swot": {
+    "name": "Initiator / Pioneer",
+    "primary_quadrant": "Dominance",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 25,
+     "opportunities": 25,
+     "threats": 15
+    },
+    "strengths": "High-speed vision, bold charismatic leadership, decisive drive",
+    "weaknesses": "Impatience, poor operational follow-through, impulsive risks",
+    "opportunities": "Rapid venture scaling, commercial expansion, evangelism",
+    "threats": "Execution derailment, team exhaustion from shifting priorities"
+   },
+   "report": {
+    "about": [
+     "You are confident, energetic, and action-oriented.",
+     "You like to take initiative and lead activities.",
+     "You are comfortable speaking with people and expressing your ideas.",
+     "You can motivate and encourage others in the group.",
+     "You enjoy working toward goals while keeping the group active and engaged.",
+     "People may see you as dynamic, enthusiastic, and capable of guiding group activities."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Good",
+      "items": [
+       "Maintaining accounts and financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Supporting financial planning and budgeting"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Strong",
+      "items": [
+       "Speaking confidently in group meetings",
+       "Explaining ideas and plans clearly",
+       "Communicating with customers, officials, and buyers",
+       "Supporting awareness and outreach activities"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Strong",
+      "items": [
+       "Motivating group members to participate actively",
+       "Building strong relationships within the group",
+       "Supporting team coordination and cooperation",
+       "Encouraging positive group interaction"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products for display in markets or stalls",
+       "Assisting in organizing materials and product layouts"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Moderate",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural programs",
+       "Helping in community mobilisation activities",
+       "Spreading awareness messages through songs and performances"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Good",
+      "items": [
+       "Creating new product ideas",
+       "Designing handicrafts, bags, or garments",
+       "Improving product packaging and presentation",
+       "Suggesting new patterns and styles"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a dynamic and confident individual who combines leadership with strong communication skills.",
+      "You perform best in roles that require initiative, interaction with people, and the ability to motivate others."
+     ],
+     "suitable_for": [
+      "Leader or Group Mobiliser",
+      "Community outreach and awareness activities",
+      "Managing enterprise or production teams",
+      "Handling customer interaction and market connections",
+      "Supporting group planning and decision-making"
+     ],
+     "closing": "With training in enterprise management, communication skills, and digital tools, you can become a strong leader who motivates the group and helps expand activities of organization and create more opportunities."
+    },
+    "primary": "Dominant",
+    "secondary": "Influential"
+   }
+  },
+  {
+   "code": "DS",
+   "primary": "D",
+   "secondary": "S",
+   "label": "Dominant – Steady (D/S)",
+   "archetype": "The Tenacious Achiever",
+   "swot_name": "Implementer",
+   "aliases": [
+    "implementer",
+    "tenacious achiever"
+   ],
+   "meters": [
+    {
+     "name": "Decisiveness & Drive",
+     "value": 88,
+     "level": "Very High"
+    },
+    {
+     "name": "Consistency & Patience",
+     "value": 75,
+     "level": "Moderate-High"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 78,
+     "level": "High"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 70,
+     "level": "Moderate-High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 60,
+     "level": "Moderate"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 55,
+     "level": "Moderate"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Dominance (D) – Focus on control, outcomes, and decisive direction."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Steadiness (S) – Adds persistence, methodical execution, and operational follow-through."
+    }
+   },
+   "student": {
+    "group_projects": "Works systematically to lead the team from planning through complete execution.",
+    "academic_pressure": "Steady worker under pressure; maintains continuous output without losing sight of deadlines.",
+    "communication": "Direct yet composed; delivers clear instructions with a calm cadence.",
+    "learning_environment": "Structured challenge environments combining clear goalposts with autonomous execution."
+   },
+   "professional": {
+    "workplace_execution": "Combines clear direction with steady persistence to complete complex projects.",
+    "leadership": "Methodical leader; demands results while maintaining a stable, reliable environment for staff.",
+    "stress_response": "Stubborn or unyielding when pushed; internalizes urgency into relentless work effort.",
+    "ideal_roles": [
+     "Operations Director",
+     "Plant Manager",
+     "Construction Manager",
+     "Delivery Lead"
+    ]
+   },
+   "personal": {
+    "household": "Reliable protector and planner; creates long-term domestic security and clear expectations.",
+    "relationships": "Dependable, loyal, and direct; prefers stable, low-drama relationships.",
+    "conflict": "Firm and persistent; holds their ground calmly until a practical resolution is reached."
+   },
+   "mentor": {
+    "guideline": "Respect their determination; assist them in balancing goal pursuit with personal well-being.",
+    "communication_key": "Be pragmatic, realistic, and clear. Avoid frequent changes to established strategies.",
+    "growth_exercise": {
+     "name": "Pacing Calibration",
+     "text": "Practice delegating sub-tasks explicitly without double-checking progress mid-cycle."
+    }
+   },
+   "drivers": {
+    "fuels": "Long-term ambitious goals, operational control, steady progress, and reliable execution teams.",
+    "drains": "Unpredictable directional shifts, emotional drama, and superficial rapid-fire meetings."
+   },
+   "summary": {
+    "short_name": "Tenacious Achiever",
+    "student": "Methodical student; works steadily toward targets.",
+    "professional": "Reliable execution of long-term projects.",
+    "personal": "Dependable protector and long-term planner.",
+    "fuel": "Long-term goals, control.",
+    "drain": "Unpredictable shifts, drama.",
+    "key": "Pragmatic, stable goals.",
+    "exercise": "Pacing Calibration"
+   },
+   "swot": {
+    "name": "Implementer",
+    "primary_quadrant": "Dominance",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 20,
+     "opportunities": 25,
+     "threats": 20
+    },
+    "strengths": "Relentless milestone delivery, practical tenacity, focus",
+    "weaknesses": "Internalized resentment, stubbornness under sudden change",
+    "opportunities": "End-to-end program delivery, operational transformation",
+    "threats": "Overwork, resistance to strategic pivots, siloed execution"
+   },
+   "report": {
+    "about": [
+     "You are confident and focused on achieving results.",
+     "You like to take initiative and lead activities.",
+     "At the same time, you are patient and supportive toward others.",
+     "You value team cooperation and stable working relationships.",
+     "You are capable of guiding the group while also maintaining harmony among members.",
+     "People may see you as a responsible leader who can balance action with teamwork."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Strong",
+      "items": [
+       "Maintaining accounts and financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Planning costs, budgets, and profits"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Good",
+      "items": [
+       "Explaining plans and instructions clearly",
+       "Speaking in group meetings",
+       "Communicating with customers, officials, and buyers",
+       "Supporting report writing and documentation"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Strong",
+      "items": [
+       "Guiding group members during activities",
+       "Supporting team coordination and cooperation",
+       "Encouraging members to participate actively",
+       "Maintaining a positive and cooperative group environment"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products for display in markets or stalls",
+       "Assisting in organizing materials and product layouts"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Moderate",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural programs",
+       "Helping in community mobilisation activities",
+       "Spreading awareness messages through songs and performances"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Good",
+      "items": [
+       "Creating new product ideas",
+       "Designing handicrafts, bags, or garments",
+       "Improving product packaging and presentation",
+       "Suggesting new patterns and styles"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a confident and responsible individual who combines leadership with patience and teamwork.",
+      "You perform best in roles that require initiative, coordination, and cooperation with others."
+     ],
+     "suitable_for": [
+      "Leader or Group Coordinator",
+      "Managing production teams and enterprise activities",
+      "Supporting group planning and decision-making",
+      "Maintaining coordination among members",
+      "Connecting with customers, markets, and institutions"
+     ],
+     "closing": "With training in enterprise management, leadership skills, and digital tools, you can become a strong leader who guides the team towards steady growth and success."
+    },
+    "primary": "Dominant",
+    "secondary": "Steady"
+   }
+  },
+  {
+   "code": "DC",
+   "primary": "D",
+   "secondary": "C",
+   "label": "Dominant – Compliant (D/C)",
+   "archetype": "The Strategic Architect",
+   "swot_name": "Challenger / Architect",
+   "aliases": [
+    "strategic architect"
+   ],
+   "meters": [
+    {
+     "name": "Decisiveness & Drive",
+     "value": 90,
+     "level": "Very High"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 88,
+     "level": "Very High"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 70,
+     "level": "Moderate-High"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 75,
+     "level": "Moderate-High"
+    },
+    {
+     "name": "Consistency & Patience",
+     "value": 50,
+     "level": "Moderate"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 45,
+     "level": "Moderate-Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Dominance (D) – Results-driven, decisive, and authoritative."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Conscientiousness (C) – Adds analytical rigor, high standards, and structural precision."
+    }
+   },
+   "student": {
+    "group_projects": "Establishes rigorous standards, structural frameworks, and strict performance deadlines.",
+    "academic_pressure": "Excels in analytical subjects; demands perfection in self and peers under tight timelines.",
+    "communication": "Precise, factual, and direct; focuses on data-backed conclusions.",
+    "learning_environment": "Rigorous academic settings that reward evidence-based problem solving and strategic analysis."
+   },
+   "professional": {
+    "workplace_execution": "Executes strategic plans using precise methodology, objective standards, and clear accountability.",
+    "leadership": "Standards-driven leader; expects technical competence, high quality, and swift execution.",
+    "stress_response": "Critical, exacting, or hyper-focused on efficiency standard breakdowns under stress.",
+    "ideal_roles": [
+     "Management Consultant",
+     "Chief Risk Officer",
+     "Corporate Strategist",
+     "Systems Architect"
+    ]
+   },
+   "personal": {
+    "household": "Organizes household operations with systematic efficiency, budgeting discipline, and structured schedules.",
+    "relationships": "Reserved and pragmatic; values logical consistency and clarity in personal interactions.",
+    "conflict": "Relies on logic and evidence; systematically dismantles non-rational arguments."
+   },
+   "mentor": {
+    "guideline": "Acknowledge their high standards; help them build patience for human error and operational variation.",
+    "communication_key": "Present objective data, logical rationales, and structured metrics. Avoid vague emotional appeals.",
+    "growth_exercise": {
+     "name": "The Good-Enough Protocol",
+     "text": "Set intentional limits on analytical revision cycles to preserve momentum."
+    }
+   },
+   "drivers": {
+    "fuels": "Data-driven strategy, operational autonomy, systemic efficiency, and measurable excellence.",
+    "drains": "Disorganized workflows, subjective decision-making, emotional appeals, and sloppy execution."
+   },
+   "summary": {
+    "short_name": "Strategic Architect",
+    "student": "Enforces high analytical academic standards.",
+    "professional": "Strategic design, systems optimization.",
+    "personal": "Organized, budget-conscious household management.",
+    "fuel": "Data-driven strategy.",
+    "drain": "Disorganization, subjective decisions.",
+    "key": "Objective data and logic.",
+    "exercise": "Good-Enough Protocol"
+   },
+   "swot": {
+    "name": "Challenger / Architect",
+    "primary_quadrant": "Dominance",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 25,
+     "opportunities": 20,
+     "threats": 20
+    },
+    "strengths": "Calculated risk-taking, rigorous high standards, analytical drive",
+    "weaknesses": "Hypercritical attitude, micro-management, delegating reluctance",
+    "opportunities": "Complex strategic turnarounds, high-stakes restructuring",
+    "threats": "Alienation of direct reports, decision bottlenecks"
+   },
+   "report": {
+    "about": [
+     "You are confident and focused on achieving results.",
+     "You like to take initiative and move work forward.",
+     "You also value accuracy, planning, and proper methods.",
+     "You prefer doing work carefully and maintaining quality standards.",
+     "You are comfortable taking responsibility while ensuring that work is done correctly.",
+     "People may see you as strong, disciplined, and dependable when important tasks need to be handled."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Strong",
+      "items": [
+       "Maintaining accounts and financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Planning costs, budgets, and profits"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Good",
+      "items": [
+       "Explaining plans and instructions clearly",
+       "Speaking in group meetings",
+       "Writing records and reports",
+       "Communicating with customers, officials, and buyers"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Good",
+      "items": [
+       "Supporting team coordination and cooperation",
+       "Encouraging members to follow plans and responsibilities",
+       "Maintaining discipline in group activities",
+       "Helping the group work systematically"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products for display in markets or stalls",
+       "Assisting in organizing materials and product layouts"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Developing",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural programs",
+       "Helping in community mobilisation activities"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Moderate",
+      "items": [
+       "Suggesting new product ideas",
+       "Supporting design and finishing work",
+       "Improving product packaging and presentation",
+       "Helping make products more attractive for customers"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a strong and responsible individual who combines leadership with careful planning and attention to detail.",
+      "You perform best in roles that require decision-making, organization, and quality control."
+     ],
+     "suitable_for": [
+      "Leader or Activity Coordinator",
+      "Managing production planning and supervision",
+      "Maintaining financial records and documentation",
+      "Monitoring product quality and standards",
+      "Supporting enterprise planning and operations"
+     ],
+     "closing": "With training in enterprise management, financial planning, and digital record keeping, you can become a key person who helps in the operations of organization efficiently and grow successfully."
+    },
+    "primary": "Dominant",
+    "secondary": "Compliant"
+   }
+  },
+  {
+   "code": "ID",
+   "primary": "I",
+   "secondary": "D",
+   "label": "Influential – Dominant (I/D)",
+   "archetype": "The Mobilizer / Persuader",
+   "swot_name": "Persuader / Rainmaker",
+   "aliases": [
+    "mobilizer",
+    "persuader",
+    "rainmaker"
+   ],
+   "meters": [
+    {
+     "name": "Decisiveness & Drive",
+     "value": 88,
+     "level": "Very High"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 90,
+     "level": "Very High"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 85,
+     "level": "Very High"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 80,
+     "level": "High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 50,
+     "level": "Moderate"
+    },
+    {
+     "name": "Consistency & Patience",
+     "value": 30,
+     "level": "Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Influence (I) – Charismatic, communicative, and people-centric motivation."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Dominance (D) – Adds drive, competitiveness, and urgency to achieve external outcomes."
+    }
+   },
+   "student": {
+    "group_projects": "Takes center stage, pitching ideas dynamically and driving the group toward ambitious goals.",
+    "academic_pressure": "Motivated by public achievement and peer recognition; prefers lively debate to quiet study.",
+    "communication": "High-energy, expressive, persuasive, and assertive.",
+    "learning_environment": "Interactive, presentation-heavy classrooms with dynamic peer engagement."
+   },
+   "professional": {
+    "workplace_execution": "Secures resources, aligns stakeholders, and drives high-profile campaigns forward rapidly.",
+    "leadership": "Energetic and driving manager; leads via charisma, high expectations, and personal persuasion.",
+    "stress_response": "May become pushy, overly vocal, or dramatic when facing resistance or slow progress.",
+    "ideal_roles": [
+     "VP of Sales",
+     "Head of Public Relations",
+     "Chief Growth Officer",
+     "Political Campaign Director"
+    ]
+   },
+   "personal": {
+    "household": "Fosters an expressive, active, social household; drives family activities and social gatherings.",
+    "relationships": "Outgoing, expressive, and persuasive; naturally steps into leadership in social circles.",
+    "conflict": "Directly addresses conflicts using persuasive energy and emotional expressiveness to reach agreement."
+   },
+   "mentor": {
+    "guideline": "Guide their persuasive energy toward structured execution and sustained focus.",
+    "communication_key": "Keep conversations dynamic, visual, and fast-paced; highlight personal visibility and progress.",
+    "growth_exercise": {
+     "name": "Execution Hold",
+     "text": "Ensure all pending follow-through items are completed before launching a new initiative."
+    }
+   },
+   "drivers": {
+    "fuels": "Public platforms, team alignment, rapid progress, dynamic influence, and high visibility.",
+    "drains": "Siloed administrative tasks, rigid routine work, lack of social audience, and slow consensus processes."
+   },
+   "summary": {
+    "short_name": "Mobilizer",
+    "student": "Rallies peers around creative pitches.",
+    "professional": "Persuasive sales leadership, rapid alignment.",
+    "personal": "Outgoing, social event planner.",
+    "fuel": "Platforms, fast progress.",
+    "drain": "Siloed work, slow consensus.",
+    "key": "Fast-paced, dynamic engagement.",
+    "exercise": "Execution Hold"
+   },
+   "swot": {
+    "name": "Persuader / Rainmaker",
+    "primary_quadrant": "Influence",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 25,
+     "opportunities": 25,
+     "threats": 15
+    },
+    "strengths": "High energy, deal-closing power, competitive magnetism",
+    "weaknesses": "Overpromising deliverables, lack of detail, impulsivity",
+    "opportunities": "Enterprise business development, strategic partnerships",
+    "threats": "Reputational loss from unfulfilled promises, administrative chaos"
+   },
+   "report": {
+    "about": [
+     "You are energetic, confident, and expressive.",
+     "You enjoy interacting with people and sharing your ideas.",
+     "You are comfortable taking initiative and guiding group activities.",
+     "You can motivate and inspire others to participate actively.",
+     "You like working toward goals while keeping the group enthusiastic and engaged.",
+     "People may see you as a dynamic and confident person who can encourage others and lead activities effectively."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Good",
+      "items": [
+       "Maintaining basic financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Supporting financial planning and budgeting"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Strong",
+      "items": [
+       "Speaking confidently in group meetings",
+       "Explaining ideas and plans clearly",
+       "Communicating with customers, officials, and buyers",
+       "Supporting awareness and outreach activities"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Strong",
+      "items": [
+       "Motivating group members to participate actively",
+       "Building strong relationships within the group",
+       "Supporting team coordination and cooperation",
+       "Encouraging positive group interaction"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products for display in markets or stalls",
+       "Assisting in organizing materials and product layouts"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Good",
+      "items": [
+       "Singing community awareness songs",
+       "Participating in village cultural programs",
+       "Supporting community mobilisation activities",
+       "Spreading awareness messages through songs and performances"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Good",
+      "items": [
+       "Creating new product ideas",
+       "Designing handicrafts, bags, or garments",
+       "Improving product packaging and presentation",
+       "Suggesting new patterns and styles"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a confident and energetic individual who combines strong communication skills with the ability to take initiative.",
+      "You perform best in roles that require interaction with people, motivation, and leadership."
+     ],
+     "suitable_for": [
+      "Community mobilisation and awareness activities",
+      "Facilitating SHG meetings and discussions",
+      "Customer interaction and product promotion",
+      "Leading group activities and motivating members",
+      "Supporting market linkages and outreach efforts"
+     ],
+     "closing": "With training in communication, leadership, and enterprise management, you can become a strong leader who helps expand activities of the organisation and connect the group with new opportunities."
+    },
+    "primary": "Influential",
+    "secondary": "Dominant"
+   }
+  },
+  {
+   "code": "II",
+   "primary": "I",
+   "secondary": "I",
+   "label": "Influential – Influential (I/I)",
+   "archetype": "The Pure Promoter",
+   "swot_name": "Pure Expressive",
+   "aliases": [
+    "pure expressive",
+    "pure promoter"
+   ],
+   "meters": [
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 88,
+     "level": "Very High"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 85,
+     "level": "High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 65,
+     "level": "Moderate"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 60,
+     "level": "Moderate"
+    },
+    {
+     "name": "Decisiveness & Drive",
+     "value": 65,
+     "level": "Moderate"
+    },
+    {
+     "name": "Consistency & Patience",
+     "value": 20,
+     "level": "Very Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Influence (I) – Expressive, social, intuitive communication."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Influence (I) – Pure enthusiasm; maximizes social connection and spontaneous inspiration."
+    }
+   },
+   "student": {
+    "group_projects": "Acts as the energetic social bond; excels at creative brainstorming and final oral presentations.",
+    "academic_pressure": "Struggles with prolonged solo study; learns best through discussion, storytelling, and study groups.",
+    "communication": "Highly expressive, animated, optimistic, and conversational.",
+    "learning_environment": "Highly social, collaborative spaces with active discussions and verbal expression."
+   },
+   "professional": {
+    "workplace_execution": "Generates enthusiasm, builds broad networks, and initiates new creative campaigns.",
+    "leadership": "Enthusiastic, approachable leader; motivates teams through praise and optimistic vision.",
+    "stress_response": "Avoids conflict, glosses over negative metrics, or seeks social validation when overwhelmed.",
+    "ideal_roles": [
+     "Brand Ambassador",
+     "Event Director",
+     "Motivational Speaker",
+     "Community Manager"
+    ]
+   },
+   "personal": {
+    "household": "Creates an open, welcoming, and spontaneous home environment filled with visitors and activities.",
+    "relationships": "Warm, highly expressive, optimistic, and deeply communicative.",
+    "conflict": "Prefers positive reframing; seeks to preserve harmony and good feelings in interactions."
+   },
+   "mentor": {
+    "guideline": "Help them build follow-through systems while celebrating their creative energy and personal warmth.",
+    "communication_key": "Warm, encouraging, and highly collaborative; focus on shared enthusiasm and positive impact.",
+    "growth_exercise": {
+     "name": "The Completion Checklist",
+     "text": "Require written tracking and finishing of core administrative commitments daily."
+    }
+   },
+   "drivers": {
+    "fuels": "Social connection, praise, creative freedom, spontaneous collaboration, and public visibility.",
+    "drains": "Social isolation, detailed documentation, critical performance audits, and strict routine."
+   },
+   "summary": {
+    "short_name": "Pure Promoter",
+    "student": "Social bond; excels at creative presentations.",
+    "professional": "Generates team enthusiasm, builds broad networks.",
+    "personal": "Open, hospitable, spontaneous home environment.",
+    "fuel": "Connection, praise.",
+    "drain": "Social isolation, detailed routine.",
+    "key": "Warm, encouraging approach.",
+    "exercise": "Completion Checklist"
+   },
+   "swot": {
+    "name": "Pure Expressive",
+    "primary_quadrant": "Influence",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 30,
+     "opportunities": 25,
+     "threats": 10
+    },
+    "strengths": "Unmatched enthusiasm, cultural energizer, networking power",
+    "weaknesses": "Disorganization, conflict avoidance, poor routine discipline",
+    "opportunities": "Brand ambassadorship, community leadership, PR & media",
+    "threats": "Operational breakdown, missed commitments, accountability loss"
+   },
+   "report": {
+    "about": [
+     "You are friendly, enthusiastic, and expressive.",
+     "You enjoy interacting with people and sharing ideas.",
+     "You can motivate and encourage others in the group.",
+     "You bring energy and positivity to group activities.",
+     "You are comfortable speaking in meetings and community gatherings.",
+     "People may see you as an energetic and inspiring member who helps keep the group active and engaged."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Good",
+      "items": [
+       "Maintaining basic financial records",
+       "Tracking savings and loan entries",
+       "Supporting stock and inventory records",
+       "Assisting in simple financial planning"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Strong",
+      "items": [
+       "Speaking confidently in group meetings",
+       "Explaining ideas and plans clearly",
+       "Communicating with customers, officials, and buyers",
+       "Supporting awareness and outreach activities"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Strong",
+      "items": [
+       "Building strong relationships with group members",
+       "Encouraging active participation in activities",
+       "Supporting team coordination and cooperation",
+       "Creating a positive and supportive group environment"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products for display in markets or stalls",
+       "Assisting in organizing materials and product layouts"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related activities",
+       "Dairy and livestock work",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Good",
+      "items": [
+       "Singing community awareness songs",
+       "Participating in village cultural programs",
+       "Supporting community mobilisation activities",
+       "Spreading awareness messages through songs and performances"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Good",
+      "items": [
+       "Creating new product ideas",
+       "Designing handicrafts, bags, or garments",
+       "Improving product packaging and presentation",
+       "Suggesting new patterns and styles"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a dynamic and enthusiastic individual who enjoys working with people and sharing ideas.",
+      "You perform best in roles that require communication, motivation, and interaction with the community."
+     ],
+     "suitable_for": [
+      "Community mobiliser or awareness facilitator",
+      "Meeting facilitator",
+      "Customer interaction and marketing activities",
+      "Supporting group communication and outreach programs",
+      "Promoting products in markets and community events"
+     ],
+     "closing": "With training in communication, marketing, and enterprise skills, you can play an important role in expanding activities of the organization and connecting the group with more opportunities."
+    },
+    "primary": "Influential",
+    "secondary": "Influential"
+   }
+  },
+  {
+   "code": "IS",
+   "primary": "I",
+   "secondary": "S",
+   "label": "Influential – Steady (I/S)",
+   "archetype": "The Harmonious Connector",
+   "swot_name": "Counselor / Coach",
+   "aliases": [
+    "counselor",
+    "harmonious connector"
+   ],
+   "meters": [
+    {
+     "name": "Consistency & Patience",
+     "value": 82,
+     "level": "High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 85,
+     "level": "High"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 55,
+     "level": "Moderate"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 50,
+     "level": "Moderate"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 45,
+     "level": "Moderate-Low"
+    },
+    {
+     "name": "Decisiveness & Drive",
+     "value": 50,
+     "level": "Moderate"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Influence (I) – Expressive connection, warmth, and relational outreach."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Steadiness (S) – Adds patience, empathetic listening, and relational loyalty."
+    }
+   },
+   "student": {
+    "group_projects": "Ensures every member is included and heard; maintains group harmony while steadying work output.",
+    "academic_pressure": "Relies on peer support networks; seeks stable environments without aggressive competition.",
+    "communication": "Warm, empathetic, encouraging, and supportive.",
+    "learning_environment": "Collaborative group environments emphasizing team building and mutual support."
+   },
+   "professional": {
+    "workplace_execution": "Builds collaborative teams, fosters employee well-being, and keeps projects moving smoothly.",
+    "leadership": "Empathetic, supportive leader; focuses on morale, culture, and collaborative trust.",
+    "stress_response": "May over-accommodate others, internalize strain, or delay difficult corrective decisions.",
+    "ideal_roles": [
+     "HR Business Partner",
+     "Employee Experience Lead",
+     "Customer Success Manager",
+     "Relationship Coach"
+    ]
+   },
+   "personal": {
+    "household": "Nurturing and hospitable; maintains a peaceful, welcoming household centered on family traditions.",
+    "relationships": "Loyal, considerate, and deeply attentive to the emotional needs of loved ones.",
+    "conflict": "Seeks gentle reconciliation and consensus; works to avoid emotional confrontation."
+   },
+   "mentor": {
+    "guideline": "Validate their relational contributions while encouraging them to hold firm boundaries.",
+    "communication_key": "Empathetic, personal, and reassuring; frame constructive advice in terms of relationship health.",
+    "growth_exercise": {
+     "name": "Boundary Setting",
+     "text": "Practice saying \"no\" to non-essential requests without adding self-critical rationalizations."
+    }
+   },
+   "drivers": {
+    "fuels": "Team harmony, positive relationships, consensus, personal appreciation, and stable culture.",
+    "drains": "Interpersonal conflict, cold transactional settings, aggressive confrontation, and abrupt shifts."
+   },
+   "summary": {
+    "short_name": "Harmonious Connector",
+    "student": "Supports team cohesion; value-driven student.",
+    "professional": "Culture building, employee engagement.",
+    "personal": "Nurturing, hospitable family focus.",
+    "fuel": "Harmony, team unity.",
+    "drain": "Interpersonal conflict, cold settings.",
+    "key": "Personal, empathetic dialogue.",
+    "exercise": "Boundary Setting"
+   },
+   "swot": {
+    "name": "Counselor / Coach",
+    "primary_quadrant": "Influence",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 20,
+     "opportunities": 30,
+     "threats": 15
+    },
+    "strengths": "Empathetic communication, relational loyalty, morale building",
+    "weaknesses": "Indecisive with tough decisions, avoids conflict, subjective bias",
+    "opportunities": "Organizational development, retention, culture cultivation",
+    "threats": "Exploitation by aggressive peers, tolerance of underperformance"
+   },
+   "report": {
+    "about": [
+     "You are friendly, expressive, and enjoy interacting with people.",
+     "You bring energy and positivity to group activities.",
+     "You are also patient and supportive toward others.",
+     "You like working cooperatively and maintaining good relationships in the group.",
+     "You can encourage and motivate members while maintaining harmony in the team.",
+     "People often see you as approachable, supportive, and someone who helps keep the group active and connected."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Good",
+      "items": [
+       "Maintaining basic financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Supporting simple financial planning"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Strong",
+      "items": [
+       "Speaking confidently in group meetings",
+       "Explaining ideas and plans clearly",
+       "Communicating with customers, officials, and buyers",
+       "Supporting awareness and outreach activities"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Strong",
+      "items": [
+       "Building positive relationships within the group",
+       "Encouraging members to participate in activities",
+       "Supporting team coordination and cooperation",
+       "Maintaining a friendly and cooperative group environment"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products for display in markets or stalls",
+       "Assisting in organizing materials and product layouts"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Good",
+      "items": [
+       "Singing community awareness songs",
+       "Participating in village cultural programs",
+       "Supporting community mobilisation activities",
+       "Spreading awareness messages through songs and performances"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Good",
+      "items": [
+       "Creating new product ideas",
+       "Designing handicrafts, bags, or garments",
+       "Improving product packaging and presentation",
+       "Suggesting new patterns and styles"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a friendly and cooperative individual who combines strong communication skills with a supportive and patient nature.",
+      "You perform best in roles that require interaction with people, teamwork, and consistent effort."
+     ],
+     "suitable_for": [
+      "Community mobilisation and awareness activities",
+      "Facilitating meetings and group discussions",
+      "Customer interaction and product promotion",
+      "Supporting production and group coordination",
+      "Encouraging participation and teamwork within the organisation"
+     ],
+     "closing": "With training in communication, marketing, and enterprise skills, you can become an important member who helps connect the team members with the community and expand its opportunities."
+    },
+    "primary": "Influential",
+    "secondary": "Steady"
+   }
+  },
+  {
+   "code": "IC",
+   "primary": "I",
+   "secondary": "C",
+   "label": "Influential – Compliant (I/C)",
+   "archetype": "The Detailed Communicator",
+   "swot_name": "Communicator / Strategist",
+   "aliases": [
+    "detailed communicator"
+   ],
+   "meters": [
+    {
+     "name": "Decisiveness & Drive",
+     "value": 94,
+     "level": "Very High"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 92,
+     "level": "Very High"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 90,
+     "level": "Very High"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 86,
+     "level": "Very High"
+    },
+    {
+     "name": "Consistency & Patience",
+     "value": 84,
+     "level": "High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 74,
+     "level": "High"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Influence (I) – Dynamic, communicative, and engaging framing."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Conscientiousness (C) – Precision, analytical structure, and quality standards."
+    }
+   },
+   "student": {
+    "group_projects": "Bridges expressive pitching with structured documentation; ensures work is both engaging and precise.",
+    "academic_pressure": "Balances social study with meticulous preparation; produces articulate, well-researched work.",
+    "communication": "Persuasive yet data-backed; uses structured arguments to convince others.",
+    "learning_environment": "Analytical settings that require presentation of data, debate, and structured research."
+   },
+   "professional": {
+    "workplace_execution": "Drives campaigns forward backed by data, clear strategy, and systematic communication.",
+    "leadership": "Communicates high standards clearly; inspires teams while maintaining operational compliance.",
+    "stress_response": "May over-analyze under pressure or debate points exhaustively to defend technical accuracy.",
+    "ideal_roles": [
+     "Product Marketing Manager",
+     "Regulatory Affairs Director",
+     "Corporate Communications Lead",
+     "Technical Sales Manager"
+    ]
+   },
+   "personal": {
+    "household": "Manages family affairs with planned activities, open dialogue, and organized schedules.",
+    "relationships": "Expressive, articulate, and thoughtful; values meaningful, logical conversations.",
+    "conflict": "Combines persuasive rationale with concrete facts to address and resolve disputes cleanly."
+   },
+   "mentor": {
+    "guideline": "Support their enthusiasm while channeling their analytical focus into actionable priorities.",
+    "communication_key": "Clear, structured, and engaging; blend expressive enthusiasm with factual accuracy.",
+    "growth_exercise": {
+     "name": "The 3-Beat Pause",
+     "text": "Pause for three full beats before responding during tense discussions to process facts objectively without emotional reaction."
+    }
+   },
+   "drivers": {
+    "fuels": "Well-structured presentations, data-backed consensus, clear strategic direction, and public success.",
+    "drains": "Unsubstantiated claims, chaotic workflows, public criticism, and sloppy execution."
+   },
+   "summary": {
+    "short_name": "Detailed Communicator",
+    "student": "Bridges research rigor with presentation flair.",
+    "professional": "Technical sales, product marketing campaigns.",
+    "personal": "Planned social activities, articulate communication.",
+    "fuel": "Structured data, clear direction.",
+    "drain": "Sloppy work, public criticism.",
+    "key": "Blend enthusiasm with facts.",
+    "exercise": "3-Beat Pause"
+   },
+   "swot": {
+    "name": "Communicator / Strategist",
+    "primary_quadrant": "Influence",
+    "pct": {
+     "strengths": 30,
+     "weaknesses": 25,
+     "opportunities": 25,
+     "threats": 20
+    },
+    "strengths": "Translating complex metrics into engaging stories, articulate",
+    "weaknesses": "Overexplaining, analysis paralysis under social pressure",
+    "opportunities": "Product marketing, client advisory, technical evangelism",
+    "threats": "Mixed messaging, hesitation when data conflicts with narrative"
+   },
+   "report": {
+    "about": [
+     "You are friendly, expressive, and comfortable interacting with people.",
+     "You enjoy sharing ideas and encouraging others in the group.",
+     "At the same time, you value accuracy and doing work in a proper way.",
+     "You like to communicate clearly while also paying attention to details.",
+     "You can motivate people while ensuring that work is organized and well planned.",
+     "People may see you as an energetic yet responsible member who can communicate well and handle tasks carefully."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Good",
+      "items": [
+       "Maintaining basic financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Supporting financial planning and budgeting"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Strong",
+      "items": [
+       "Speaking confidently in group meetings",
+       "Explaining ideas and information clearly",
+       "Communicating with customers, officials, and buyers",
+       "Supporting awareness and outreach activities"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Strong",
+      "items": [
+       "Building good relationships with group members",
+       "Encouraging participation in group activities",
+       "Supporting team coordination and cooperation",
+       "Creating a positive and supportive group environment"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products for display in markets or stalls",
+       "Assisting in organizing materials and product layouts"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Moderate",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural programs",
+       "Helping in community mobilisation activities",
+       "Spreading awareness messages through songs and performances"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Good",
+      "items": [
+       "Creating new product ideas",
+       "Designing handicrafts, bags, or garments",
+       "Improving product packaging and presentation",
+       "Suggesting new patterns and styles"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a communicative and responsible individual who combines enthusiasm with attention to detail.",
+      "You perform best in roles that require interaction with people along with organized and careful work."
+     ],
+     "suitable_for": [
+      "Community outreach and awareness activities",
+      "Facilitating meetings and discussions",
+      "Supporting record keeping and documentation",
+      "Customer interaction and product promotion",
+      "Helping coordinate group activities"
+     ],
+     "closing": "With training in communication, enterprise management, and digital record keeping, you can become a valuable member who helps the organisation grow through strong communication and organized work."
+    },
+    "primary": "Influential",
+    "secondary": "Compliant"
+   }
+  },
+  {
+   "code": "SD",
+   "primary": "S",
+   "secondary": "D",
+   "label": "Steady – Dominant (S/D)",
+   "archetype": "The Quiet Finisher",
+   "swot_name": "Stabilizer / Achiever",
+   "aliases": [
+    "quiet finisher",
+    "stabilizer"
+   ],
+   "meters": [
+    {
+     "name": "Consistency & Patience",
+     "value": 85,
+     "level": "High"
+    },
+    {
+     "name": "Decisiveness & Drive",
+     "value": 75,
+     "level": "Moderate-High"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 70,
+     "level": "Moderate-High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 65,
+     "level": "Moderate"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 60,
+     "level": "Moderate"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 50,
+     "level": "Moderate"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Steadiness (S) – Methodical, patient, and persistent execution."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Dominance (D) – Adds quiet determination, goal orientation, and underlying drive."
+    }
+   },
+   "student": {
+    "group_projects": "Quietly keeps the team on track; takes action when progress stalls to cross the finish line.",
+    "academic_pressure": "Handles heavy workloads through steady focus; driven to achieve without seeking external attention.",
+    "communication": "Concise, practical, calm, and purposeful.",
+    "learning_environment": "Structured, self-paced environments with explicit objectives and quiet working conditions."
+   },
+   "professional": {
+    "workplace_execution": "Methodically finishes complex projects, working through obstacles without drama.",
+    "leadership": "Leads by quiet example; holds staff accountable through steady, consistent follow-up.",
+    "stress_response": "Internalizes pressure until a threshold is reached, then sets firm, unyielding boundaries.",
+    "ideal_roles": [
+     "Project Delivery Manager",
+     "Operations Analyst",
+     "Supply Chain Manager",
+     "Senior Engineer"
+    ]
+   },
+   "personal": {
+    "household": "Maintains a well-ordered, dependable household; quietly addresses repairs and physical tasks.",
+    "relationships": "Loyal, straightforward, and reliable; shows devotion through helpful action rather than words.",
+    "conflict": "Listens patiently, then states a firm, pragmatic boundary that settles the issue."
+   },
+   "mentor": {
+    "guideline": "Respect their quiet work style; offer clear, non-disruptive feedback on outcomes.",
+    "communication_key": "Direct, practical, and grounded. Focus on tangible goals without hyperbole.",
+    "growth_exercise": {
+     "name": "Proactive Assertion",
+     "text": "Encourage them to speak up early when project goals diverge from original plans."
+    }
+   },
+   "drivers": {
+    "fuels": "Uninterrupted work time, realistic schedules, practical goals, and quiet operational autonomy.",
+    "drains": "Constant interruptions, dramatic grandstanding, unmanaged chaos, and shifting goalposts."
+   },
+   "summary": {
+    "short_name": "Quiet Finisher",
+    "student": "Quietly ensures project completion.",
+    "professional": "Persistent project delivery through obstacles.",
+    "personal": "Dependable, quiet support for home projects.",
+    "fuel": "Quiet autonomy, clear tasks.",
+    "drain": "Interruptions, grandstanding.",
+    "key": "Direct, practical feedback.",
+    "exercise": "Proactive Assertion"
+   },
+   "swot": {
+    "name": "Stabilizer / Achiever",
+    "primary_quadrant": "Steadiness",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 20,
+     "opportunities": 25,
+     "threats": 20
+    },
+    "strengths": "Quiet persistence, dependable execution, drama-free delivery",
+    "weaknesses": "Passive resistance, delays upfront confrontation until crisis",
+    "opportunities": "Sustained long-term project stewardship, operational scale",
+    "threats": "Bottlenecks from suppressed grievances, sudden disengagement"
+   },
+   "report": {
+    "about": [
+     "You are calm, patient, and dependable in your work.",
+     "You prefer maintaining stability and harmony within the group.",
+     "At the same time, you are capable of taking initiative when needed.",
+     "You believe in working cooperatively while also ensuring that tasks are completed on time.",
+     "You are comfortable supporting others and stepping forward to guide the group when required.",
+     "People often see you as reliable, responsible, and capable of handling important responsibilities."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Good",
+      "items": [
+       "Maintaining accounts and financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Supporting financial planning and budgeting"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Good",
+      "items": [
+       "Participating in group meetings and discussions",
+       "Explaining ideas and information clearly",
+       "Writing records and documentation",
+       "Communicating with customers and officials"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Strong",
+      "items": [
+       "Supporting team cooperation and coordination",
+       "Maintaining group harmony and trust",
+       "Helping resolve small conflicts within the group",
+       "Encouraging members to work together"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and display",
+       "Arranging products for markets or stalls",
+       "Assisting in measuring and organizing materials"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related activities",
+       "Dairy and livestock work",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Moderate",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural programs",
+       "Helping in community mobilisation activities",
+       "Spreading awareness messages through songs and performances"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Moderate",
+      "items": [
+       "Supporting new product ideas",
+       "Assisting in product design and finishing",
+       "Improving packaging and presentation",
+       "Suggesting small creative improvements"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a balanced and dependable individual who combines patience with the ability to take initiative when needed.",
+      "You perform best in roles that require team cooperation, responsibility, and steady progress."
+     ],
+     "suitable_for": [
+      "Supporting group coordination and activities",
+      "Managing production and routine operations",
+      "Maintaining records and documentation",
+      "Ensuring quality and consistency in group work",
+      "Assisting in planning and organizing group tasks"
+     ],
+     "closing": "With training in enterprise management, leadership skills, and digital record keeping, you can play an important role in helping the organisation operate smoothly and grow over time."
+    },
+    "primary": "Steady",
+    "secondary": "Dominant"
+   }
+  },
+  {
+   "code": "SI",
+   "primary": "S",
+   "secondary": "I",
+   "label": "Steady – Influential (S/I)",
+   "archetype": "The Supportive Diplomat",
+   "swot_name": "Supporter / Peacemaker",
+   "aliases": [
+    "peacemaker",
+    "supportive diplomat"
+   ],
+   "meters": [
+    {
+     "name": "Collaborative Listening",
+     "value": 90,
+     "level": "Very High"
+    },
+    {
+     "name": "Consistency & Patience",
+     "value": 88,
+     "level": "Very High"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 50,
+     "level": "Moderate"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 45,
+     "level": "Moderate-Low"
+    },
+    {
+     "name": "Decisiveness & Drive",
+     "value": 45,
+     "level": "Moderate-Low"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 35,
+     "level": "Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Steadiness (S) – Warm, stable, and patient presence."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Influence (I) – Adds social open-mindedness, verbal warmth, and relational optimism."
+    }
+   },
+   "student": {
+    "group_projects": "Acts as the team mediator; keeps group dynamics positive, supportive, and harmonious.",
+    "academic_pressure": "Relies on study groups and peer support; steady and consistent in completing work.",
+    "communication": "Gentle, warm, inclusive, and encouraging.",
+    "learning_environment": "Collaborative classrooms with peer interaction and supportive teaching approaches."
+   },
+   "professional": {
+    "workplace_execution": "Maintains supportive team networks, resolves interpersonal friction, and delivers steady work.",
+    "leadership": "Empathetic, approachable leader; focuses on staff well-being, consensus, and team stability.",
+    "stress_response": "May avoid necessary confrontation or struggle to enforce tough performance standards.",
+    "ideal_roles": [
+     "Team Ombudsman",
+     "HR Specialist",
+     "Guidance Counselor",
+     "Account Manager"
+    ]
+   },
+   "personal": {
+    "household": "Creates a welcoming, supportive home environment centered on family connections and peace.",
+    "relationships": "Warm, empathetic listener; prioritizes the feelings and peace of friends and family.",
+    "conflict": "De-escalates tension calmly; seeks win-win compromises through gentle dialogue."
+   },
+   "mentor": {
+    "guideline": "Encourage them to share their ideas while validating their supportive nature.",
+    "communication_key": "Warm, personable, and encouraging; provide gentle guidance rather than harsh directives.",
+    "growth_exercise": {
+     "name": "Direct Feedback Practice",
+     "text": "Practice delivering constructive feedback directly without softening the core message."
+    }
+   },
+   "drivers": {
+    "fuels": "Harmony, appreciation, supportive teams, personal connection, and predictable routines.",
+    "drains": "Harsh confrontation, high-stress deadline pressures, cold environments, and unpredictable shifts."
+   },
+   "summary": {
+    "short_name": "Supportive Diplomat",
+    "student": "Team mediator; maintains classroom harmony.",
+    "professional": "HR support, team morale, consensus building.",
+    "personal": "Inclusive, peaceful household focus.",
+    "fuel": "Harmony, appreciation.",
+    "drain": "Confrontation, high stress.",
+    "key": "Warm, encouraging guidance.",
+    "exercise": "Direct Feedback Practice"
+   },
+   "swot": {
+    "name": "Supporter / Peacemaker",
+    "primary_quadrant": "Steadiness",
+    "pct": {
+     "strengths": 30,
+     "weaknesses": 25,
+     "opportunities": 30,
+     "threats": 15
+    },
+    "strengths": "Cross-functional consensus, approachable, patient coaching",
+    "weaknesses": "Reluctance to enforce tough deadlines or address low performance",
+    "opportunities": "Customer success, dispute mediation, employee engagement",
+    "threats": "Compromised operational rigor, systemic delay in difficult actions"
+   },
+   "report": {
+    "about": [
+     "You are calm, patient, and supportive in your work.",
+     "You like to maintain harmony and cooperation within the group.",
+     "You are also friendly and comfortable interacting with people.",
+     "You can encourage and motivate others in the group.",
+     "You prefer working together and building positive relationships.",
+     "People often see you as approachable, dependable, and helpful during group activities."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Good",
+      "items": [
+       "Maintaining basic financial records",
+       "Tracking savings and loan entries",
+       "Supporting stock and inventory records",
+       "Assisting in group financial planning"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Good",
+      "items": [
+       "Participating in group meetings and discussions",
+       "Explaining ideas or information clearly",
+       "Communicating with customers and officials",
+       "Supporting record writing and documentation"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Strong",
+      "items": [
+       "Building good relationships with group members",
+       "Encouraging active participation in group activities",
+       "Supporting team coordination and cooperation",
+       "Maintaining group harmony and trust"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products for display in markets or stalls",
+       "Assisting in measuring and organizing materials"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related activities",
+       "Dairy and livestock work",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Moderate",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural programs",
+       "Helping in community mobilisation activities",
+       "Spreading awareness messages through songs and performances"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Moderate",
+      "items": [
+       "Supporting new product ideas",
+       "Assisting in product design and finishing",
+       "Improving packaging and presentation",
+       "Suggesting small creative improvements"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a friendly, cooperative, and dependable team member who works well with others and helps maintain a positive group environment.",
+      "You perform best in roles that require teamwork, communication, and consistent effort."
+     ],
+     "suitable_for": [
+      "Supporting group coordination and activities",
+      "Helping manage production work",
+      "Assisting in community outreach and awareness programs",
+      "Supporting record keeping and communication tasks",
+      "Encouraging participation among group members"
+     ],
+     "closing": "With training in communication skills, enterprise activities, and digital record keeping, you can become a valuable member who helps strengthen teamwork and expand various activities."
+    },
+    "primary": "Steady",
+    "secondary": "Influential"
+   }
+  },
+  {
+   "code": "SS",
+   "primary": "S",
+   "secondary": "S",
+   "label": "Steady – Steady (S/S)",
+   "archetype": "The Dependable Anchor",
+   "swot_name": "Pure Anchor",
+   "aliases": [
+    "dependable anchor",
+    "pure anchor"
+   ],
+   "meters": [
+    {
+     "name": "Consistency & Patience",
+     "value": 98,
+     "level": "Extremely High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 92,
+     "level": "Very High"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 30,
+     "level": "Low"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 20,
+     "level": "Very Low"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 40,
+     "level": "Low"
+    },
+    {
+     "name": "Decisiveness & Drive",
+     "value": 35,
+     "level": "Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Steadiness (S) – Patient, methodical, and calm presence."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Steadiness (S) – Maximum operational continuity and relational loyalty."
+    }
+   },
+   "student": {
+    "group_projects": "Reliable contributor; takes on long-term assignments without complaint and completes them consistently.",
+    "academic_pressure": "Stays calm under regular workloads; values predictable schedules and steady study routines.",
+    "communication": "Modest, calm, thoughtful, and deliberate.",
+    "learning_environment": "Stable, supportive environments with predictable routines and clear instructions."
+   },
+   "professional": {
+    "workplace_execution": "Provides reliable, steady execution; excels at maintaining long-term institutional processes.",
+    "leadership": "Servant-leader style; protects team stability, supports staff, and maintains consistent output.",
+    "stress_response": "Resistant to abrupt change; may become silent or passive when overwhelmed by rapid pivots.",
+    "ideal_roles": [
+     "Customer Support Director",
+     "Quality Assurance Lead",
+     "Office Manager",
+     "Long-term Care Coordinator"
+    ]
+   },
+   "personal": {
+    "household": "Creates a peaceful home life; maintains family routines and long-term security.",
+    "relationships": "Deeply loyal, patient, and dependable friend; avoids unnecessary drama.",
+    "conflict": "Seeks peaceful resolution through patient dialogue and gentle compromise."
+   },
+   "mentor": {
+    "guideline": "Offer stable encouragement and clear notice before structural changes occur.",
+    "communication_key": "Calm, gentle, and unambiguous; allow time for them to process changes before requiring action.",
+    "growth_exercise": {
+     "name": "Controlled Risk Trial",
+     "text": "Introduce small, controlled adjustments to daily routines to build comfort with change."
+    }
+   },
+   "drivers": {
+    "fuels": "Operational stability, clear routines, long-term security, group harmony, and practical appreciation.",
+    "drains": "Frequent sudden changes, high-conflict environments, aggressive confrontation, and chaotic priorities."
+   },
+   "summary": {
+    "short_name": "Dependable Anchor",
+    "student": "Consistent team worker; completes work reliably.",
+    "professional": "Operational continuity, steady support.",
+    "personal": "Peaceful home life, steady routines.",
+    "fuel": "Stability, clear routines.",
+    "drain": "Sudden changes, confrontation.",
+    "key": "Calm, step-by-step directions.",
+    "exercise": "Controlled Risk Trial"
+   },
+   "swot": {
+    "name": "Pure Anchor",
+    "primary_quadrant": "Steadiness",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 20,
+     "opportunities": 20,
+     "threats": 25
+    },
+    "strengths": "Unshakable reliability, exceptional loyalty, process adherence",
+    "weaknesses": "Rigid resistance to change, conflict aversion, slow initiation",
+    "opportunities": "High-retention operational roles, critical ongoing workflows",
+    "threats": "Obsolescence in volatile/disruptive markets, change fatigue"
+   },
+   "report": null
+  },
+  {
+   "code": "SC",
+   "primary": "S",
+   "secondary": "C",
+   "label": "Steady – Compliant (S/C)",
+   "archetype": "The System Specialist",
+   "swot_name": "Technician / Specialist",
+   "aliases": [
+    "system specialist"
+   ],
+   "meters": [
+    {
+     "name": "Consistency & Patience",
+     "value": 92,
+     "level": "Very High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 80,
+     "level": "High"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 65,
+     "level": "Moderate"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 25,
+     "level": "Low"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 40,
+     "level": "Low"
+    },
+    {
+     "name": "Decisiveness & Drive",
+     "value": 35,
+     "level": "Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Steadiness (S) – Patient, deliberate, and stable methodology."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Conscientiousness (C) – Adds analytical precision, quality control, and rule adherence."
+    }
+   },
+   "student": {
+    "group_projects": "Produces thorough, accurate work; organizes research and ensures all guidelines are met.",
+    "academic_pressure": "Thrives with clear rubrics and schedules; works methodically to produce precise results.",
+    "communication": "Soft-spoken, detailed, matter-of-fact, and practical.",
+    "learning_environment": "Quiet, organized environments with explicit instructions and thorough rubrics."
+   },
+   "professional": {
+    "workplace_execution": "Maintains systems, monitors compliance standards, and completes work with consistent quality.",
+    "leadership": "Lead-by-example style; sets clear operational standards and maintains quiet consistency.",
+    "stress_response": "May become overly cautious, hesitant to make fast decisions, or retreat into detailed analysis.",
+    "ideal_roles": [
+     "Quality Control Analyst",
+     "Database Administrator",
+     "Compliance Specialist",
+     "Medical Records Administrator"
+    ]
+   },
+   "personal": {
+    "household": "Keeps the home organized and running predictably; manages budgets and records carefully.",
+    "relationships": "Reliable, thoughtful, and private; demonstrates care through helpful actions and reliability.",
+    "conflict": "Refers to established rules, facts, or calm logic to resolve disagreements cleanly."
+   },
+   "mentor": {
+    "guideline": "Provide clear guidelines and adequate time for task completion; avoid sudden operational changes.",
+    "communication_key": "Calm, structured, and factual; present clear directions and allow time for review.",
+    "growth_exercise": {
+     "name": "Agile Decision Sprint",
+     "text": "Make low-stakes operational decisions within a strict 5-minute window."
+    }
+   },
+   "drivers": {
+    "fuels": "Clear structures, precise standards, quiet work settings, predictable tasks, and proven methods.",
+    "drains": "Sudden operational shifts, vague instructions, high-risk gambles, and chaotic environments."
+   },
+   "summary": {
+    "short_name": "System Specialist",
+    "student": "Produces precise research within guidelines.",
+    "professional": "Quality control, regulatory compliance.",
+    "personal": "Orderly, predictable domestic routines.",
+    "fuel": "Structured rules, quiet work.",
+    "drain": "Unclear shifts, high risk.",
+    "key": "Clear, structured instructions.",
+    "exercise": "Agile Decision Sprint"
+   },
+   "swot": {
+    "name": "Technician / Specialist",
+    "primary_quadrant": "Steadiness",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 20,
+     "opportunities": 20,
+     "threats": 25
+    },
+    "strengths": "Methodical precision, high quality control, systematic calm",
+    "weaknesses": "Reluctance to take risks without full data, slow pace",
+    "opportunities": "Compliance governance, specialized technical engineering",
+    "threats": "Paralysis in ambiguous or emergency situations"
+   },
+   "report": {
+    "about": [
+     "You are calm, patient, and dependable in your work.",
+     "You prefer working in an organized and systematic way.",
+     "You value accuracy, responsibility, and careful planning.",
+     "You like to maintain harmony in the group while also ensuring work is done properly.",
+     "You are comfortable following clear processes and maintaining records carefully.",
+     "People often see you as reliable, disciplined, and someone who can be trusted with important tasks."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Good",
+      "items": [
+       "Maintaining accounts and financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Supporting group financial planning and budgeting"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Good",
+      "items": [
+       "Participating in group meetings and discussions",
+       "Explaining information clearly when needed",
+       "Writing records, notes, and documentation",
+       "Communicating with customers or officials politely"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Strong",
+      "items": [
+       "Working cooperatively with group members",
+       "Supporting team coordination and cooperation",
+       "Maintaining group discipline and harmony",
+       "Helping ensure responsibilities are carried out properly"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and finishing",
+       "Arranging products for display in markets or stalls",
+       "Assisting in measuring and organizing materials"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Moderate",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural activities",
+       "Helping in community mobilisation programs",
+       "Spreading awareness messages through songs and performances"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Moderate",
+      "items": [
+       "Supporting simple product design ideas",
+       "Assisting in improving product packaging and finishing",
+       "Suggesting small improvements in products",
+       "Helping make products more attractive for customers"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a patient, responsible, and detail-oriented individual who works best in environments that require consistency, organization, and teamwork.",
+      "You perform well in roles that require careful planning and reliable execution of tasks."
+     ],
+     "suitable_for": [
+      "Maintaining accounts and records",
+      "Supporting production and quality control activities",
+      "Managing documentation and inventory records",
+      "Ensuring regular group operations run smoothly",
+      "Supporting coordination among group members"
+     ],
+     "closing": "With training in enterprise management, digital record keeping, and quality management, you can play an important role in helping the organization maintain strong systems and grow sustainably."
+    },
+    "primary": "Steady",
+    "secondary": "Compliant"
+   }
+  },
+  {
+   "code": "CD",
+   "primary": "C",
+   "secondary": "D",
+   "label": "Compliant – Dominant (C/D)",
+   "archetype": "The Critical Strategist",
+   "swot_name": "Governor / Systems Architect",
+   "aliases": [
+    "critical strategist",
+    "systems architect"
+   ],
+   "meters": [
+    {
+     "name": "Task Autonomy",
+     "value": 90,
+     "level": "Very High"
+    },
+    {
+     "name": "Decisiveness & Drive",
+     "value": 80,
+     "level": "High"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 65,
+     "level": "Moderate"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 70,
+     "level": "Moderate-High"
+    },
+    {
+     "name": "Consistency & Patience",
+     "value": 55,
+     "level": "Moderate"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 40,
+     "level": "Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Conscientiousness (C) – Precision, objective analysis, and systematic quality."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Dominance (D) – Adds assertiveness, directness, and drive to enforce standards."
+    }
+   },
+   "student": {
+    "group_projects": "Sets strict quality guidelines and directly enforces team accountability to meet them.",
+    "academic_pressure": "Focuses intensely on technical excellence; challenges incomplete theories or flawed logic.",
+    "communication": "Direct, precise, assertive, and factual.",
+    "learning_environment": "High-rigor environments requiring analytical problem-solving and direct debate."
+   },
+   "professional": {
+    "workplace_execution": "Audits, refines, and enforces operational quality and strategic metrics assertively.",
+    "leadership": "Direct, standards-driven leader; insists on compliance, accuracy, and operational results.",
+    "stress_response": "Can become overly critical or blunt when standards are breached or deadlines missed.",
+    "ideal_roles": [
+     "Chief Risk Officer",
+     "Quality Assurance Director",
+     "Strategic Auditor",
+     "Systems Engineer"
+    ]
+   },
+   "personal": {
+    "household": "Manages family affairs with precision, clear expectations, and structured systems.",
+    "relationships": "Direct, private, and pragmatic; values honesty, logical clarity, and reliability.",
+    "conflict": "Dismantles flawed logic directly with precise facts to settle disputes."
+   },
+   "mentor": {
+    "guideline": "Recognize their drive for quality; help them deliver constructive critique diplomatically.",
+    "communication_key": "Precise, direct, and data-driven; present clear logical arguments without subjective padding.",
+    "growth_exercise": {
+     "name": "Constructive Feedback Sandwich",
+     "text": "Require pairing every critical point with an objective observation of what is working well."
+    }
+   },
+   "drivers": {
+    "fuels": "System efficiency, technical precision, logical strategies, and clear performance standards.",
+    "drains": "Incompetence, sloppy work, emotional arguments, and lack of structure."
+   },
+   "summary": {
+    "short_name": "Critical Strategist",
+    "student": "Directly enforces project quality and rigor.",
+    "professional": "Strategic auditing, risk management.",
+    "personal": "Systematic, standards-based home management.",
+    "fuel": "Technical precision, efficiency.",
+    "drain": "Incompetence, emotional appeals.",
+    "key": "Direct, logic-driven critique.",
+    "exercise": "Constructive Feedback Sandwich"
+   },
+   "swot": {
+    "name": "Governor / Systems Architect",
+    "primary_quadrant": "Compliance",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 25,
+     "opportunities": 20,
+     "threats": 20
+    },
+    "strengths": "Objective systemic integrity, policy enforcement, logical rigor",
+    "weaknesses": "Blunt aloofness, low tolerance for emotional nuances or human error",
+    "opportunities": "Internal audit, risk oversight, technical architecture",
+    "threats": "Severe team friction, friction with entrepreneurial business units"
+   },
+   "report": {
+    "about": [
+     "You are careful, organized, and detail-oriented in your work.",
+     "You like to follow proper processes and maintain accuracy.",
+     "At the same time, you are capable of taking initiative and handling responsibilities when required.",
+     "You prefer planning tasks carefully before making decisions.",
+     "You can ensure that work is done correctly while also guiding others when needed.",
+     "People may see you as disciplined, responsible, and capable of managing important tasks effectively."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Strong",
+      "items": [
+       "Maintaining accounts and financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Supporting budgeting and financial planning"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Good",
+      "items": [
+       "Writing records, notes, and reports",
+       "Explaining information clearly when required",
+       "Communicating with customers, officials, and buyers",
+       "Supporting documentation and reporting"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Good",
+      "items": [
+       "Maintaining discipline in group activities",
+       "Supporting team coordination and cooperation",
+       "Helping members follow plans and responsibilities",
+       "Building trust within the group"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products neatly for display",
+       "Assisting in organizing materials and product layouts"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Developing",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural activities",
+       "Helping in community mobilisation programs"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Moderate",
+      "items": [
+       "Suggesting small improvements in products",
+       "Supporting product design and finishing",
+       "Improving packaging and presentation",
+       "Helping make products more attractive for customers"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a careful and responsible individual who combines attention to detail with the ability to take initiative when required.",
+      "You perform best in roles that require organization, accuracy, and responsible decision-making."
+     ],
+     "suitable_for": [
+      "Maintaining accounts and financial records",
+      "Managing documentation and inventory systems",
+      "Supervising production quality and standards",
+      "Supporting enterprise planning and operations",
+      "Assisting in organizing and coordinating group activities"
+     ],
+     "closing": "With training in digital record keeping, enterprise management, and leadership skills, you can become a key person who helps the organization maintain strong systems while also guiding the group toward growth and efficiency."
+    },
+    "primary": "Compliant",
+    "secondary": "Dominant"
+   }
+  },
+  {
+   "code": "CI",
+   "primary": "C",
+   "secondary": "I",
+   "label": "Compliant – Influential (C/I)",
+   "archetype": "The Strategic Communicator",
+   "swot_name": "Analyst / Clarifier",
+   "aliases": [
+    "clarifier",
+    "strategic communicator"
+   ],
+   "meters": [
+    {
+     "name": "Task Autonomy",
+     "value": 80,
+     "level": "High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 75,
+     "level": "High"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 60,
+     "level": "Moderate"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 65,
+     "level": "Moderate"
+    },
+    {
+     "name": "Consistency & Patience",
+     "value": 65,
+     "level": "Moderate"
+    },
+    {
+     "name": "Decisiveness & Drive",
+     "value": 55,
+     "level": "Moderate"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Conscientiousness (C) – Analytical structure, detail orientation, and factual clarity."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Influence (I) – Adds communicative warmth, verbal fluency, and engaging presentation skills."
+    }
+   },
+   "student": {
+    "group_projects": "Combines accurate research with clear presentation slides; explains complex data engagingly.",
+    "academic_pressure": "Maintains structured study schedules while enjoying class discussions and presentations.",
+    "communication": "Articulate, structured, persuasive, and detail-oriented.",
+    "learning_environment": "Classrooms blending independent research with group discussions and presentations."
+   },
+   "professional": {
+    "workplace_execution": "Translates complex data sets into clear, compelling narratives and actionable reports.",
+    "leadership": "Methodical yet communicative leader; keeps teams informed with clear, structured guidance.",
+    "stress_response": "May over-explain complex points or seek verbal reassurance on detailed technical choices.",
+    "ideal_roles": [
+     "Technical Writer",
+     "Market Research Director",
+     "Communications Analyst",
+     "Training Specialist"
+    ]
+   },
+   "personal": {
+    "household": "Organizes household schedules thoughtfully, balancing clear planning with open communication.",
+    "relationships": "Articulate, thoughtful, and communicative; values intellectual discussion.",
+    "conflict": "Uses structured logical narrative to work through personal differences calmly."
+   },
+   "mentor": {
+    "guideline": "Value their thoroughness; encourage them to summarize core points concisely when presenting to leadership.",
+    "communication_key": "Clear, articulate, and well-structured; pair detailed reasoning with an open, friendly tone.",
+    "growth_exercise": {
+     "name": "Executive Summary Practice",
+     "text": "Limit initial project updates to a three-bullet summary before diving into detailed data."
+    }
+   },
+   "drivers": {
+    "fuels": "Well-organized information, clear messaging platforms, validated findings, and thoughtful discussion.",
+    "drains": "Disorganized communication, hasty decisions without data, emotional outbursts, and ambiguous roles."
+   },
+   "summary": {
+    "short_name": "Strategic Communicator",
+    "student": "Explains complex research clearly to peers.",
+    "professional": "Technical writing, market research analysis.",
+    "personal": "Thoughtful home organizing, active discussion.",
+    "fuel": "Validated data, clear messaging.",
+    "drain": "Disorganization, emotional noise.",
+    "key": "Structured, articulate dialogue.",
+    "exercise": "Executive Summary Practice"
+   },
+   "swot": {
+    "name": "Analyst / Clarifier",
+    "primary_quadrant": "Compliance",
+    "pct": {
+     "strengths": 30,
+     "weaknesses": 25,
+     "opportunities": 25,
+     "threats": 20
+    },
+    "strengths": "Structured data translation, visual frameworks, training design",
+    "weaknesses": "Vulnerability to criticism, anxiety over public errors",
+    "opportunities": "Business intelligence reporting, pedagogical technical design",
+    "threats": "Perfectionism stalling delivery, sensitivity to debate"
+   },
+   "report": {
+    "about": [
+     "You are careful, responsible, and detail-oriented in your work.",
+     "You like to follow proper methods and maintain accuracy.",
+     "At the same time, you are friendly and able to communicate well with others.",
+     "You can explain ideas clearly and motivate people when needed.",
+     "You prefer work that is organized but also allows interaction with people.",
+     "People may see you as dependable, supportive, and good at maintaining both quality and relationships."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Strong",
+      "items": [
+       "Maintaining financial records and accounts",
+       "Tracking savings, loans, and repayments",
+       "Managing stock records",
+       "Supporting budget planning"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Strong",
+      "items": [
+       "Communicating with customers and community members",
+       "Explaining products and services clearly",
+       "Writing records, notes, and reports",
+       "Supporting marketing and promotion activities"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Strong",
+      "items": [
+       "Building good relationships within the group",
+       "Helping resolve small conflicts",
+       "Motivating members to participate in activities",
+       "Encouraging teamwork and cooperation"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Designing simple product packaging",
+       "Arranging products neatly for display",
+       "Supporting presentation of products in markets"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture and farming activities",
+       "Dairy and livestock work",
+       "Identifying good quality natural materials",
+       "Supporting food and agricultural enterprises"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Developing",
+      "items": [
+       "Participating in community awareness programs",
+       "Supporting cultural events and village programs"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Moderate",
+      "items": [
+       "Suggesting new ideas for products",
+       "Improving product appearance and packaging",
+       "Helping make products more attractive to customers"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a balanced individual who combines accuracy with good communication skills. You work carefully but also enjoy interacting with people.",
+      "You perform best in roles that involve organization, communication, and coordination."
+     ],
+     "suitable_for": [
+      "Maintaining records and documentation",
+      "Supporting communication with customers and officials",
+      "Helping in marketing and promotion of products",
+      "Coordinating group activities and meetings",
+      "Supporting quality checking and product finishing"
+     ],
+     "closing": "With training in communication, enterprise skills, and digital documentation, you can become a valuable member who helps the organization maintain good systems while also building strong connections with the community and markets."
+    },
+    "primary": "Compliant",
+    "secondary": "Influential"
+   }
+  },
+  {
+   "code": "CS",
+   "primary": "C",
+   "secondary": "S",
+   "label": "Compliant – Steady (C/S)",
+   "archetype": "The Precision Specialist",
+   "swot_name": "Quality Coordinator",
+   "aliases": [
+    "precision specialist",
+    "quality coordinator"
+   ],
+   "meters": [
+    {
+     "name": "Consistency & Patience",
+     "value": 90,
+     "level": "Very High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 82,
+     "level": "High"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 70,
+     "level": "Moderate-High"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 20,
+     "level": "Very Low"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 35,
+     "level": "Low"
+    },
+    {
+     "name": "Decisiveness & Drive",
+     "value": 30,
+     "level": "Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Conscientiousness (C) – Methodical analysis, accuracy, and detail focus."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Steadiness (S) – Adds patience, consistency, and calm persistence."
+    }
+   },
+   "student": {
+    "group_projects": "Reliably manages documentation, proofreading, and quality checks without fuss.",
+    "academic_pressure": "Works steadily and quietly; prefers structured self-study over fast-paced group sessions.",
+    "communication": "Quiet, precise, respectful, and soft-spoken.",
+    "learning_environment": "Quiet, organized learning spaces with explicit guidelines, clear rubrics, and steady pace."
+   },
+   "professional": {
+    "workplace_execution": "Maintains systematic quality control, manages detailed technical files, and ensures operational compliance.",
+    "leadership": "Supportive, detail-focused leader; establishes clear, calm, and structured operational routines.",
+    "stress_response": "Retracts into passive compliance or becomes overly anxious about potential errors under high pressure.",
+    "ideal_roles": [
+     "Compliance Specialist",
+     "Medical Researcher",
+     "Financial Auditor",
+     "Archival Specialist"
+    ]
+   },
+   "personal": {
+    "household": "Maintains a calm, organized household; carefully manages administrative details and home budgets.",
+    "relationships": "Private, thoughtful, and deeply dependable; values long-term, stable friendships.",
+    "conflict": "Refers quietly to established rules or facts, seeking a peaceful and logical outcome."
+   },
+   "mentor": {
+    "guideline": "Provide a quiet, structured environment; give step-by-step feedback and avoid sudden pivots.",
+    "communication_key": "Calm, structured, explicit, and quiet; avoid high pressure or vague demands.",
+    "growth_exercise": {
+     "name": "Safe-Space Pivot",
+     "text": "Introduce minor, low-risk workflow adjustments gradually to build comfort with change."
+    }
+   },
+   "drivers": {
+    "fuels": "Quiet environments, precise quality standards, clear instructions, stable routines, and predictable workflows.",
+    "drains": "Sudden disruptions, chaotic workspaces, high-risk gambles, and aggressive public confrontation."
+   },
+   "summary": {
+    "short_name": "Precision Specialist",
+    "student": "Meticulous documentation and proofreading.",
+    "professional": "Compliance records, technical archive management.",
+    "personal": "Quiet, highly orderly home environment.",
+    "fuel": "Quiet spaces, stable routines.",
+    "drain": "Sudden changes, loud conflict.",
+    "key": "Calm, step-by-step instructions.",
+    "exercise": "Safe-Space Pivot"
+   },
+   "swot": {
+    "name": "Quality Coordinator",
+    "primary_quadrant": "Compliance",
+    "pct": {
+     "strengths": 35,
+     "weaknesses": 20,
+     "opportunities": 20,
+     "threats": 25
+    },
+    "strengths": "Flawless documentation, zero-defect standard, dependable calm",
+    "weaknesses": "Bottlenecks caused by exhaustive reviews, aversion to changes",
+    "opportunities": "Regulatory reporting, QA infrastructure, clinical operations",
+    "threats": "Inability to adapt quickly to shifting market dynamics"
+   },
+   "report": {
+    "about": [
+     "You are careful, organized, and responsible in your work.",
+     "You like to follow proper processes and maintain accuracy.",
+     "You are also patient and supportive toward others.",
+     "You prefer working in a calm and cooperative environment.",
+     "You believe in doing tasks carefully while maintaining harmony in the group.",
+     "People often see you as reliable, disciplined, and someone who can be trusted with important responsibilities."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Strong",
+      "items": [
+       "Maintaining accounts and financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Supporting budgeting and financial planning"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Good",
+      "items": [
+       "Writing records and documentation",
+       "Explaining information clearly when needed",
+       "Communicating with customers or officials politely",
+       "Supporting group communication"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Good",
+      "items": [
+       "Working cooperatively with group members",
+       "Maintaining group discipline and harmony",
+       "Supporting team coordination and responsibility",
+       "Helping ensure tasks are completed properly"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and finishing",
+       "Arranging products neatly for display",
+       "Assisting in measuring and organizing materials"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Developing",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural activities",
+       "Helping in community mobilisation programs"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Moderate",
+      "items": [
+       "Suggesting small improvements in products",
+       "Supporting product design and finishing",
+       "Improving packaging and presentation",
+       "Helping make products more attractive for customers"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a careful and dependable individual who combines attention to detail with patience and teamwork.",
+      "You perform best in roles that require organization, consistency, and responsible execution of tasks."
+     ],
+     "suitable_for": [
+      "Maintaining accounts and records",
+      "Managing documentation and inventory records",
+      "Supporting production and quality control activities",
+      "Ensuring work is done carefully and systematically",
+      "Helping maintain smooth coordination within the group"
+     ],
+     "closing": "With training in digital record keeping, enterprise management, and quality management, you can become a valuable member who helps the organization maintain strong systems and work efficiently."
+    },
+    "primary": "Compliant",
+    "secondary": "Steady"
+   }
+  },
+  {
+   "code": "CC",
+   "primary": "C",
+   "secondary": "C",
+   "label": "Compliant – Compliant (C/C)",
+   "archetype": "The Pure Analyst",
+   "swot_name": "Pure Evaluator",
+   "aliases": [
+    "pure analyst",
+    "pure evaluator"
+   ],
+   "meters": [
+    {
+     "name": "Consistency & Patience",
+     "value": 85,
+     "level": "High"
+    },
+    {
+     "name": "Collaborative Listening",
+     "value": 60,
+     "level": "Moderate"
+    },
+    {
+     "name": "Task Autonomy",
+     "value": 80,
+     "level": "High"
+    },
+    {
+     "name": "Calculated Risk Appetite",
+     "value": 15,
+     "level": "Extremely Low"
+    },
+    {
+     "name": "Pace & Execution Urgency",
+     "value": 35,
+     "level": "Low"
+    },
+    {
+     "name": "Decisiveness & Drive",
+     "value": 30,
+     "level": "Low"
+    }
+   ],
+   "placement": {
+    "primary": {
+     "weight": 60,
+     "text": "High Conscientiousness (C) – Rigorous analysis, precision, and standards."
+    },
+    "secondary": {
+     "weight": 40,
+     "text": "High Conscientiousness (C) – Maximizes objective quality control and risk mitigation."
+    }
+   },
+   "student": {
+    "group_projects": "Focuses on research, factual validation, and technical accuracy; double-checks all details.",
+    "academic_pressure": "Studies exhaustively to ensure mastery; prefers clear, objective grading standards.",
+    "communication": "Formal, highly detailed, precise, and objective.",
+    "learning_environment": "Rigorous, quiet academic environments that value research methodology and evidence."
+   },
+   "professional": {
+    "workplace_execution": "Establishes standards, audits quality, and ensures thorough compliance with zero tolerance for error.",
+    "leadership": "Standards-focused leader; expects precision, detailed documentation, and adherence to rules.",
+    "stress_response": "Can become overly critical, risk-averse, or bogged down in analysis paralysis under pressure.",
+    "ideal_roles": [
+     "Senior Auditor",
+     "Compliance Director",
+     "Research Scientist",
+     "Actuary"
+    ]
+   },
+   "personal": {
+    "household": "Highly organized household operations; maintains accurate records, budgets, and schedules.",
+    "relationships": "Reserved, deliberate, and selective; prefers small groups and thoughtful conversations.",
+    "conflict": "Systematically presents objective documentation and logic to address issues."
+   },
+   "mentor": {
+    "guideline": "Encourage their commitment to quality while helping them recognize when a project is complete enough.",
+    "communication_key": "Fact-based, precise, and logical; present documented evidence and clear parameters.",
+    "growth_exercise": {
+     "name": "The 80/20 Rule",
+     "text": "Practice releasing analytical deliverables when they are functionally complete rather than perfect."
+    }
+   },
+   "drivers": {
+    "fuels": "Objective facts, clear standards, uninterrupted focus time, accuracy, and structured systems.",
+    "drains": "Unsubstantiated claims, chaotic environments, forced risk-taking, and sloppy work."
+   },
+   "summary": {
+    "short_name": "Pure Analyst",
+    "student": "Thorough academic research and detail focus.",
+    "professional": "Rigorous auditing, technical validation.",
+    "personal": "Organized home records, quiet routines.",
+    "fuel": "Objective facts, clear systems.",
+    "drain": "Hasty claims, sloppy work.",
+    "key": "Fact-based, explicit parameters.",
+    "exercise": "80/20 Rule"
+   },
+   "swot": {
+    "name": "Pure Evaluator",
+    "primary_quadrant": "Compliance",
+    "pct": {
+     "strengths": 40,
+     "weaknesses": 25,
+     "opportunities": 15,
+     "threats": 20
+    },
+    "strengths": "Unrivaled analytical precision, exhaustive audit and validation",
+    "weaknesses": "Crippling perfectionism, extreme skepticism, social isolation",
+    "opportunities": "Forensic auditing, cyber security, mission-critical systems",
+    "threats": "Total paralysis without complete documentation, isolation"
+   },
+   "report": {
+    "about": [
+     "You are careful, organized, and detail-oriented in your work.",
+     "You like to follow clear rules and processes.",
+     "You prefer planning work properly before starting a task.",
+     "You value accuracy, quality, and responsibility.",
+     "You are comfortable handling records, data, and structured tasks.",
+     "People may see you as disciplined, dependable, and someone who ensures that work is done correctly."
+    ],
+    "intelligences": [
+     {
+      "name": "Logical-Numerical Intelligence",
+      "area": "Numbers & Accounts",
+      "level": "Strong",
+      "items": [
+       "Maintaining accounts and financial records",
+       "Tracking savings and loan entries",
+       "Managing stock and inventory records",
+       "Supporting budgeting and financial planning"
+      ],
+      "key": "logical"
+     },
+     {
+      "name": "Linguistic Intelligence",
+      "area": "Communication Skills",
+      "level": "Good",
+      "items": [
+       "Writing records, notes, and reports",
+       "Explaining information clearly when required",
+       "Communicating with officials or customers politely",
+       "Supporting documentation and written communication"
+      ],
+      "key": "linguistic"
+     },
+     {
+      "name": "Personal & Social Intelligence",
+      "area": "Self and People Skills",
+      "level": "Good",
+      "items": [
+       "Maintaining discipline in group work",
+       "Supporting team coordination and cooperation",
+       "Helping ensure group responsibilities are carried out properly",
+       "Maintaining trust and reliability within the group"
+      ],
+      "key": "social"
+     },
+     {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "area": "Practical Work Skills",
+      "level": "Good",
+      "items": [
+       "Production activities",
+       "Food processing",
+       "Stitching and tailoring",
+       "Packing and finishing work",
+       "Quality checking"
+      ],
+      "key": "bodily"
+     },
+     {
+      "name": "Visual-Spatial Intelligence",
+      "area": "Design & Arrangement",
+      "level": "Moderate",
+      "items": [
+       "Supporting product packaging and presentation",
+       "Arranging products neatly for display",
+       "Assisting in measuring and organizing materials"
+      ],
+      "key": "visual"
+     },
+     {
+      "name": "Naturalistic Intelligence",
+      "area": "Understanding Nature",
+      "level": "Good",
+      "items": [
+       "Agriculture-related work",
+       "Dairy and livestock activities",
+       "Identifying good quality raw materials",
+       "Checking freshness and quality of natural products"
+      ],
+      "key": "naturalistic"
+     },
+     {
+      "name": "Musical Intelligence",
+      "area": "Rhythm & Music",
+      "level": "Developing",
+      "items": [
+       "Participating in community awareness songs",
+       "Supporting village cultural activities",
+       "Assisting in community mobilisation programs"
+      ],
+      "key": "musical"
+     },
+     {
+      "name": "Creative Intelligence",
+      "area": "Designing & Innovation",
+      "level": "Moderate",
+      "items": [
+       "Suggesting small improvements in products",
+       "Supporting product design and finishing",
+       "Assisting in improving packaging and presentation",
+       "Helping make products more attractive for customers"
+      ],
+      "key": "creative"
+     }
+    ],
+    "work_direction": {
+     "intro": [
+      "You are a careful, organized, and responsible individual who prefers working in a structured and systematic way.",
+      "You perform best in roles that require accuracy, planning, and attention to detail."
+     ],
+     "suitable_for": [
+      "Maintaining accounts and financial records",
+      "Handling documentation and record keeping",
+      "Managing inventory and stock records",
+      "Ensuring product quality and standards",
+      "Supporting organized production activities"
+     ],
+     "closing": "With training in digital record keeping, enterprise management, and quality management, you can become a key person who helps the organization maintain strong systems and operate efficiently."
+    },
+    "primary": "Compliant",
+    "secondary": "Compliant"
+   }
+  }
+ ]
+}
