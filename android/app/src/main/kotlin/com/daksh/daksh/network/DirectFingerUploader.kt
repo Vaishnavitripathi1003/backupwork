@@ -6,6 +6,8 @@ import com.daksh.daksh.data.remote.FingerDataY
 import com.daksh.daksh.data.remote.FingerPrintScan1Request
 import com.daksh.daksh.data.remote.RetrofitInstance
 import com.daksh.daksh.ScanResultStore
+import com.daksh.daksh.data.remote.FingerPrintScanAtdRequest
+import com.google.gson.GsonBuilder
 import com.daksh.daksh.model.EnhancedImageResult
 import com.daksh.daksh.model.ScanStep
 import kotlinx.coroutines.CancellationException
@@ -55,7 +57,13 @@ object DirectFingerUploader {
         fingerRightRing = scannedMap[ScanStep.RIGHT_RING_IND]?.toFingerDataY(),
         fingerRightLittle = scannedMap[ScanStep.RIGHT_LITTLE_IND]?.toFingerDataY(),
        isSubmitted = true
+
     )
+
+
+
+
+
 
     /**
      * Two server saves, in order: 1) ridge metadata (POST /fingerprintscan1), then 2) HD images (PATCH /fingerprintscanImage).
@@ -135,7 +143,7 @@ object DirectFingerUploader {
             }
                 ////////todo raw image work
 
-               /* fun createOrgPart(partName: String, vararg steps: ScanStep): MultipartBody.Part? {
+                fun createOrgPart(partName: String, vararg steps: ScanStep): MultipartBody.Part? {
                     for (step in steps) {
                         val result = scannedMap[step] ?: continue
                         val path = result.rawPath.ifEmpty { result.enhancedPath }
@@ -157,7 +165,7 @@ object DirectFingerUploader {
 
 
                 return null
-            }*/
+            }
 
             val parts = linkedMapOf(
                 "leftThumb" to createPart("leftThumb", ScanStep.LEFT_THUMB_IND, ScanStep.LEFT_THUMB_GROUP),
@@ -171,7 +179,7 @@ object DirectFingerUploader {
                 "rightRing" to createPart("rightRing", ScanStep.RIGHT_RING_IND),
                 "rightLittle" to createPart("rightLittle", ScanStep.RIGHT_LITTLE_IND)
             )
-               /* val orgParts = linkedMapOf(
+                val orgParts = linkedMapOf(
                     "leftThumbOrg" to createOrgPart("leftThumbOrg", ScanStep.LEFT_THUMB_IND, ScanStep.LEFT_THUMB_GROUP),
                     "leftIndexOrg" to createOrgPart("leftIndexOrg", ScanStep.LEFT_INDEX_IND),
                     "leftMiddleOrg" to createOrgPart("leftMiddleOrg", ScanStep.LEFT_MIDDLE_IND),
@@ -182,7 +190,7 @@ object DirectFingerUploader {
                     "rightMiddleOrg" to createOrgPart("rightMiddleOrg", ScanStep.RIGHT_MIDDLE_IND),
                     "rightRingOrg" to createOrgPart("rightRingOrg", ScanStep.RIGHT_RING_IND),
                     "rightLittleOrg" to createOrgPart("rightLittleOrg", ScanStep.RIGHT_LITTLE_IND)
-                )*/
+                )
             val missing = parts.filterValues { it == null }.keys.toList()
             val sent = parts.filterValues { it != null }.keys.toList()
 
@@ -307,7 +315,7 @@ object DirectFingerUploader {
             Log.d("FP_PERF", "Image HTTP upload: ${SystemClock.elapsedRealtime() - imageUploadStarted}ms; total upload: ${SystemClock.elapsedRealtime() - uploadStarted}ms")
             Log.d(TAG, "HTTP ${response.code()} body=$body")
 
-            when {
+          /*  when {
                 !response.isSuccessful -> {
                     val err = response.errorBody()?.string()
                     Log.e(TAG, "Upload failed: HTTP ${response.code()} $err")
@@ -319,6 +327,206 @@ object DirectFingerUploader {
                 body.status_code == null && body.message?.contains("success", ignoreCase = true) != true ->
                     UploadResult.Failure(body.message ?: "Unexpected response", response.code(), missing)
                 else -> UploadResult.Success(sent, body.message)
+            }*/
+
+            val enhancedResult: UploadResult = when {
+                !response.isSuccessful -> {
+                    val err = response.errorBody()?.string()
+                    Log.e(TAG, "Upload failed: HTTP ${response.code()} $err")
+                    UploadResult.Failure("HTTP ${response.code()}: $err", response.code(), missing)
+                }
+                body == null -> UploadResult.Failure("Empty response from server", response.code(), missing)
+                body.status_code != null && body.status_code !in 200..299 ->
+                    UploadResult.Failure(body.message ?: "Server rejected upload", body.status_code, missing)
+                body.status_code == null && body.message?.contains("success", ignoreCase = true) != true ->
+                    UploadResult.Failure(body.message ?: "Unexpected response", response.code(), missing)
+                else -> UploadResult.Success(sent, body.message)
+            }
+
+            if (enhancedResult is UploadResult.Failure) return@withContext enhancedResult
+
+            ////todo raw images saving
+            // ── SAVE 3: raw (original) images ──
+            val rawSent = orgParts.filterValues { it != null }.keys
+            if (rawSent.isEmpty()) {
+                Log.w(TAG, "No raw images found to upload")
+                return@withContext enhancedResult
+            }
+
+            Log.d(TAG, "Sending ${rawSent.size} RAW image files for userData_id = '$userDataId'")
+            val rawResponse = RetrofitInstance.apiService.fingerprintscanImageSave(
+                auth = auth,
+                userDataId = userDataId,
+                leftThumbOrg = orgParts["leftThumbOrg"],
+                leftIndexOrg = orgParts["leftIndexOrg"],
+                leftMiddleOrg = orgParts["leftMiddleOrg"],
+                leftRingOrg = orgParts["leftRingOrg"],
+                leftLittleOrg = orgParts["leftLittleOrg"],
+                rightThumbOrg = orgParts["rightThumbOrg"],
+                rightIndexOrg = orgParts["rightIndexOrg"],
+                rightMiddleOrg = orgParts["rightMiddleOrg"],
+                rightRingOrg = orgParts["rightRingOrg"],
+                rightLittleOrg = orgParts["rightLittleOrg"]
+            )
+            val rawBody = rawResponse.body()
+            Log.d(TAG, "RAW HTTP ${rawResponse.code()} body=$rawBody")
+
+            return@withContext when {
+                !rawResponse.isSuccessful -> {
+                    val err = rawResponse.errorBody()?.string()
+                    UploadResult.Failure("Raw upload failed: HTTP ${rawResponse.code()} $err", rawResponse.code(), missing)
+                }
+                rawBody == null -> UploadResult.Failure("Empty raw response", rawResponse.code(), missing)
+                rawBody.status_code != null && rawBody.status_code !in 200..299 ->
+                    UploadResult.Failure(rawBody.message ?: "Raw upload rejected", rawBody.status_code, missing)
+                else -> enhancedResult
+            }
+
+
+
+
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: IOException) {
+            Log.e(TAG, "Network error", e)
+            UploadResult.Failure("Network error: ${e.message}")
+        } catch (e: Exception) {
+            Log.e(TAG, "Unexpected error", e)
+            UploadResult.Failure("Unexpected error: ${e.message}")
+        }
+    }
+
+
+    /**
+     * ATD only: atd_left_hand / atd_right_hand / atd_avg_hand ko
+     * POST /fingerprintscan1 se save karta hai (isSubmitted = true ke saath).
+     * scannedMap by default empty hai, to finger data aur images nahi jaate.
+     */
+
+    /////////todo AtdWork
+    /** The exact body sent to POST /fingerprintscan1 (also used by the review dialog). */
+    fun buildScanAtdRequest(
+        scannedMap: Map<ScanStep, EnhancedImageResult> = emptyMap(),
+        atdLeft: Double? = null,
+        atdRight: Double? = null,
+        atdAvg: Double? = null,
+        isAtdReportGenerated: Boolean? = null
+    ) = FingerPrintScanAtdRequest(
+        /*fingerLeftThumb = scannedMap[ScanStep.LEFT_THUMB_IND]?.toFingerDataY()
+            ?: scannedMap[ScanStep.LEFT_THUMB_GROUP]?.toFingerDataY(),
+        fingerLeftIndex = scannedMap[ScanStep.LEFT_INDEX_IND]?.toFingerDataY(),
+        fingerLeftMiddle = scannedMap[ScanStep.LEFT_MIDDLE_IND]?.toFingerDataY(),
+        fingerLeftRing = scannedMap[ScanStep.LEFT_RING_IND]?.toFingerDataY(),
+        fingerLeftLittle = scannedMap[ScanStep.LEFT_LITTLE_IND]?.toFingerDataY(),
+        fingerRightThumb = scannedMap[ScanStep.RIGHT_THUMB_IND]?.toFingerDataY()
+            ?: scannedMap[ScanStep.RIGHT_THUMB_GROUP]?.toFingerDataY(),
+        fingerRightIndex = scannedMap[ScanStep.RIGHT_INDEX_IND]?.toFingerDataY(),
+        fingerRightMiddle = scannedMap[ScanStep.RIGHT_MIDDLE_IND]?.toFingerDataY(),
+        fingerRightRing = scannedMap[ScanStep.RIGHT_RING_IND]?.toFingerDataY(),
+        fingerRightLittle = scannedMap[ScanStep.RIGHT_LITTLE_IND]?.toFingerDataY(),*/
+/*atd_left_hand: { type: Number },
+  atd_right_hand: { type: Number },
+  atd_avg_hand: { type: Number },
+  isAtdReportGenerated: { type: Boolean, default: false },*/
+        atd_left_hand = atdLeft,
+        atd_right_hand = atdRight,
+        atd_avg_hand = atdAvg,
+        isAtdReportGenerated = isAtdReportGenerated,
+
+    )
+    suspend fun uploadAtdOnly(
+        token: String,
+        userDataId: String,
+        atdLeft: Double?,
+        atdRight: Double?,
+        atdAvg: Double? = null,                    // null ho to left + right se calculate hota hai
+        isAtdReportGenerated: Boolean? = null,     // null = server ko nahi bhejta
+        scannedMap: Map<ScanStep, EnhancedImageResult> = emptyMap()   // optional fingers
+    ): UploadResult = withContext(Dispatchers.IO) {
+        val started = SystemClock.elapsedRealtime()
+        try {
+            if (token.isBlank() || userDataId.isBlank()) {
+                return@withContext UploadResult.Failure("Missing authorization or user ID")
+            }
+
+            val values = listOfNotNull(atdLeft, atdRight, atdAvg)
+            if (values.isEmpty()) {
+                return@withContext UploadResult.Failure("No ATD values to upload")
+            }
+            if (values.any { !it.isFinite() || it <= 0.0 }) {
+                return@withContext UploadResult.Failure("Invalid ATD value")
+            }
+
+            // Fingers diye gaye hon tabhi unki checking hoti hai
+            if (scannedMap.isNotEmpty()) {
+                val mismatched = scannedMap.filter { (step, result) -> result.step != step }.keys
+                if (mismatched.isNotEmpty()) {
+                    return@withContext UploadResult.Failure("Finger identity mismatch: ${mismatched.joinToString()}")
+                }
+                val invalid = scannedMap.filter { (_, result) ->
+                    result.predictedPattern.isBlank() || result.ridgeCount <= 0 || result.patternCode.isBlank()
+                }.keys
+                if (invalid.isNotEmpty()) {
+                    return@withContext UploadResult.Failure(
+                        "Pattern/ridge data unavailable for ${invalid.joinToString()}; re-scan these fingers."
+                    )
+                }
+            }
+
+            fun round2(v: Double) = Math.round(v * 100.0) / 100.0
+            val left = atdLeft?.let(::round2)
+            val right = atdRight?.let(::round2)
+            val avg = (atdAvg ?: if (atdLeft != null && atdRight != null) (atdLeft + atdRight) / 2.0 else null)
+                ?.let(::round2)
+
+            val auth = if (token.startsWith("Bearer ")) token else "Bearer $token"
+
+            val prettyGson = GsonBuilder().setPrettyPrinting().create()
+
+            val atdRequest = buildScanAtdRequest(
+                scannedMap = scannedMap,
+                atdLeft = left,
+                atdRight = right,
+                atdAvg = avg,
+                isAtdReportGenerated = isAtdReportGenerated
+            )
+            Log.d(TAG, "┌── SAVE ATD (fingerprintscan1) ──")
+            Log.d(TAG, "│ userDataId = '$userDataId'")
+            Log.d(TAG, "│ RAW JSON =\n${prettyGson.toJson(atdRequest)}")
+            // ── Jo bhej rahe hain wo log karo ──
+            Log.d(TAG, "┌── SAVE ATD (fingerprintscan1) ──")
+            Log.d(TAG, "│ userDataId = '$userDataId'")
+            Log.d(TAG, "│ auth = ${auth.take(15)}... (len=${auth.length})")
+            Log.d(TAG, "│ atd_left_hand=$left atd_right_hand=$right atd_avg_hand=$avg fingers=${scannedMap.size}")
+            Log.d(TAG, "│ request = $atdRequest")
+
+            val response = RetrofitInstance.apiService.fingerPrintScanAtd(
+                auth = auth,
+                userDataId = userDataId,
+                fingerPrintScan1Request = atdRequest
+            )
+
+            // ── Response log ──
+            val rawReq = response.raw().request
+            val body = response.body()
+            // errorBody().string() sirf ek baar padha ja sakta hai, isliye yahin padh kar reuse karte hain
+            val errBody = if (!response.isSuccessful) response.errorBody()?.string() else null
+
+            Log.d(TAG, "│ URL = ${rawReq.method} ${rawReq.url}")
+            Log.d(TAG, "│ HTTP ${response.code()} ${response.message()} in ${SystemClock.elapsedRealtime() - started}ms")
+            Log.d(TAG, "│ body = $body")
+            Log.d(TAG, "│ errorBody = $errBody")
+            Log.d(TAG, "└── END SAVE ATD ──")
+
+            when {
+                !response.isSuccessful ->
+                    UploadResult.Failure("ATD save failed: HTTP ${response.code()} $errBody", response.code())
+                body == null ->
+                    UploadResult.Failure("Empty response from server", response.code())
+                body.status_code != null && body.status_code !in 200..299 ->
+                    UploadResult.Failure(body.message ?: "ATD rejected by server", body.status_code)
+                else ->
+                    UploadResult.Success(scannedMap.keys.map { it.name }, body.message)
             }
         } catch (e: CancellationException) {
             throw e

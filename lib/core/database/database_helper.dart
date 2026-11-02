@@ -656,7 +656,7 @@ class DatabaseHelper {
         isChecked INTEGER NOT NULL DEFAULT 0,
         isComplete INTEGER NOT NULL DEFAULT 0,
         isSubmitted INTEGER NOT NULL DEFAULT 0,
-
+        isAtdReportGenerated INTEGER NOT NULL DEFAULT 0,
         address1 TEXT,
         address2 TEXT,
         landmark TEXT,
@@ -673,6 +673,7 @@ class DatabaseHelper {
         updatedAt TEXT,
 
         isPhotosUploaded INTEGER NOT NULL DEFAULT 0
+        
       )
     ''');
 
@@ -838,6 +839,7 @@ class DatabaseHelper {
         'isChecked': candidate.isChecked == true ? 1 : 0,
         'isComplete': candidate.isComplete == true ? 1 : 0,
         'isSubmitted': candidate.isSubmitted==true ? 1 : 0,
+        'isAtdReportGenerated': candidate.isAtdReportGenerated == true ? 1 :0,
 
         'email': candidate.email,
         'mobile': candidate.mobile,
@@ -954,6 +956,7 @@ class DatabaseHelper {
         isChecked: map['isChecked'] == 1,
         isComplete: map['isComplete'] == 1,
         isSubmitted: map['isSubmitted'] == 1,
+        isAtdReportGenerated: map['isAtdReportGenerated'] == 1,
 
         email: map['email']?.toString(),
         mobile: map['mobile']?.toString(),
@@ -1003,6 +1006,7 @@ class DatabaseHelper {
         isChecked: map['isChecked'] == 1,
         isComplete: map['isComplete'] == 1,
         isSubmitted: map['isSubmitted'] == 1,
+        isAtdReportGenerated: map['isAtdReportGenerated'] == 1,
 
         email: map['email']?.toString(),
         mobile: map['mobile']?.toString(),
@@ -1071,6 +1075,8 @@ class DatabaseHelper {
 
       'isSubmitted':
       adminData.isSubmitted ==true? 1 : 0,
+      'isAtdReportGenerated':
+      adminData.isAtdReportGenerated ==true? 1 : 0,
 
       'profileImage': adminData.profileImage,
 
@@ -1155,6 +1161,7 @@ class DatabaseHelper {
       isChecked: map['isChecked'] == 1,
       isComplete: map['isComplete'] == 1,
       isSubmitted: map['isSubmitted'] == 1,
+      isAtdReportGenerated: map['isAtdReportGenerated'] == 1,
 
       profileImage: map['profileImage']?.toString(),
       createdAt: map['createdAt']?.toString(),
@@ -1246,4 +1253,22 @@ class DatabaseHelper {
       whereArgs: [userId],
     );
   }
+
+
+  Future<int> updateIsAtdScannedResultStatus(
+      String userId,
+      bool isSubmitted,
+      ) async {
+    final db = await database;
+
+    return await db.update(
+      'user_table',
+      {
+        'isAtdReportGenerated': isSubmitted ? 1 : 0,
+      },
+      where: 'userId = ?',
+      whereArgs: [userId],
+    );
+  }
+
 }

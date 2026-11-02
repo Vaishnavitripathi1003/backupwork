@@ -42,6 +42,12 @@ class MainActivity : FlutterFragmentActivity() {
             pendingScan?.success(status ?: json)
             pendingScan = null
         }
+    private val scanLauncher1 = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { activityResult ->
+        val status = activityResult.data?.getStringExtra("STATUSATD") ?: activityResult.data?.getStringExtra("STATUSATD")
+        val finalResult = status ?: if (activityResult.resultCode == RESULT_OK) "SUCCESS" else "CANCELLED"
+        pendingScan?.success(finalResult)
+        pendingScan = null
+    }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
@@ -186,7 +192,7 @@ class MainActivity : FlutterFragmentActivity() {
                             putExtra("USER_DATA_ID", userDataId)
                         }
                         pendingScan = result
-                        scanLauncher.launch(intent)
+                        scanLauncher1.launch(intent)
                     }
                     else -> result.notImplemented()
                 }

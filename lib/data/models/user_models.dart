@@ -289,6 +289,7 @@ class User {
 
   // New field - default false
   bool isSubmitted;
+  bool isAtdReportGenerated;
 
   String? address1;
   String? address2;
@@ -334,6 +335,8 @@ class User {
 
     // Default false
     this.isSubmitted = false,
+    this.isAtdReportGenerated = false,
+
 
     this.address1,
     this.address2,
@@ -431,6 +434,11 @@ class User {
           json['isSubmitted'] == 'true' ||
           json['isSubmitted'] == '1',
 
+      isAtdReportGenerated:
+      json['isAtdReportGenerated'] == true ||
+          json['isAtdReportGenerated'] == 1,
+
+
       address1: json['address1'] as String?,
       address2: json['address2'] as String?,
       landmark: json['landmark'] as String?,
@@ -479,6 +487,7 @@ class User {
 
       // New field
       'isSubmitted': isSubmitted,
+      'isAtdReportGenerated':isAtdReportGenerated,
 
       'address1': address1,
       'address2': address2,

@@ -39,8 +39,30 @@ data class FingerPrintScan1Request(
     @SerializedName("fingerRightRing") val fingerRightRing: FingerDataY? = null,
     @SerializedName("fingerRightThumb") val fingerRightThumb: FingerDataY? = null,
     @SerializedName("isSubmitted") val isSubmitted: Boolean = false
+
+
 )
 
+
+
+/////todo Atd
+data class FingerPrintScanAtdRequest(
+    @SerializedName("fingerLeftIndex") val fingerLeftIndex: FingerDataY? = null,
+    @SerializedName("fingerLeftLittle") val fingerLeftLittle: FingerDataY? = null,
+    @SerializedName("fingerLeftMiddle") val fingerLeftMiddle: FingerDataY? = null,
+    @SerializedName("fingerLeftRing") val fingerLeftRing: FingerDataY? = null,
+    @SerializedName("fingerLeftThumb") val fingerLeftThumb: FingerDataY? = null,
+    @SerializedName("fingerRightIndex") val fingerRightIndex: FingerDataY? = null,
+    @SerializedName("fingerRightLittle") val fingerRightLittle: FingerDataY? = null,
+    @SerializedName("fingerRightMiddle") val fingerRightMiddle: FingerDataY? = null,
+    @SerializedName("fingerRightRing") val fingerRightRing: FingerDataY? = null,
+    @SerializedName("fingerRightThumb") val fingerRightThumb: FingerDataY? = null,
+    @SerializedName("isSubmitted") val isSubmitted: Boolean = false,
+    @SerializedName("atd_left_hand") val atd_left_hand: Double? = null,
+    @SerializedName("atd_right_hand") val atd_right_hand: Double? = null,
+    @SerializedName("atd_avg_hand") val atd_avg_hand: Double? = null,
+    @SerializedName("isAtdReportGenerated") val isAtdReportGenerated: Boolean? = null
+)
 interface ApiService {
     @Multipart
     @PATCH("fingerprintscanImage")
@@ -66,8 +88,20 @@ interface ApiService {
         @Body fingerPrintScan1Request: FingerPrintScan1Request
     ): Response<FingerScanApiResponse>
 
-///todo new work raw image upload
 
+
+
+   // todoAtd work
+
+    @POST("fingerprintscan1")
+    suspend fun fingerPrintScanAtd(
+        @Header("Authorization") auth: String,
+        @Query("userData_id") userDataId: String,
+        @Body fingerPrintScan1Request: FingerPrintScanAtdRequest
+    ): Response<FingerScanApiResponse>
+
+
+///todo new work raw image upload
     @Multipart
     @PATCH("fingerprintscanImageSave")
     suspend fun fingerprintscanImageSave(

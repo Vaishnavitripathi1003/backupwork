@@ -5068,6 +5068,7 @@ import '../../data/models/personalityblenResponse.dart';
 import '../../data/models/sensesAnalysisResponse.dart';
 import '../../data/models/user_models.dart';
 import '../../shared/widgets/add_family_member_dialog.dart';
+import 'AtdWork/atdResultScreen.dart';
 import 'candidate_list_screen.dart';
 import 'dmit_protocol_intro_screen.dart';
 import 'widgets/brain_dominance_card.dart';
@@ -5105,6 +5106,7 @@ class HomeScreenState extends State<HomeScreen> {
 
   // Jin candidates ka report status abhi poll ho raha hai (duplicate polling roke)
   final Set<String> _pollingIds = {};
+  String AtdViewText="Start Atd Analysis(Scan Palm)";
 
   @override
   void initState() {
@@ -5540,6 +5542,13 @@ class HomeScreenState extends State<HomeScreen> {
     return _selectedCandidate?.isReportGenerated == true;
   }
 
+
+
+
+
+  bool get _isAtdReportGenerated {
+    return _selectedCandidate?.isAtdReportGenerated == true;
+  }
   /// Loading card tab dikhao jab status == true ho aur report abhi generate na hui ho,
   /// ya jab us candidate ki polling chal rahi ho (scan ke turant baad).
   bool get _showReportLoading {
@@ -5547,7 +5556,7 @@ class HomeScreenState extends State<HomeScreen> {
     if (c == null) return false;
     if (c.isReportGenerated == true) return false;
     if(c.isSubmitted == false) return false;
-    return c.isSubmitted == true && c.isReportGenerated == false /*_pollingIds.contains(c.id)*/;
+    return c.isSubmitted == true && c.isReportGenerated == false  /*&& _isAtdReportGenerated==true*//*_pollingIds.contains(c.id)*/;
 
   }
 
@@ -5935,7 +5944,7 @@ class HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  Future<void> _openAtdScan() async {
+  /*Future<void> _openAtdScan() async {
     final id = GlobalClass.selected_member;
     if (id.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -5954,9 +5963,22 @@ class HomeScreenState extends State<HomeScreen> {
           userDataId: id,
         );
 
+
+        if(isSuccess==true)
+          {
+            await DatabaseHelper.instance.updateIsAtdScannedResultStatus(id, true);
+            setState(() {
+              AtdViewText="View Atd Report";
+            });
+
+
+
+          }
+
         debugPrint("ATD Scan result: $isSuccess");
 
         if (isSuccess && mounted) {
+
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text('✓ ATD Palm Scan Completed Successfully!'),
@@ -5968,8 +5990,49 @@ class HomeScreenState extends State<HomeScreen> {
     } catch (e) {
       debugPrint("Error opening ATD scan: $e");
     }
-  }
+  }*/
+  Future<void> _openAtdScan() async {
+    final id = GlobalClass.selected_member;
+    if (id.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please select a candidate first.')),
+      );
+      return;
+    }
 
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final token = UserPref(prefs).getToken() ?? '';
+      if (token.isEmpty) return;
+
+      final isSuccess = await BiometricScanner.startAtdScan(
+        token: token,
+        userDataId: id,
+      );
+      debugPrint('ATD Scan result: $isSuccess');
+
+      if (isSuccess == true) {
+        // 1) save in SQLite
+        await DatabaseHelper.instance.updateIsAtdScannedResultStatus(id, true);
+        if (!mounted) return;
+
+        // 2) update the local list so the button changes immediately
+        setState(() {
+          final i = _candidateMembers.indexWhere((c) => c.id == id);
+          if (i != -1) _candidateMembers[i].isAtdReportGenerated = true;
+        });
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('✓ ATD Palm Scan Completed Successfully!'),
+            backgroundColor: Color(0xFF22C55E),
+          ),
+        );
+      }
+    } catch (e) {
+      debugPrint('Error opening ATD scan: $e');
+    }
+  }
   void _openAddMemberDialog() {
     AddFamilyMemberDialog.show(
       context,
@@ -6046,7 +6109,9 @@ class HomeScreenState extends State<HomeScreen> {
                     _buildReportLoadingCard(context),
                     const SizedBox(height: 80),
                   ]
-                  else if (_isReportGenerated) ...[
+
+
+                  else if (_isReportGenerated /*&& _isAtdReportGenerated==true*/) ...[
                     // Personality Blend Card
                     if (_personalityBlend != null &&
                         _personalityBlend!.report != null &&
@@ -6100,11 +6165,491 @@ class HomeScreenState extends State<HomeScreen> {
                       CareerMatchCard(_careerMatch!.report!.career),
                       const SizedBox(height: 16),
                     ],
+
+
+                   /* if(_isAtdReportGenerated==true)...[*/
+                      SizedBox(
+                        width: double.infinity,
+                        height: 52,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color(0xFF00E5FF),
+                                Color(0xFF2563EB),
+                                Color(0xFF7C3AED),
+                              ],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                            ),
+                            borderRadius: BorderRadius.circular(18),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(0xFF2563EB).withValues(alpha: 0.45),
+                                blurRadius: 18,
+                                offset: const Offset(0, 6),
+                              ),
+                            ],
+                          ),
+                          child: ElevatedButton(
+                            onPressed: _isAtdReportGenerated==true?_openReportPage:_openAtdScan,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              shadowColor: Colors.transparent,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Icon(Icons.waving_hand_rounded,
+                                    color: Colors.white, size: 18),
+                                const SizedBox(width: 8),
+                                Flexible(
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                      _isAtdReportGenerated==true?'View ATD Report':"Scan Atd",
+                                      style: TextStyle(
+                                        fontSize: context.scaleFont(14),
+                                        fontWeight: FontWeight.w800,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 6),
+                                const Icon(Icons.arrow_forward_rounded,
+                                    color: Colors.white, size: 18),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                  /*  ]*/
                   ]
 
+
+              /*    else if (_selectedCandidate!=null &&_selectedCandidate!.isSubmitted==true && _isAtdReportGenerated==false) ...[
+                      // Personality Blend Card
+                    *//*  SizedBox(
+                        width: double.infinity,
+                        height: 52,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color(0xFF00E5FF),
+                                Color(0xFF2563EB),
+                                Color(0xFF7C3AED),
+                              ],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                            ),
+                            borderRadius: BorderRadius.circular(18),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(0xFF2563EB).withValues(alpha: 0.45),
+                                blurRadius: 18,
+                                offset: const Offset(0, 6),
+                              ),
+                            ],
+                          ),
+                          child: ElevatedButton(
+                            onPressed:  _openAtdScan,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              shadowColor: Colors.transparent,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Icon(Icons.waving_hand_rounded,
+                                    color: Colors.white, size: 18),
+                                const SizedBox(width: 8),
+                                Flexible(
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                       'Start ATD Analysis (Scan Palm)',
+                                      style: TextStyle(
+                                        fontSize: context.scaleFont(14),
+                                        fontWeight: FontWeight.w800,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 6),
+                                const Icon(Icons.arrow_forward_rounded,
+                                    color: Colors.white, size: 18),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),*//*
+                     *//* Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.all(context.scalePadding(18)),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color(0xFF0F172A),
+                              Color(0xFF1E1B4B),
+                              Color(0xFF0F172A),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(24),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF1E1B4B).withValues(alpha: 0.15),
+                              blurRadius: 20,
+                              offset: const Offset(0, 8),
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            // Completion status
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Flexible(
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 10,
+                                      vertical: 7,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFF064E3B),
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: const Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          Icons.check_circle_rounded,
+                                          color: Color(0xFF4ADE80),
+                                          size: 15,
+                                        ),
+                                        SizedBox(width: 6),
+                                        Flexible(
+                                          child: Text(
+                                            'Finger Scan Complete',
+                                            style: TextStyle(
+                                              color: Color(0xFF86EFAC),
+                                              fontSize: 11,
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                const Text(
+                                  'STEP 2 OF 2',
+                                  style: TextStyle(
+                                    color: Color(0xFF67E8F9),
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            const SizedBox(height: 22),
+
+                            // Biometric scan icon
+                            Container(
+                              height: 78,
+                              width: 78,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: const Color(0xFF164E63),
+                                border: Border.all(
+                                  color: const Color(0xFF22D3EE),
+                                  width: 1.5,
+                                ),
+                              ),
+                              child: const Icon(
+                                Icons.fingerprint_rounded,
+                                color: Color(0xFF67E8F9),
+                                size: 42,
+                              ),
+                            ),
+
+                            const SizedBox(height: 16),
+
+                            Text(
+                              '10 Fingers Scanned Successfully!',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: context.scaleFont(19),
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                              ),
+                            ),
+
+                            const SizedBox(height: 10),
+
+                            const Text(
+                              'Your fingerprint scan is complete. '
+                                  'Now scan both palms to continue your '
+                                  'full biometric report.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color(0xFFCBD5E1),
+                                fontSize: 12.5,
+                                height: 1.5,
+                              ),
+                            ),
+
+                            const SizedBox(height: 22),
+
+                            // Completed / Pending status cards
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 8,
+                                      vertical: 14,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFF1E293B),
+                                      borderRadius: BorderRadius.circular(14),
+                                      border: Border.all(
+                                        color: const Color(0xFF166534),
+                                      ),
+                                    ),
+                                    child: const Column(
+                                      children: [
+                                        Icon(
+                                          Icons.check_circle_rounded,
+                                          color: Color(0xFF4ADE80),
+                                          size: 25,
+                                        ),
+                                        SizedBox(height: 8),
+                                        Text(
+                                          '10 Fingers',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                        SizedBox(height: 4),
+                                        Text(
+                                          'Completed',
+                                          style: TextStyle(
+                                            color: Color(0xFF4ADE80),
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 10),
+                                Expanded(
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 8,
+                                      vertical: 14,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFF1E293B),
+                                      borderRadius: BorderRadius.circular(14),
+                                      border: Border.all(
+                                        color: const Color(0xFF475569),
+                                      ),
+                                    ),
+                                    child: const Column(
+                                      children: [
+                                        Icon(
+                                          Icons.pan_tool_alt_rounded,
+                                          color: Color(0xFF67E8F9),
+                                          size: 25,
+                                        ),
+                                        SizedBox(height: 8),
+                                        Text(
+                                          'Both Palms',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                        SizedBox(height: 4),
+                                        Text(
+                                          'Pending',
+                                          style: TextStyle(
+                                            color: Color(0xFFFDE68A),
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            const SizedBox(height: 18),
+
+                            // Next step information
+                            Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.all(14),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF1E293B),
+                                borderRadius: BorderRadius.circular(14),
+                                border: Border.all(
+                                  color: const Color(0xFF334155),
+                                ),
+                              ),
+                              child: const Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Icon(
+                                    Icons.info_outline_rounded,
+                                    color: Color(0xFF67E8F9),
+                                    size: 20,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Next: ATD Palm Scan',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          'Scan your left and right palms '
+                                              'to complete the next stage of '
+                                              'your assessment.',
+                                          style: TextStyle(
+                                            color: Color(0xFFCBD5E1),
+                                            fontSize: 11.5,
+                                            height: 1.5,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            const SizedBox(height: 20),
+
+                            // Existing ATD scan action
+                            SizedBox(
+                              width: double.infinity,
+                              height: 52,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xFF00E5FF),
+                                      Color(0xFF2563EB),
+                                      Color(0xFF7C3AED),
+                                    ],
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(18),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color(0xFF2563EB)
+                                          .withValues(alpha: 0.35),
+                                      blurRadius: 18,
+                                      offset: const Offset(0, 6),
+                                    ),
+                                  ],
+                                ),
+                                child: ElevatedButton(
+                                  onPressed: _openAtdScan,
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.transparent,
+                                    shadowColor: Colors.transparent,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18),
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(
+                                        Icons.pan_tool_alt_rounded,
+                                        color: Colors.white,
+                                        size: 18,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Flexible(
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: Text(
+                                            'Start ATD Palm Scan',
+                                            style: TextStyle(
+                                              fontSize: context.scaleFont(14),
+                                              fontWeight: FontWeight.w800,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      const Icon(
+                                        Icons.arrow_forward_rounded,
+                                        color: Colors.white,
+                                        size: 18,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            const SizedBox(height: 12),
+
+                            const Text(
+                              'Tap above to scan both palms',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color(0xFF94A3B8),
+                                fontSize: 11,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 20),*//*
+
+                    ]
+*/
                   else ...[
                     // Hero DMIT Card for candidates whose report is not yet generated
-                    _buildHeroDmitCard(context, isNarrow),
+                    _buildHeroDmitCard(context, isNarrow,_isAtdReportGenerated),
                     const SizedBox(height: 16),
 
                     // Scientific Notice Footer Card
@@ -6663,7 +7208,7 @@ class HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildHeroDmitCard(BuildContext context, bool isNarrow) {
+  Widget _buildHeroDmitCard(BuildContext context, bool isNarrow, bool isAtdReportGenerated) {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(context.scalePadding(16)),
@@ -6951,61 +7496,64 @@ class HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 16),
 
 
-          SizedBox(
-            width: double.infinity,
-            height: 52,
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xFF00E5FF),
-                    Color(0xFF2563EB),
-                    Color(0xFF7C3AED),
+          Visibility(
+            visible: false,
+            child: SizedBox(
+              width: double.infinity,
+              height: 52,
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color(0xFF00E5FF),
+                      Color(0xFF2563EB),
+                      Color(0xFF7C3AED),
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  borderRadius: BorderRadius.circular(18),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF2563EB).withValues(alpha: 0.45),
+                      blurRadius: 18,
+                      offset: const Offset(0, 6),
+                    ),
                   ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
                 ),
-                borderRadius: BorderRadius.circular(18),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFF2563EB).withValues(alpha: 0.45),
-                    blurRadius: 18,
-                    offset: const Offset(0, 6),
+                child: ElevatedButton(
+                  onPressed: isAtdReportGenerated ? _openReportPage : _openAtdScan,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18),
+                    ),
                   ),
-                ],
-              ),
-              child: ElevatedButton(
-                onPressed: _openAtdScan,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.waving_hand_rounded,
-                        color: Colors.white, size: 18),
-                    const SizedBox(width: 8),
-                    Flexible(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Start Atd Analysis(Scan Palm)',
-                          style: TextStyle(
-                            fontSize: context.scaleFont(14),
-                            fontWeight: FontWeight.w800,
-                            color: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.waving_hand_rounded,
+                          color: Colors.white, size: 18),
+                      const SizedBox(width: 8),
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            isAtdReportGenerated?isAtdReportGenerated ? 'View ATD Report' : 'Start ATD Analysis (Scan Palm)':'Start ATD Analysis (Scan Palm)',
+                            style: TextStyle(
+                              fontSize: context.scaleFont(14),
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: 6),
-                    const Icon(Icons.arrow_forward_rounded,
-                        color: Colors.white, size: 18),
-                  ],
+                      const SizedBox(width: 6),
+                      const Icon(Icons.arrow_forward_rounded,
+                          color: Colors.white, size: 18),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -7253,6 +7801,30 @@ class HomeScreenState extends State<HomeScreen> {
     } catch (e) {
       debugPrint('Profile: admin load error: $e');
     }
+  }
+
+ /* _openReportPage() {
+      Navigator.push(context, MaterialPageRoute(
+    builder: (_) => ResultsScreen(
+       userDataId: _selectedCandidate!.id,
+     ),
+  ));
+  }*/
+  Future<void> _openReportPage() async {
+    final candidate = _selectedCandidate;
+    if (candidate == null) return;
+    if (!mounted) return;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ResultsScreen(
+
+          userDataId: candidate.id,
+
+        ),
+      ),
+    );
   }
 }
 

@@ -1362,6 +1362,8 @@ import '../../data/models/multipleintellegenceResponse.dart';
 import '../../data/models/personalityblenResponse.dart';
 import '../../data/models/sensesAnalysisResponse.dart';
 import '../../data/models/user_models.dart';
+import 'AtdWork/atdResultScreen.dart';
+import 'AtdWork/model/AtdResult.dart';
 import 'brain_dominance_detail_screen.dart';
 import 'multi_intelligence_detail_screen.dart';
 import 'personality_detail_screen.dart';
@@ -1804,11 +1806,48 @@ class _ReportScreenState extends State<ReportScreen> {
                       _buildPersonalityAndSwotRow(context, isNarrow),
 
                       const SizedBox(height: 14),
+                      if (_selectedCandidateUser?.isAtdReportGenerated == true) ...[
+                        const SizedBox(height: 12),
+
+                        SizedBox(
+                          width: double.infinity,
+                          height: 48,
+                          child: ElevatedButton.icon(
+                            onPressed: () {
+                              _openReportPage();
+                            },
+                            icon: const Icon(
+                              Icons.description_outlined,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                            label: const Text(
+                              'View ATD Report',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF4F46E5),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14),
+                              ),
+                              elevation: 2,
+                            ),
+                          ),
+                        ),
+
+                        const SizedBox(height: 12),
+                      ],
 
                       // Unlock Personalized Recommendations Banner
                       _buildUnlockRecommendationsBanner(context, isNarrow),
 
                       const SizedBox(height: 80), // Bottom navigation padding
+
+
                     ],
                   ],
                 ),
@@ -2128,16 +2167,6 @@ class _ReportScreenState extends State<ReportScreen> {
                         fontSize: context.scaleFont(15),
                         fontWeight: FontWeight.bold,
                         color: AppTheme.textPrimary,
-                      ),
-                    ),
-                    const SizedBox(height: 2),
-                    Text(
-                      _selectedCandidateUser?.studdingClass != null
-                          ? 'Grade: ${_selectedCandidateUser!.studdingClass}'
-                          : 'Grade unavailable',
-                      style: TextStyle(
-                        fontSize: context.scaleFont(11),
-                        color: AppTheme.textSecondary,
                       ),
                     ),
                     const SizedBox(height: 3),
@@ -2704,4 +2733,49 @@ class _ReportScreenState extends State<ReportScreen> {
       ),
     );
   }
+
+
+  Future<AtdResultResponse> fetchAtdResult({
+    required String userDataId,
+  }) async {
+    final prefs = await SharedPreferences.getInstance();
+    final token = UserPref(prefs).getToken() ?? '';
+    if (token.isEmpty) throw Exception('Missing authentication token');
+
+    final response = await ApiService().findAtdReportByUserDataId(
+      auth: token,
+      userDataId: userDataId,
+    );
+
+    if (response.statusCode != 200 || response.data == null) {
+      throw Exception('Server error ${response.statusCode}');
+    }
+
+    final dataMap = response.data is Map
+        ? Map<String, dynamic>.from(response.data as Map)
+        : <String, dynamic>{};
+
+    final atdResponse = AtdResultResponse.fromJson(dataMap);
+    if (atdResponse.atdReport == null) {
+      throw Exception('No ATD report found for candidate');
+    }
+
+    return atdResponse;
+  }
+
+  Future<void> _openReportPage() async {
+
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ResultsScreen(
+
+          userDataId:_selectedCandidateUser!.id,
+
+        ),
+      ),
+    );
+  }
+
 }

@@ -7,7 +7,7 @@ class LanguageManager {
   LanguageManager._internal();
   static final LanguageManager instance = LanguageManager._internal();
 
-  /// Global Notifier for Language ('en' or 'hi')
+  /// Global Notifier for Language ('en' or 'hi'). Initial default is ALWAYS English ('en').
   final ValueNotifier<String> languageNotifier = ValueNotifier<String>('en');
 
   bool get isHindi => languageNotifier.value == 'hi';
@@ -15,14 +15,16 @@ class LanguageManager {
   /// Get current screen translations helper
   AppLocalizations get strings => AppLocalizations(isHindi: isHindi);
 
-  /// Load language from SharedPreferences on app startup
+  /// Initialize language manager, forcing initial language to English ('en')
   Future<void> init() async {
+    languageNotifier.value = 'en'; // Force default initial language to English
     try {
       final prefs = await SharedPreferences.getInstance();
       final userPref = UserPref(prefs);
-      final isHindiSaved = userPref.getHindiReport();
-      languageNotifier.value = isHindiSaved ? 'hi' : 'en';
+      // Reset any previously cached Hindi preference to false on startup
+      await userPref.setHindiReport(false);
     } catch (e) {
+      languageNotifier.value = 'en';
       debugPrint("LanguageManager init error: $e");
     }
   }

@@ -25,9 +25,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.core.content.ContextCompat
-import com.daksh.daksh.data.remote.RetrofitInstance
+import androidx.lifecycle.lifecycleScope
+import com.daksh.daksh.network.DirectFingerUploader
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class AtdScanActivity : ComponentActivity() {
 
@@ -62,7 +64,6 @@ class AtdScanActivity : ComponentActivity() {
         }
 
         val appStatusManager = AppStatusManager(this)
-        val profileRepo = UserProfileRepository(this)
 
         setContent {
             MaterialTheme {
@@ -77,6 +78,9 @@ class AtdScanActivity : ComponentActivity() {
                 var leftHandAngle by remember { mutableStateOf<Float?>(null) }
                 var rightHandAngle by remember { mutableStateOf<Float?>(null) }
                 var finalCalculatedAngle by remember { mutableStateOf<Float?>(null) }
+
+                // Upload state (true while Submit is uploading)
+                var isUploading by remember { mutableStateOf(false) }
 
                 // Frame and landmarks for drawing ATD points overlay on captured hands
                 var latestFrameBitmap by remember { mutableStateOf<Bitmap?>(null) }
@@ -109,7 +113,8 @@ class AtdScanActivity : ComponentActivity() {
                             currentLiveAngle = 0.0f
                             detectedHandLabel = null
                         },
-                        onError = { err ->
+                        onError = {
+                            err ->
                             Log.e("PalmScan", "HAND_TRACKER_ERROR -> $err")
                         }
                     )
@@ -170,6 +175,7 @@ class AtdScanActivity : ComponentActivity() {
                             currentPinkyD = currentPinkyD,
                             leftHandBitmap = leftHandBitmap,
                             rightHandBitmap = rightHandBitmap,
+                            isUploading = isUploading,
                             onCaptureLeft = {
                                 if (!isHandPresent || currentLiveAngle <= 0f) {
                                     Log.w("PalmScan", "Capture Left ignored -> Hand not present or invalid angle ($currentLiveAngle°)")
@@ -221,55 +227,57 @@ class AtdScanActivity : ComponentActivity() {
                                 }
                             },
                             onCalculateFinal = {
+                                // Only calculates. NO upload here.
                                 val left = leftHandAngle ?: currentLiveAngle
                                 val right = rightHandAngle ?: currentLiveAngle
                                 val avg = ((left + right) / 2f * 10f).toInt() / 10f
                                 finalCalculatedAngle = avg
+                                Log.i("PalmScanResult", "Left: $left°, Right: $right°, Avg: $avg°")
+                            },
+                            onSubmit = {
+                                val left = leftHandAngle
+                                val right = rightHandAngle
+                                if (left == null || right == null) {
+                                    Toast.makeText(this@AtdScanActivity, "Capture both palms first", Toast.LENGTH_SHORT).show()
+                                    return@PalmAtdScanDialog
+                                }
+                                if (isUploading) return@PalmAtdScanDialog
 
-                                val category = AtdMath.getCategory(avg)
+                                val avg = ((left + right) / 2f * 10f).toInt() / 10f
+                                finalCalculatedAngle = avg
+                                isUploading = true
 
-                                /*// Construct AtdResultFinal model object
-                                val atdResult = AtdResultFinal(
-                                    leftAngle = left,
-                                    rightAngle = right,
-                                    finalAverageAngle = avg,
-                                    UserDataId = userDataId,
-                                )
-
-                                // Asynchronously send ATD Result to backend API server
-                                coroutineScope.launch(Dispatchers.IO) {
+                                lifecycleScope.launch {
                                     try {
-                                        val authHeader = if (userToken.startsWith("Bearer ")) userToken else "Bearer $userToken"
-                                        val response = RetrofitInstance.apiService.AtdResultFinal(
-                                            auth = authHeader,
-                                            userDataId = userDataId,
-                                            atdResultFinal = atdResult
-                                        )
-                                        Log.d("PalmScanResult", "AtdScan API HTTP Response code: ${response.code()}")
+                                        val result = withContext(Dispatchers.IO) {
+                                            DirectFingerUploader.uploadAtdOnly(
+                                                token = userToken,
+                                                userDataId = userDataId,
+                                                atdLeft = left.toDouble(),
+                                                atdRight = right.toDouble(),
+                                                atdAvg = avg.toDouble(),
+                                                isAtdReportGenerated = true
+                                            )
+                                        }
+                                        Log.d("PalmScanResult", "uploadAtdOnly result: $result")
+                                        Toast.makeText(this@AtdScanActivity, "Submitted successfully", Toast.LENGTH_SHORT).show()
+
+                                        val resultIntent = Intent().apply {
+                                            putExtra("STATUSATD", "SUCCESS")
+                                            putExtra("FINAL_ATD_ANGLE", avg)
+                                            putExtra("LEFT_ATD_ANGLE", left)
+                                            putExtra("RIGHT_ATD_ANGLE", right)
+                                            putExtra("USER_TOKEN", userToken)
+                                            putExtra("USER_DATA_ID", userDataId)
+                                        }
+                                        setResult(Activity.RESULT_OK, resultIntent)
+                                        finish()
                                     } catch (e: Exception) {
-                                        Log.e("PalmScanResult", "AtdScan API request failed: ${e.message}", e)
+                                        Log.e("PalmScanResult", "uploadAtdOnly failed: ${e.message}", e)
+                                        isUploading = false
+                                        Toast.makeText(this@AtdScanActivity, "Upload failed, try again", Toast.LENGTH_SHORT).show()
                                     }
-                                }*/
-
-                                Log.i("PalmScanResult", "=====================================================")
-                                Log.i("PalmScanResult", " PALM ATD SCAN RESULT CALCULATED SUCCESSFULLY")
-                                Log.i("PalmScanResult", " User Data ID:           $userDataId")
-                                Log.i("PalmScanResult", " User Token Length:      ${userToken.length}")
-                                Log.i("PalmScanResult", " Left Palm Angle:        $left°")
-                                Log.i("PalmScanResult", " Right Palm Angle:       $right°")
-                                Log.i("PalmScanResult", " Final Average Angle:    $avg°")
-                                Log.i("PalmScanResult", " Category Name:          ${category.profileName}")
-                                Log.i("PalmScanResult", " Category Label:         ${category.label}")
-                                Log.i("PalmScanResult", "=====================================================")
-
-                                profileRepo.addScanRecord(
-                                    ScanHistoryRecord(
-                                        finalAngle = avg,
-                                        leftAngle = left,
-                                        rightAngle = right,
-                                        categoryLabel = category.profileName
-                                    )
-                                )
+                                }
                             },
                             onReset = {
                                 leftHandAngle = null
@@ -280,10 +288,12 @@ class AtdScanActivity : ComponentActivity() {
                                 currentLiveAngle = 0.0f
                                 isHandPresent = false
                                 detectedHandLabel = null
+                                isUploading = false
                             },
                             onDismiss = {
+                                val statusStr = if (finalCalculatedAngle != null) "SUCCESS" else "CANCELLED"
                                 val resultIntent = Intent().apply {
-                                    putExtra("STATUS", if (finalCalculatedAngle != null) "SUCCESS" else "CANCELLED")
+                                    putExtra("STATUS", statusStr)
                                     putExtra("FINAL_ATD_ANGLE", finalCalculatedAngle ?: 0f)
                                     putExtra("LEFT_ATD_ANGLE", leftHandAngle ?: 0f)
                                     putExtra("RIGHT_ATD_ANGLE", rightHandAngle ?: 0f)

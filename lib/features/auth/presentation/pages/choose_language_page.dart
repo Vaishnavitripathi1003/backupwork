@@ -24,13 +24,13 @@ class _ChooseLanguagePageState extends State<ChooseLanguagePage> {
       'titleNative': 'English',
       'subtitle': 'Welcome! • Default',
     },
-    {
+   /* {
       'code': 'hi',
       'short': 'हि',
       'title': 'हिन्दी',
       'titleNative': 'Hindi',
       'subtitle': 'नमस्ते! • उत्तर / मध्य भारत',
-    },
+    },*/
   ];
 
   void _onContinue() async {

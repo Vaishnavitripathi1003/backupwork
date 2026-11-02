@@ -171,36 +171,40 @@ class HomeTopBar extends StatelessWidget {
 
         const SizedBox(width: 4),
 
-        // Language Toggle Pill Button
-        if (onLanguageToggle != null) ...[
-          GestureDetector(
-            onTap: onLanguageToggle,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 5),
-              decoration: BoxDecoration(
-                color: const Color(0xFFEEF2FF),
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: const Color(0xFFC7D2FE)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(Icons.language_rounded, size: 14, color: Color(0xFF4F46E5)),
-                  const SizedBox(width: 3),
-                  Text(
-                    isHindi ? 'हिन्दी' : 'EN',
-                    style: const TextStyle(
-                      fontSize: 10.5,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF4338CA),
+        // Global Language Toggle Pill Button
+      /*  ValueListenableBuilder<String>(
+          valueListenable: LanguageManager.instance.languageNotifier,
+          builder: (context, langCode, _) {
+            final isHindi = langCode == 'hi';
+            return GestureDetector(
+              onTap: () => LanguageManager.instance.toggleLanguage(),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 5),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFEEF2FF),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: const Color(0xFFC7D2FE)),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.language_rounded, size: 14, color: Color(0xFF4F46E5)),
+                    const SizedBox(width: 3),
+                    Text(
+                      isHindi ? 'हिन्दी' : 'EN',
+                      style: const TextStyle(
+                        fontSize: 10.5,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF4338CA),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ),
-          const SizedBox(width: 4),
-        ],
+            );
+          },
+        ),*/
+        const SizedBox(width: 4),
 
         // Upgrade Pill Button
         GestureDetector(

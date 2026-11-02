@@ -501,7 +501,22 @@ class ApiService {
       options: Options(headers: _buildAuthHeader(auth)),
     );
   }
+
+
+
+  //todo AtdReport Work
+  Future<Response> findAtdReportByUserDataId({
+    required String auth,
+    required String userDataId,
+  }) async {
+    return _dio.get(
+      'findAtdReportByUserDataId',
+      queryParameters: {'userDataId': userDataId},
+      options: Options(headers: _buildAuthHeader(auth)),
+    );
+  }
 }
 
 ///new one to take report
 /// 23. findReportByUserParam: GET("admin/findReportByUserParam?user_param=...&userDataId=...")
+

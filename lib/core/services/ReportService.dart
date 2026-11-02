@@ -260,7 +260,33 @@ class ReportService {
     }
   }
 
+//////// todo Atd Report Work
+  Future<dynamic> fetchAtdByParam({
+    required String userDataId,
+  }) async {
+    final token = await _token();
+    if (token.isEmpty || userDataId.isEmpty) {
+      debugPrint('AtdReportService: token or userDataId missing');
+      return null;
+    }
 
+    try {
+      final response = await _apiService.findAtdReportByUserDataId(
+        auth: token,
+        userDataId: userDataId,
+      );
+
+      if (response.statusCode == 200 && response.data != null) {
+        logFullReportData('ReportService [$userDataId]', response.data);
+        return response.data;
+      }
+      debugPrint('ReportService [$userDataId] Failed: ${response.data}');
+      return null;
+    } catch (e) {
+      debugPrint('ReportService [$userDataId] Error: $e');
+      return null;
+    }
+  }
 
 
 }

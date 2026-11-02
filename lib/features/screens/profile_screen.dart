@@ -632,6 +632,7 @@ import '../../core/storage/user_pref.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/responsive.dart';
 import '../../data/models/user_models.dart';
+import '../../core/localization/language_manager.dart';
 import '../../shared/widgets/add_family_member_dialog.dart';
 import 'home_screen.dart';
 
@@ -824,11 +825,12 @@ class ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildHeaderRow(BuildContext context, bool isNarrow) {
+    final isHindi = LanguageManager.instance.isHindi;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Admin & Profile',
+          isHindi ? 'एडमिन और प्रोफ़ाइल' : 'Admin & Profile',
           style: TextStyle(
             fontSize: context.scaleFont(22),
             fontWeight: FontWeight.bold,
@@ -837,7 +839,7 @@ class ProfileScreenState extends State<ProfileScreen> {
         ),
 
         // Plan Badge Pill
-        Container(
+      /*  Container(
           padding: EdgeInsets.symmetric(
             horizontal: isNarrow ? 8 : 12,
             vertical: 6,
@@ -853,7 +855,7 @@ class ProfileScreenState extends State<ProfileScreen> {
               const Text('👑', style: TextStyle(fontSize: 12)),
               const SizedBox(width: 4),
               Text(
-                'Family Plan',
+                isHindi ? 'फैमिली प्लान' : 'Family Plan',
                 style: TextStyle(
                   fontSize: context.scaleFont(11),
                   fontWeight: FontWeight.bold,
@@ -862,12 +864,13 @@ class ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
-        ),
+        ),*/
       ],
     );
   }
 
   Widget _buildAdminProfileCard(BuildContext context, bool isNarrow) {
+    final isHindi = LanguageManager.instance.isHindi;
     return Container(
       padding: EdgeInsets.all(isNarrow ? 12 : 16),
       decoration: BoxDecoration(
@@ -926,9 +929,9 @@ class ProfileScreenState extends State<ProfileScreen> {
                         color: const Color(0xFFEEF2FF),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: const Text(
-                        'Admin',
-                        style: TextStyle(
+                      child: Text(
+                        isHindi ? 'एडमिन' : 'Admin',
+                        style: const TextStyle(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
                           color: AppTheme.primary,
@@ -957,6 +960,7 @@ class ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildSubscriptionPlanBanner(BuildContext context, bool isNarrow) {
+    final isHindi = LanguageManager.instance.isHindi;
     return Container(
       padding: EdgeInsets.all(isNarrow ? 12 : 16),
       decoration: BoxDecoration(
@@ -979,7 +983,7 @@ class ProfileScreenState extends State<ProfileScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Subscription: ${_subscriptionLevel.value}',
+                  isHindi ? 'सदस्यता: ${_subscriptionLevel.value}' : 'Subscription: ${_subscriptionLevel.value}',
                   style: TextStyle(
                     fontSize: context.scaleFont(13.5),
                     fontWeight: FontWeight.bold,
@@ -988,7 +992,7 @@ class ProfileScreenState extends State<ProfileScreen> {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  '10-Finger AI Counseling Active',
+                  isHindi ? '10-उंगली परामर्श सक्रिय' : '10-Finger AI Counseling Active',
                   style: TextStyle(
                     fontSize: context.scaleFont(11),
                     color: const Color(0xFFC7D2FE),
@@ -1005,7 +1009,7 @@ class ProfileScreenState extends State<ProfileScreen> {
               border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
             ),
             child: Text(
-              'Active',
+              isHindi ? 'सक्रिय' : 'Active',
               style: TextStyle(
                 fontSize: context.scaleFont(10.5),
                 fontWeight: FontWeight.bold,
@@ -1020,6 +1024,7 @@ class ProfileScreenState extends State<ProfileScreen> {
 
   Widget _buildFamilyMembersCard(
       BuildContext context, bool isNarrow, User? admin) {
+    final isHindi = LanguageManager.instance.isHindi;
     return Container(
       padding: EdgeInsets.all(isNarrow ? 12 : 16),
       decoration: BoxDecoration(
@@ -1042,7 +1047,7 @@ class ProfileScreenState extends State<ProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Candidate Members (${_candidateMembers.length})',
+                isHindi ? 'उम्मीदवार सदस्य (${_candidateMembers.length})' : 'Candidate Members (${_candidateMembers.length})',
                 style: TextStyle(
                   fontSize: context.scaleFont(14),
                   fontWeight: FontWeight.bold,
@@ -1052,7 +1057,7 @@ class ProfileScreenState extends State<ProfileScreen> {
               InkWell(
                 onTap: _openAddMemberDialog,
                 child: Text(
-                  '+ Add Member',
+                  isHindi ? '+ सदस्य जोड़ें' : '+ Add Member',
                   style: TextStyle(
                     fontSize: context.scaleFont(12),
                     fontWeight: FontWeight.bold,
@@ -1071,12 +1076,12 @@ class ProfileScreenState extends State<ProfileScreen> {
               context: context,
               emoji: '👦',
               user: admin,
-              role: 'Primary Student • Class 8',
+              role: isHindi ? 'मुख्य छात्र • कक्षा 8' : 'Primary Student • Class 8',
               isSelected: true,
             )
-                : const Text(
-              'No members yet',
-              style: TextStyle(fontSize: 12, color: Color(0xFF64748B)),
+                : Text(
+              isHindi ? 'अभी कोई सदस्य नहीं हैं' : 'No members yet',
+              style: const TextStyle(fontSize: 12, color: Color(0xFF64748B)),
             )
           else
             ...List.generate(_candidateMembers.length, (index) {
@@ -1108,6 +1113,7 @@ class ProfileScreenState extends State<ProfileScreen> {
     required String role,
     required bool isSelected,
   }) {
+    final isHindi = LanguageManager.instance.isHindi;
     final displayName = (user.dataName != null && user.dataName!.isNotEmpty)
         ? user.dataName!
         : (user.firstName != null && user.firstName!.isNotEmpty)
@@ -1189,9 +1195,9 @@ class ProfileScreenState extends State<ProfileScreen> {
                   color: AppTheme.primary,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const Text(
-                  'Active',
-                  style: TextStyle(
+                child: Text(
+                  isHindi ? 'सक्रिय' : 'Active',
+                  style: const TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -1212,6 +1218,7 @@ class ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildPreferencesCard(BuildContext context, bool isNarrow) {
+    final isHindi = LanguageManager.instance.isHindi;
     return Container(
       padding: EdgeInsets.all(isNarrow ? 12 : 16),
       decoration: BoxDecoration(
@@ -1223,7 +1230,7 @@ class ProfileScreenState extends State<ProfileScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Preferences & Support',
+            isHindi ? 'प्राथमिकताएं और सहायता' : 'Preferences & Support',
             style: TextStyle(
               fontSize: context.scaleFont(14),
               fontWeight: FontWeight.bold,
@@ -1233,12 +1240,58 @@ class ProfileScreenState extends State<ProfileScreen> {
 
           const SizedBox(height: 12),
 
+          // App Language Switcher Row
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  const Icon(Icons.language_rounded, color: AppTheme.primary, size: 18),
+                  const SizedBox(width: 8),
+                  Text(
+                    isHindi ? 'ऐप की भाषा (App Language)' : 'App Language',
+                    style: TextStyle(
+                      fontSize: context.scaleFont(12),
+                      color: const Color(0xFF334155),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+              InkWell(
+                onTap: () async {
+                  await LanguageManager.instance.toggleLanguage();
+                  setState(() {});
+                },
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFEEF2FF),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: const Color(0xFFC7D2FE)),
+                  ),
+                  child: Text(
+                    isHindi ? 'English' : 'हिन्दी',
+                    style: const TextStyle(
+                      fontSize: 11.5,
+                      fontWeight: FontWeight.bold,
+                      color: AppTheme.primary,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          const Divider(height: 16, color: Color(0xFFF1F5F9)),
+
           // Daily AI Counselor Reminders
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Daily AI Counselor Reminders',
+                isHindi ? 'दैनिक AI परामर्शदाता रिमाइंडर' : 'Daily AI Counselor Reminders',
                 style: TextStyle(
                   fontSize: context.scaleFont(12),
                   color: const Color(0xFF334155),
@@ -1265,7 +1318,7 @@ class ProfileScreenState extends State<ProfileScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Assessment Data Privacy',
+                    isHindi ? 'मूल्यांकन डेटा गोपनीयता' : 'Assessment Data Privacy',
                     style: TextStyle(
                       fontSize: context.scaleFont(12),
                       color: const Color(0xFF334155),
@@ -1286,7 +1339,7 @@ class ProfileScreenState extends State<ProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Help & Student Mentorship Hotline',
+                isHindi ? 'सहायता और मार्गदर्शन हॉटलाइन' : 'Help & Student Mentorship Hotline',
                 style: TextStyle(
                   fontSize: context.scaleFont(12),
                   color: const Color(0xFF334155),
@@ -1296,7 +1349,7 @@ class ProfileScreenState extends State<ProfileScreen> {
               InkWell(
                 onTap: () {},
                 child: Text(
-                  'Support →',
+                  isHindi ? 'सहायता →' : 'Support →',
                   style: TextStyle(
                     fontSize: context.scaleFont(12),
                     fontWeight: FontWeight.bold,

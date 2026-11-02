@@ -47,6 +47,7 @@ class BiometricScanner {
         'userToken': token,
         'userDataId': userDataId,
       });
+      debugPrint("ATD Scanner status: ${status}");
       return status == 'SUCCESS';
     } on PlatformException catch (e) {
       debugPrint("ATD Scanner Error: ${e.message}");

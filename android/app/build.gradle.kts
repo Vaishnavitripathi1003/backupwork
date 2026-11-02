@@ -35,6 +35,12 @@ android {
         ndk {
             abiFilters.addAll(setOf("arm64-v8a", "armeabi-v7a"))
         }
+
+        externalNativeBuild {
+            cmake {
+                arguments("-DANDROID_STL=c++_shared", "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384")
+            }
+        }
     }
 
     signingConfigs {
@@ -54,15 +60,18 @@ android {
     packaging {
         jniLibs {
             // Fixes 16 KB memory page size alignment for Android 15 / Play Store compatibility
-            useLegacyPackaging = true
-            keepDebugSymbols += "**/*.so"
+            useLegacyPackaging = false
+            excludes += setOf(
+                "lib/x86/**",
+                "lib/x86_64/**"
+            )
         }
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

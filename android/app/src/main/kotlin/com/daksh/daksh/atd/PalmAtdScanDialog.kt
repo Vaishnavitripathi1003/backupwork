@@ -1,3 +1,4 @@
+/*
 package com.daksh.daksh.atd
 
 import android.graphics.Bitmap
@@ -465,5 +466,199 @@ private fun AtdBarColumnItem(label: String, value: Float, color: Color) {
         )
         Spacer(modifier = Modifier.height(6.dp))
         Text(label, fontSize = 11.sp, color = Color(0xFF64748B))
+    }
+}
+*/
+package com.daksh.daksh.atd
+
+import android.graphics.Bitmap
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
+import com.daksh.daksh.R
+import java.util.Locale
+
+@Composable
+fun PalmAtdScanDialog(
+    hasCameraPermission: Boolean,
+    onRequestPermission: () -> Unit,
+    onFrameAvailable: (Bitmap) -> Unit,
+    currentAngle: Float,
+    detectedHandLabel: String?,
+    positionStatus: PalmPositionStatus,
+    isHandPresent: Boolean,
+    leftAngle: Float?,
+    rightAngle: Float?,
+    finalCalculatedAngle: Float?,
+    currentWrist: Point2D?,
+    currentIndexA: Point2D?,
+    currentPinkyD: Point2D?,
+    leftHandBitmap: Bitmap?,
+    rightHandBitmap: Bitmap?,
+    isUploading: Boolean,
+    onCaptureLeft: () -> Unit,
+    onCaptureRight: () -> Unit,
+    onCalculateFinal: () -> Unit,
+    onSubmit: () -> Unit,
+    onReset: () -> Unit,
+    onDismiss: () -> Unit
+) {
+    // Submit is visible as soon as BOTH palms are captured
+    val bothPalmsCaptured = leftAngle != null && rightAngle != null
+
+    Dialog(
+        onDismissRequest = { if (!isUploading) onDismiss() },
+        properties = DialogProperties(
+            usePlatformDefaultWidth = false,
+            dismissOnClickOutside = false
+        )
+    ) {
+        Surface(
+            modifier = Modifier
+                .fillMaxWidth(0.95f)
+                .fillMaxHeight(0.92f)
+                .clip(RoundedCornerShape(24.dp)),
+            color = Color(0xFFF8FAFC),
+            border = BorderStroke(1.dp, Color(0xFFE2E8F0)),
+            shadowElevation = 12.dp
+        ) {
+            Column(modifier = Modifier.fillMaxSize()) {
+
+                // Popup Header Bar
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color.White)
+                        .padding(horizontal = 16.dp, vertical = 12.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Image(
+                            painter = painterResource(id = R.mipmap.ic_launcher_foreground),
+                            contentDescription = "DAKSH Logo",
+                            modifier = Modifier.size(32.dp)
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Column {
+                            Text(
+                                text = "DAKSH • PalmATD Scanner",
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color(0xFF4F46E5)
+                            )
+                            Text(
+                                text = "Scan Left & Right Palm",
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = Color(0xFF0F172A)
+                            )
+                        }
+                    }
+
+                    IconButton(
+                        onClick = onDismiss,
+                        enabled = !isUploading,
+                        modifier = Modifier.size(32.dp)
+                    ) {
+                        Icon(Icons.Default.Close, contentDescription = "Close", tint = Color(0xFF64748B))
+                    }
+                }
+
+                HorizontalDivider(color = Color(0xFFE2E8F0), thickness = 1.dp)
+
+                // Popup Body Content
+                Column(modifier = Modifier.weight(1f)) {
+
+                    // Scanning screen
+                    Box(modifier = Modifier.weight(1f)) {
+                        PalmWorkflowScreen(
+                            hasCameraPermission = hasCameraPermission,
+                            onRequestPermission = onRequestPermission,
+                            onFrameAvailable = onFrameAvailable,
+                            currentAngle = currentAngle,
+                            detectedHandLabel = detectedHandLabel,
+                            positionStatus = positionStatus,
+                            isHandPresent = isHandPresent,
+                            leftAngle = leftAngle,
+                            rightAngle = rightAngle,
+                            currentWrist = currentWrist,
+                            currentIndexA = currentIndexA,
+                            currentPinkyD = currentPinkyD,
+                            onCaptureLeft = onCaptureLeft,
+                            onCaptureRight = onCaptureRight,
+                            onCalculateFinal = onCalculateFinal,
+                            onReset = onReset
+                        )
+                    }
+
+                    // Submit bar: visible right after both palms are captured
+                    if (bothPalmsCaptured) {
+                        HorizontalDivider(color = Color(0xFFE2E8F0), thickness = 1.dp)
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(Color.White)
+                                .padding(16.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            val avg = (((leftAngle ?: 0f) + (rightAngle ?: 0f)) / 2f * 10f).toInt() / 10f
+                            Text(
+                                text = "Left: ${String.format(Locale.getDefault(), "%.1f", leftAngle)}°   " +
+                                        "Right: ${String.format(Locale.getDefault(), "%.1f", rightAngle)}°   " +
+                                        "Avg: ${String.format(Locale.getDefault(), "%.1f", avg)}°",
+                                fontSize = 13.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color(0xFF4F46E5)
+                            )
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Button(
+                                onClick = onSubmit,
+                                enabled = !isUploading,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(48.dp),
+                                shape = RoundedCornerShape(14.dp),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = Color(0xFF10B981),
+                                    disabledContainerColor = Color(0xFF94A3B8)
+                                )
+                            ) {
+                                if (isUploading) {
+                                    CircularProgressIndicator(
+                                        modifier = Modifier.size(18.dp),
+                                        color = Color.White,
+                                        strokeWidth = 2.dp
+                                    )
+                                    Spacer(modifier = Modifier.width(8.dp))
+                                    Text("Uploading...", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                                } else {
+                                    Icon(Icons.Default.Check, contentDescription = null, tint = Color.White, modifier = Modifier.size(18.dp))
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text("Submit", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
