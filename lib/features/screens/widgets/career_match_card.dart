@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../core/models/user_profile.dart';
-import '../../../shared/widgets/section_card.dart';
-import '../../../shared/widgets/status_badge.dart';
-import '../../../shared/widgets/unlock_button.dart';
-
-import 'package:flutter/material.dart';
-import '../../../data/models/careerMatchResponse.dart'; // apne model file ka sahi path
+import '../../../core/constants/app_strings.dart';
+import '../../../core/localization/app_localizations.dart';
+import '../../../data/models/careerMatchResponse.dart';
 import '../../../shared/widgets/section_card.dart';
 import '../../../shared/widgets/status_badge.dart';
 import '../../../shared/widgets/unlock_button.dart';
@@ -36,7 +32,7 @@ class CareerMatchCard extends StatelessWidget {
           child: Text('💼', style: TextStyle(fontSize: 20)),
         ),
       ),
-      title: 'CAREER MATCH',
+      title: AppLocalizations.of(context)?.careerMatchTitle ?? AppStrings.careerMatchTitle,
       badge: StatusBadge.topOneOnly(),
       subtitle: 'Top careers matching your cognitive and sensory profile.',
       child: Row(

@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   cupertino_icons: ^1.0.8
   dio: ^5.11.1
@@ -53,6 +55,7 @@ flutter_launcher_icons:
   adaptive_icon_foreground: "assets/images/dakshlogo.png"
 
 flutter:
+  generate: true
   uses-material-design: true
 
   assets:

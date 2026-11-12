@@ -1,0 +1,36 @@
+{
+  "@@locale": "gu",
+  "appName": "દક્ષ સ્ટુડન્ટ પ્રો",
+  "appVersion": "v2.4.0",
+  "appTagline": "AI DISC અને મલ્ટી-ઇન્ટેલિજન્સ સંપૂર્ણ મૂલ્યાંકન સ્યુટ",
+  "homeTitle": "ડર્માટોગ્લિફિક્સ પ્રોટોકોલ",
+  "whyTakeDmit": "DMIT શા માટે લેવું?",
+  "reportTitle": "સમગ્ર રિપોર્ટ",
+  "reportSubtitle": "પ્રમાણિત મૂલ્યાંકન ડોઝિયર",
+  "candidateTitle": "વિશ્લેષણ માટે સભ્ય પસંદ કરો",
+  "activeCandidateLabel": "સક્રિય ઉમેદવાર પ્રોફાઇલ",
+  "allCandidatesTitle": "તમામ ઉમેદવારો",
+  "searchCandidatesHint": "નામ અથવા નંબર દ્વારા શોધો",
+  "scan10Fingers": "વિશ્લેષણ શરૂ કરો (10 આંગળીઓ સ્કેન કરો)",
+  "groupScanTitle": "ગ્રુપ મોડ (4 આંગળીઓ અને અંગૂઠો)",
+  "individualScanTitle": "સિંગલ ફિંગરપ્રિન્ટ મોડ ⭐",
+  "scanReady": "સ્કેન તૈયાર",
+  "reportGeneratingSoon": " તમારો રિપોર્ટ ટૂંક સમયમાં જનરેટ થઈ રહ્યો છે ",
+  "fingerprintsUploadedSuccess": "ફિંગરપ્રિન્ટ સફળતાપૂર્વક અપલોડ થઈ ગયા",
+  "reportAnalyzingFor": "{name} માટે ડેટાનું વિશ્લેષણ અને તમારો રિપોર્ટ તૈયાર કરવામાં આવી રહ્યો છે...",
+  "@reportAnalyzingFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "takesFewMoments": "આમાં થોડો સમય લાગી શકે છે",
+  "addMember": "+ સભ્ય ઉમેરો",
+  "signOut": "સાઇન આઉટ / ખાતું બદલો",
+  "cancel": "રદ કરો",
+  "retry": "ફરી પ્રયાસ કરો",
+  "close": "બંધ કરો",
+  "unlockAll": "બધા અનલોક કરો 👑",
+  "exportLocked": "નિકાસ (લોક)"
+}

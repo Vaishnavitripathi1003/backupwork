@@ -171,30 +171,40 @@ class HomeTopBar extends StatelessWidget {
 
         const SizedBox(width: 4),
 
-        // Global Language Toggle Pill Button
-      /*  ValueListenableBuilder<String>(
+        // 🌐 Global Language Selector Button on Home Header
+        ValueListenableBuilder<String>(
           valueListenable: LanguageManager.instance.languageNotifier,
           builder: (context, langCode, _) {
-            final isHindi = langCode == 'hi';
             return GestureDetector(
-              onTap: () => LanguageManager.instance.toggleLanguage(),
+              onTap: () => _showLanguageSelectorModal(context),
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                 decoration: BoxDecoration(
                   color: const Color(0xFFEEF2FF),
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: const Color(0xFFC7D2FE)),
+                  border: Border.all(color: const Color(0xFFC7D2FE), width: 1.2),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF4F46E5).withValues(alpha: 0.1),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.language_rounded, size: 14, color: Color(0xFF4F46E5)),
-                    const SizedBox(width: 3),
+                    const Icon(
+                      Icons.language_rounded,
+                      size: 16,
+                      color: Color(0xFF4F46E5),
+                    ),
+                    const SizedBox(width: 4),
                     Text(
-                      isHindi ? 'हिन्दी' : 'EN',
+                      langCode.toUpperCase(),
                       style: const TextStyle(
-                        fontSize: 10.5,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w900,
                         color: Color(0xFF4338CA),
                       ),
                     ),
@@ -203,7 +213,7 @@ class HomeTopBar extends StatelessWidget {
               ),
             );
           },
-        ),*/
+        ),
         const SizedBox(width: 4),
 
         // Upgrade Pill Button
@@ -453,4 +463,108 @@ class _AddMemberItem extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showLanguageSelectorModal(BuildContext context) {
+  const List<Map<String, String>> languages = [
+    {'code': 'en', 'title': 'English', 'native': 'English'},
+    {'code': 'hi', 'title': 'Hindi', 'native': 'हिन्दी'},
+    {'code': 'ta', 'title': 'Tamil', 'native': 'தமிழ்'},
+    {'code': 'te', 'title': 'Telugu', 'native': 'తెలుగు'},
+    {'code': 'gu', 'title': 'Gujarati', 'native': 'ગુજરાતી'},
+    {'code': 'mr', 'title': 'Marathi', 'native': 'मराठी'},
+    {'code': 'bn', 'title': 'Bengali', 'native': 'বাংলা'},
+    {'code': 'kn', 'title': 'Kannada', 'native': 'ಕನ್ನಡ'},
+    {'code': 'ml', 'title': 'Malayalam', 'native': 'മലയാളം'},
+    {'code': 'pa', 'title': 'Punjabi', 'native': 'ਪੰਜਾਬੀ'},
+    {'code': 'or', 'title': 'Odia', 'native': 'ଓଡ଼ିଆ'},
+    {'code': 'as', 'title': 'Assamese', 'native': 'অসমীয়া'},
+    {'code': 'ur', 'title': 'Urdu', 'native': 'اردو'},
+    {'code': 'sa', 'title': 'Sanskrit', 'native': 'संस्कृतम्'},
+    {'code': 'ne', 'title': 'Nepali', 'native': 'नेपाली'},
+    {'code': 'sd', 'title': 'Sindhi', 'native': 'सिंधी'},
+    {'code': 'ks', 'title': 'Kashmiri', 'native': 'कश्मीरी'},
+    {'code': 'kok', 'title': 'Konkani', 'native': 'कोंकणी'},
+    {'code': 'mai', 'title': 'Maithili', 'native': 'मैथिली'},
+    {'code': 'mni', 'title': 'Manipuri', 'native': 'মৈইতৈলোন্'},
+    {'code': 'sat', 'title': 'Santhali', 'native': 'संथाली'},
+    {'code': 'brx', 'title': 'Bodo', 'native': 'बड़ो'},
+    {'code': 'doi', 'title': 'Dogri', 'native': 'डोगरी'},
+  ];
+
+  showModalBottomSheet(
+    context: context,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+    ),
+    builder: (ctx) {
+      return Container(
+        height: MediaQuery.sizeOf(ctx).height * 0.65,
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Row(
+                  children: [
+                    Icon(Icons.language_rounded, color: Color(0xFF4F46E5)),
+                    SizedBox(width: 8),
+                    Text(
+                      'Select App Language',
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () => Navigator.pop(ctx),
+                ),
+              ],
+            ),
+            const Divider(),
+            Expanded(
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: languages.length,
+                itemBuilder: (context, index) {
+                  final lang = languages[index];
+                  final isCurrent =
+                      LanguageManager.instance.currentLanguageCode == lang['code'];
+                  return ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor:
+                          isCurrent ? const Color(0xFF4F46E5) : const Color(0xFFF1F5F9),
+                      child: Text(
+                        lang['code']!.toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: isCurrent ? Colors.white : const Color(0xFF475569),
+                        ),
+                      ),
+                    ),
+                    title: Text(
+                      '${lang['title']} (${lang['native']})',
+                      style: TextStyle(
+                        fontWeight: isCurrent ? FontWeight.bold : FontWeight.normal,
+                        color: isCurrent ? const Color(0xFF4F46E5) : const Color(0xFF0F172A),
+                      ),
+                    ),
+                    trailing: isCurrent
+                        ? const Icon(Icons.check_circle, color: Color(0xFF4F46E5))
+                        : null,
+                    onTap: () {
+                      LanguageManager.instance.setLanguage(lang['code']!);
+                      Navigator.pop(ctx);
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
 }

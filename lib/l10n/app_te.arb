@@ -1,0 +1,36 @@
+{
+  "@@locale": "te",
+  "appName": "దక్ష్ స్టూడెంట్ ప్రో",
+  "appVersion": "v2.4.0",
+  "appTagline": "AI DISC & మల్టీ-ఇంటెలిజెన్స్ సమగ్ర అంచనా బ్యాటరీ",
+  "homeTitle": "డెర్మటోగ్లిఫిక్స్ ప్రోటోకాల్",
+  "whyTakeDmit": "DMIT ఎందుకు తీసుకోవాలి?",
+  "reportTitle": "సమగ్ర నివేదిక",
+  "reportSubtitle": "ధృవీకరించబడిన అంచనా పత్రం",
+  "candidateTitle": "విశ్లేషించడానికి సభ్యుడిని ఎంచుకోండి",
+  "activeCandidateLabel": "యాక్టివ్ అభ్యర్థి ప్రొఫైల్",
+  "allCandidatesTitle": "అన్ని అభ్యర్థులు",
+  "searchCandidatesHint": "పేరు లేదా నంబర్ ద్వారా శోధించండి",
+  "scan10Fingers": "విశ్లేషణ ప్రారంభించండి (10 వేళ్లను స్కాన్ చేయండి)",
+  "groupScanTitle": "గ్రూప్ మోడ్ (4 వేళ్లు & బొటనవేళ్లు)",
+  "individualScanTitle": "సింగిల్ ఫింగర్‌ప్రింట్ మోడ్ ⭐",
+  "scanReady": "స్కాన్ సిద్ధం",
+  "reportGeneratingSoon": " మీ నివేదిక త్వరలో రూపొందించబడుతోంది ",
+  "fingerprintsUploadedSuccess": "వేలిముద్రలు విజయవంతంగా అప్‌లోడ్ అయ్యాయి",
+  "reportAnalyzingFor": "{name} కోసం డేటా విశ్లేషించబడుతోంది మరియు మీ నివేదిక రూపొందించబడుతోంది...",
+  "@reportAnalyzingFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "takesFewMoments": "దీనికి కొద్ది సమయం పట్టవచ్చు",
+  "addMember": "+ సభ్యుడిని జోడించండి",
+  "signOut": "సైన్ అవుట్ / ఖాతాను మార్చండి",
+  "cancel": "రద్దు చేయి",
+  "retry": "మళ్లీ ప్రయత్నించండి",
+  "close": "మూసివేయి",
+  "unlockAll": "అన్నీ అన్‌లాక్ చేయండి 👑",
+  "exportLocked": "ఎగుమతి (లాక్ చేయబడింది)"
+}

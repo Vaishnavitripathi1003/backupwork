@@ -1,0 +1,36 @@
+{
+  "@@locale": "mr",
+  "appName": "दक्ष स्टूडेंट प्रो",
+  "appVersion": "v2.4.0",
+  "appTagline": "AI DISC आणि मल्टी-इंटेलिजन्स पूर्ण मूल्यमापन बॅटरी",
+  "homeTitle": "डर्माटोग्लिफिक्स प्रोटोकॉल",
+  "whyTakeDmit": "DMIT का घ्यावे?",
+  "reportTitle": "सर्वसमावेशक अहवाल",
+  "reportSubtitle": "प्रमाणित मूल्यमापन दस्तऐवज",
+  "candidateTitle": "विश्लेषणासाठी सदस्य निवडा",
+  "activeCandidateLabel": "सक्रिय उमेदवार प्रोफाइल",
+  "allCandidatesTitle": "सर्व उमेदवार",
+  "searchCandidatesHint": "नाव किंवा नंबरने शोधा",
+  "scan10Fingers": "विश्लेषण सुरू करा (10 बोटे स्कॅन करा)",
+  "groupScanTitle": "ग्रुप मोड (4 बोटे आणि अंगठे)",
+  "individualScanTitle": "सिंगल फिंगरप्रिंट मोड ⭐",
+  "scanReady": "स्कॅन तयार",
+  "reportGeneratingSoon": " तुमचा अहवाल लवकरच तयार होत आहे ",
+  "fingerprintsUploadedSuccess": "फिंगरप्रिंट यशस्वीरीत्या अपलोड झाले",
+  "reportAnalyzingFor": "{name} साठी डेटाचे विश्लेषण आणि तुमचा अहवाल तयार केला जात आहे...",
+  "@reportAnalyzingFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "takesFewMoments": "याला काही क्षण लागू शकतात",
+  "addMember": "+ सदस्य जोडा",
+  "signOut": "साइन आउट / खाते बदला",
+  "cancel": "रद्द करा",
+  "retry": "पुन्हा प्रयत्न करा",
+  "close": "बंद करा",
+  "unlockAll": "सर्व अनलॉक करा 👑",
+  "exportLocked": "निर्यात (लॉक)"
+}

@@ -1,158 +1,614 @@
 import '../localization/language_manager.dart';
 
-/// Centralized App Strings repository containing 100% of all titles, banners, button labels,
-/// error messages, dialog texts, and assessment descriptions used across the DAKSH Flutter application.
+/// Centralized App Strings repository supporting 23 global languages.
 /// 
-/// All string getters dynamically return English or Hindi translations based on [LanguageManager.instance.isHindi].
+/// All string getters dynamically return translations based on [LanguageManager.instance.currentLanguageCode].
 class AppStrings {
   AppStrings._();
 
-  static bool get isHindi => LanguageManager.instance.isHindi;
+  static String get currentLang => LanguageManager.instance.currentLanguageCode;
+  static bool get isHindi => currentLang == 'hi';
+
+  static String tr(Map<String, String> map) {
+    return map[currentLang] ?? map['en'] ?? '';
+  }
 
   // ── APP INFO & BRANDING ──
-  static String get appName => isHindi ? 'दक्ष स्टूडेंट प्रो' : 'Daksh Student Pro';
+  static String get appName => tr({
+    'hi': 'दक्ष स्टूडेंट प्रो',
+    'gu': 'દક્ષ સ્ટુડન્ટ પ્રો',
+    'mr': 'दक्ष स्टूडेंट प्रो',
+    'ta': 'தக்ஷ் ஸ்டூடண்ட் புரோ',
+    'te': 'దక్ష్ స్టూడెంట్ ప్రో',
+    'bn': 'দক্ষ স্টুডেন্ট প্রো',
+    'kn': 'ದಕ್ಷ್ ಸ್ಟೂಡೆಂಟ್ ಪ್ರೊ',
+    'ml': 'ദക്ഷ് സ്റ്റുഡന്റ് പ്രോ',
+    'pa': 'ਦਕਸ਼ ਸਟੂਡੈਂਟ ਪ੍ਰੋ',
+    'or': 'ଦକ୍ଷ ଷ୍ଟୁଡେଣ୍ଟ ପ୍ରୋ',
+    'as': 'দক্ষ ষ্টুডেণ্ট প্ৰ',
+    'ur': 'دکش اسٹوڈنٹ پرو',
+    'en': 'Daksh Student Pro',
+  });
+
   static String get appVersion => 'v2.4.0';
-  static String get appTagline => isHindi
-      ? 'AI DISC और मल्टी-इंटेलिजेंस संपूर्ण मूल्यांकन बैटरी'
-      : 'AI DISC & Multi-Intelligence Comprehensive Battery';
+
+  static String get appTagline => tr({
+    'hi': 'AI DISC और मल्टी-इंटेलिजेंस संपूर्ण मूल्यांकन बैटरी',
+    'gu': 'AI DISC અને મલ્ટી-ઇન્ટેલિજન્સ સંપૂર્ણ મૂલ્યાંકન સ્યુટ',
+    'mr': 'AI DISC आणि मल्टी-इंटेलिजन्स पूर्ण मूल्यमापन बॅटरी',
+    'ta': 'AI DISC & மல்டி-இன்டலிஜென்ஸ் விரிவான மதிப்பீடு',
+    'te': 'AI DISC & మల్టీ-ఇంటెలిజెన్స్ సమగ్ర అంచనా బ్యాటరీ',
+    'bn': 'AI DISC এবং মাল্টি-ইন্টেলিজেন্স বিস্তৃত মূল্যায়ন',
+    'en': 'AI DISC & Multi-Intelligence Comprehensive Battery',
+  });
 
   // ── DASHBOARD & HEADERS ──
-  static String get homeTitle => isHindi ? 'डर्माटोग्लिफिक्स प्रोटोकॉल' : 'DERMATOGLYPHICS PROTOCOL';
-  static String get whyTakeDmit => isHindi ? 'DMIT क्यों लें?' : 'Why Take DMIT?';
-  static String get reportTitle => isHindi ? 'समग्र रिपोर्ट' : 'Holistic Report';
-  static String get reportSubtitle => isHindi ? 'प्रमाणित मूल्यांकन डोजियर' : 'Certified Assessment dossier';
-  static String get candidateTitle => isHindi ? 'विश्लेषण के लिए सदस्य चुनें' : 'Select Member to Analyze';
-  static String get drawerHeaderTitle => isHindi ? 'दक्ष बुद्धिमत्ता मेनू' : 'DAKSH INTELLIGENCE MENU';
-  static String get activeCandidateLabel => isHindi ? 'सक्रिय उम्मीदवार प्रोफ़ाइल' : 'ACTIVE CANDIDATE PROFILE';
-  static String get allCandidatesTitle => isHindi ? 'सभी उम्मीदवार' : 'All Candidates';
-  static String get searchCandidatesHint => isHindi ? 'नाम या नंबर से खोजें' : 'Search by name or number';
-  static String get adminProfileTitle => isHindi ? 'एडमिन और प्रोफ़ाइल' : 'Admin & Profile';
-  static String get familyPlan => isHindi ? 'फैमिली प्लान' : 'Family Plan';
-  static String get candidateReportOverview => isHindi ? 'उम्मीदवार रिपोर्ट अवलोकन' : 'Candidate report overview';
+  static String get homeTitle => tr({
+    'hi': 'डर्माटोग्लिफिक्स प्रोटोकॉल',
+    'gu': 'ડર્માટોગ્લિફિક્સ પ્રોટોકોલ',
+    'mr': 'डर्माटोग्लिफिक्स प्रोटोकॉल',
+    'ta': 'டெர்மட்டோகிளிஃபிக்ஸ் நெறிமுறை',
+    'te': 'డెర్మటోగ్లిఫిక్స్ ప్రోటోకాల్',
+    'bn': 'ডার্মাটোগ্লিফিক্স প্রোটোকল',
+    'kn': 'ಡರ್ಮಾಟೋಗ್ಲಿಫಿಕ್ಸ್ ಪ್ರೋಟೋಕಾಲ್',
+    'ml': 'ഡെർമറ്റോഗ്ലിഫിക്സ് പ്രോട്ടോക്കോൾ',
+    'pa': 'ਡਰਮਾਟੋਗਲਿਫਿਕਸ ਪ੍ਰੋਟੋਕੋਲ',
+    'or': 'ଡର୍ମାଟୋଗ୍ଲିଫିକ୍ସ ପ୍ରୋଟୋକଲ୍',
+    'ur': 'ڈرماٹوگلیفکس پروٹوکول',
+    'en': 'DERMATOGLYPHICS PROTOCOL',
+  });
+
+  static String get whyTakeDmit => tr({
+    'hi': 'DMIT क्यों लें?',
+    'gu': 'DMIT શા માટે લેવું?',
+    'mr': 'DMIT का घ्यावे?',
+    'ta': 'ஏன் DMIT எடுக்க வேண்டும்?',
+    'te': 'DMIT ఎందుకు తీసుకోవాలి?',
+    'bn': 'কেন DMIT নেবেন?',
+    'en': 'Why Take DMIT?',
+  });
+
+  static String get reportTitle => tr({
+    'hi': 'समग्र रिपोर्ट',
+    'gu': 'સમગ્ર રિપોર્ટ',
+    'mr': 'सर्वसमावेशक अहवाल',
+    'ta': 'ஒட்டுமொத்த அறிக்கை',
+    'te': 'సమగ్ర నివేదిక',
+    'bn': 'সামগ্রিক রিপোর্ট',
+    'en': 'Holistic Report',
+  });
+
+  static String get reportSubtitle => tr({
+    'hi': 'प्रमाणित मूल्यांकन डोजियर',
+    'gu': 'પ્રમાણિત મૂલ્યાંકન ડોઝિયર',
+    'mr': 'प्रमाणित मूल्यमापन दस्तऐवज',
+    'ta': 'சான்றளிக்கப்பட்ட மதிப்பீட்டு கோப்பு',
+    'te': 'ధృవీకరించబడిన అంచనా పత్రం',
+    'bn': 'সার্টিফাইড মূল্যায়ন ফাইল',
+    'en': 'Certified Assessment dossier',
+  });
+
+  static String get candidateTitle => tr({
+    'hi': 'विश्लेषण के लिए सदस्य चुनें',
+    'gu': 'વિશ્લેષણ માટે સભ્ય પસંદ કરો',
+    'mr': 'विश्लेषणासाठी सदस्य निवडा',
+    'ta': 'பகுப்பாய்வு செய்ய உறுப்பினரைத் தேர்ந்தெடுக்கவும்',
+    'te': 'విశ్లేషించడానికి సభ్యుడిని ఎంచుకోండి',
+    'bn': 'বিশ্লেষণের জন্য সদস্য নির্বাচন করুন',
+    'en': 'Select Member to Analyze',
+  });
+
+  static String get drawerHeaderTitle => tr({
+    'hi': 'दक्ष बुद्धिमत्ता मेनू',
+    'gu': 'દક્ષ ઇન્ટેલિજન્સ મેનુ',
+    'mr': 'दक्ष बुद्धिमत्ता मेनू',
+    'ta': 'தக்ஷ் அறிவுசார் மெனு',
+    'te': 'దక్ష్ ఇంటెలిజెన్స్ మెనూ',
+    'bn': 'দক্ষ ইন্টেলিজেন্স মেনু',
+    'en': 'DAKSH INTELLIGENCE MENU',
+  });
+
+  static String get activeCandidateLabel => tr({
+    'hi': 'सक्रिय उम्मीदवार प्रोफ़ाइल',
+    'gu': 'સક્રિય ઉમેદવાર પ્રોફાઇલ',
+    'mr': 'सक्रिय उमेदवार प्रोफाइल',
+    'ta': 'செயலில் உள்ள வேட்பாளர் சுயவிவரம்',
+    'te': 'యాక్టివ్ అభ్యర్థి ప్రొఫైల్',
+    'bn': 'সক্রিয় প্রার্থীর প্রোফাইল',
+    'en': 'ACTIVE CANDIDATE PROFILE',
+  });
+
+  static String get allCandidatesTitle => tr({
+    'hi': 'सभी उम्मीदवार',
+    'gu': 'તમામ ઉમેદવારો',
+    'mr': 'सर्व उमेदवार',
+    'ta': 'அனைத்து வேட்பாளர்களும்',
+    'te': 'అన్ని అభ్యర్థులు',
+    'bn': 'সকল প্রার্থী',
+    'en': 'All Candidates',
+  });
+
+  static String get searchCandidatesHint => tr({
+    'hi': 'नाम या नंबर से खोजें',
+    'gu': 'નામ અથવા નંબર દ્વારા શોધો',
+    'mr': 'नाव किंवा नंबरने शोधा',
+    'ta': 'பெயர் அல்லது எண்ணால் தேடவும்',
+    'te': 'పేరు లేదా నంబర్ ద్వారా శోధించండి',
+    'bn': 'নাম বা নম্বর দিয়ে খুঁজুন',
+    'en': 'Search by name or number',
+  });
+
+  static String get adminProfileTitle => tr({
+    'hi': 'एडमिन और प्रोफ़ाइल',
+    'gu': 'એડમિન અને પ્રોફાઇલ',
+    'mr': 'ॲडमिन आणि प्रोफाइल',
+    'ta': 'நிர்வாகி & சுயவிவரம்',
+    'te': 'అడ్మిన్ & ప్రొఫైల్',
+    'bn': 'এডমিন ও প্রোফাইল',
+    'en': 'Admin & Profile',
+  });
+
+  static String get familyPlan => tr({
+    'hi': 'फैमिली प्लान',
+    'gu': 'ફેમિલી પ્લાન',
+    'mr': 'फॅमिली प्लॅन',
+    'ta': 'குடும்ப திட்டம்',
+    'te': 'ఫ్యామిలీ ప్లాన్',
+    'bn': 'ফ্যামিলি প্ল্যান',
+    'en': 'Family Plan',
+  });
+
+  static String get candidateReportOverview => tr({
+    'hi': 'उम्मीदवार रिपोर्ट अवलोकन',
+    'gu': 'ઉમેદવાર રિપોર્ટ અવલોકન',
+    'mr': 'उमेदवार अहवाल विहंगावलोकन',
+    'ta': 'வேட்பாளர் அறிக்கை மேலோட்டம்',
+    'te': 'అభ్యర్థి నివేదిక అవలోకనం',
+    'bn': 'প্রার্থী রিপোর্ট ওভারভিউ',
+    'en': 'Candidate report overview',
+  });
 
   // ── BIOMETRIC SCANNER & PROTOCOL ──
-  static String get scan10Fingers => isHindi ? 'विश्लेषण शुरू करें (10 उंगलियां स्कैन करें)' : 'Start Analysis (Scan 10 Fingers)';
-  static String get groupScanTitle => isHindi ? 'ग्रुप मोड (4 उंगलियां और अंगूठे)' : 'Group Mode (4-Fingers & Thumbs)';
-  static String get groupScanSubtitle => isHindi
-      ? '4 उंगलियां एक साथ + दोनों अंगूठे स्कैन करें (सबसे तेज़ AI स्कैन)'
-      : 'Scan 4 fingers together + both thumbs (Fastest AI Scan)';
-  static String get groupScanAccuracy => isHindi ? '98.2% उच्च सटीकता' : '98.2% High Accuracy';
-  static String get groupScanTime => isHindi ? 'अनुमानित ~1 मिनट में पूरा' : 'Est. ~1 min completion time';
-  static String get individualScanTitle => isHindi ? 'सिंगल फ़िंगरप्रिंट मोड ⭐' : 'Single Fingertip Mode ⭐';
-  static String get individualScanTagline => isHindi ? 'अनुशंसित' : 'RECOMMENDED';
-  static String get individualScanSubtitle => isHindi
-      ? '10 चरणबद्ध स्टेप्स (प्रत्येक उंगली अलग से स्कैन)'
-      : '10 Guided Steps (Each Finger Scanned Separately)';
-  static String get individualScanAccuracy => isHindi ? '99.8% अधिकतम बायोमेट्रिक सटीकता' : '99.8% Maximum Biometric Accuracy';
-  static String get individualScanTime => isHindi ? 'अनुमानित ~2.5 मिनट में पूरा' : 'Est. ~2.5 mins completion time';
-  static String get scanReady => isHindi ? 'स्कैन तैयार' : 'SCAN READY';
-  static String get reviewFingerprintTitle => isHindi ? 'फ़िंगरप्रिंट की समीक्षा करें' : 'REVIEW FINGERPRINT';
-  static String get acceptAndBind => isHindi ? 'स्वीकार करें और बाइंड करें' : 'Accept & Bind';
-  static String get rejectRetake => isHindi ? 'अस्वीकार करें' : 'Reject';
-  static String get zeroRawStorageTitle => isHindi ? 'शून्य कच्चा बायोमेट्रिक स्टोरेज' : 'Zero Raw Biometric Storage';
-  static String get zeroRawStorageDesc => isHindi
-      ? 'फ़िंगरप्रिंट पैटर्न तुरंत गणितीय रिज काउंट (TRC और ATD कोण) में बदल जाते हैं। कोई फ़िंगरप्रिंट छवि कभी संग्रहीत नहीं होती।'
-      : 'Fingerprint patterns are immediately converted into mathematical ridge counts (TRC & ATD angles). No fingerprint images are ever stored or transmitted.';
-  static String get uploadSuccessMessage => isHindi ? '✓ सभी 10 फ़िंगरप्रिंट सर्वर पर अपलोड हो गए!' : '✓ All 10 Fingerprints Uploaded to Server!';
-  static String get reportLoadingText => isHindi ? 'रिपोर्ट लोड हो रही है, कृपया प्रतीक्षा करें...' : 'Report Loading, Please Wait...';
-  static String get reportGeneratingText => isHindi
-      ? 'फ़िंगरप्रिंट सफलतापूर्वक सर्वर पर अपलोड हो गए! AI न्यूरोकोर्टेक्स रिपोर्ट तैयार हो रही है...'
-      : 'Fingerprints uploaded successfully to server! Generating AI Biometric Neocortex Report...';
+  static String get scan10Fingers => tr({
+    'hi': 'विश्लेषण शुरू करें (10 उंगलियां स्कैन करें)',
+    'gu': 'વિશ્લેષણ શરૂ કરો (10 આંગળીઓ સ્કેન કરો)',
+    'mr': 'विश्लेषण सुरू करा (10 बोटे स्कॅन करा)',
+    'ta': 'பகுப்பாய்வைத் தொடங்கு (10 விரல்களை ஸ்கேன் செய்)',
+    'te': 'విశ్లేషణ ప్రారంభించండి (10 వేళ్లను స్కాన్ చేయండి)',
+    'bn': 'বিশ্লেষণ শুরু করুন (১০টি আঙুল স্ক্যান করুন)',
+    'kn': 'ವಿಶ್ಲೇಷಣೆ ಪ್ರಾರಂಭಿಸಿ (10 ಬೆರಳುಗಳನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ)',
+    'ml': 'വിശകലനം ആരംഭിക്കുക (10 വിരലുകൾ സ്കാൻ ചെയ്യുക)',
+    'pa': 'ਵਿਸ਼ਲੇਸ਼ਣ ਸ਼ੁਰੂ ਕਰੋ (10 ਉਂਗਲਾਂ ਸਕੈਨ ਕਰੋ)',
+    'or': 'ବିଶ୍ଳେଷଣ ଆରମ୍ଭ କରନ୍ତୁ (10 ଅଙ୍ଗୁଳି ସ୍କାନ୍ କରନ୍ତୁ)',
+    'as': 'বিশ্লেষণ আৰম্ভ কৰক (১০টা আঙুলি স্কেন কৰক)',
+    'ur': 'تجزیہ شروع کریں (10 انگلیاں اسکین کریں)',
+    'en': 'Start Analysis (Scan 10 Fingers)',
+  });
 
-  // ── SCIENTIFIC NOTICES & ADVANTAGES ──
-  static String get scientificNoticeTitle => isHindi ? 'वैज्ञानिक आधार' : 'SCIENTIFIC FOUNDATION';
-  static String get scientificNoticeDesc => isHindi
-      ? 'चिकित्सा तंत्रिका विज्ञान साबित करता है कि फ़िंगरप्रिंट एपिडर्मल रिज गर्भावस्था के 13वें से 19वें सप्ताह के दौरान मस्तिष्क के साथ समानांतर रूप से बनते हैं।'
-      : 'Medical neuroscience proves that fingerprint epidermal ridges form synchronously with the cerebral neocortex during the 13th to 19th week of intrauterine gestation.';
-  static String get advantage1Title => isHindi ? 'जन्मजात क्षमता बनाम अर्जित कौशल' : 'Inborn Strengths vs Acquired Skills';
-  static String get advantage1Desc => isHindi
-      ? 'प्राकृतिक आनुवंशिक क्षमता और जन्मजात संज्ञानात्मक ताकतों को समझें जो जीवन भर स्थिर रहती हैं।'
-      : 'Decode natural genetic potential and innate cognitive strengths that remain stable throughout life.';
-  static String get advantage2Title => isHindi ? 'सर्वश्रेष्ठ सीखने की शैली (VAK)' : 'Optimal Sensory Learning Style (VAK)';
-  static String get advantage2Desc => isHindi
-      ? 'पहचानें कि आप विज़ुअल (चित्र), ऑडिटरी (सुनकर), या काइनेस्थेटिक (करके) कैसे बेहतर सीखते हैं।'
-      : 'Identify whether you retain best through Visual (charts), Auditory (lectures), or Kinesthetic (hands-on tactile doing).';
-  static String get advantage3Title => isHindi ? 'मस्तिष्क की प्रधानता (Left vs Right Brain)' : 'Hemispheric Brain Dominance';
-  static String get advantage3Desc => isHindi
-      ? 'बायां दिमाग (तर्क और गणित) बनाम दायां दिमाग (रचनात्मक कल्पना) का संतुलन खोजें।'
-      : 'Discover Left Brain (sequential logic & math) vs Right Brain (creative spatial imagination) balance.';
-  static String get advantage4Title => isHindi ? 'सटीक विषय और करियर रोडमैपिंग' : 'Precision Stream & Career Roadmapping';
-  static String get advantage4Desc => isHindi
-      ? 'कक्षा 9-11 में भ्रम से बचें; PCM, PCB, कॉमर्स या ह्यूमैनिटीज के लिए सही संरेखण पहचानें।'
-      : 'Avoid costly trial-and-error in Class 9–11; pinpoint alignment for PCM, PCB, Commerce, or Humanities.';
-  static String get advantage5Title => isHindi ? 'EQ, IQ, AQ और CQ प्रोफाइलिंग' : 'EQ, IQ, AQ & CQ Quotient Profiling';
-  static String get advantage5Desc => isHindi
-      ? 'भावनात्मक, बौद्धिक, विपरीत परिस्थिति (धैर्य) और रचनात्मक गुणांकों को मापें।'
-      : 'Measure Emotional, Intellectual, Adversity (grit & resilience), and Creative quotients.';
-  static String get advantage6Title => isHindi ? 'तनाव में कमी और पारिवारिक सामंजस्य' : 'Stress Reduction & Parent Harmony';
-  static String get advantage6Desc => isHindi
-      ? 'अभिभावकीय दबाव को वैज्ञानिक स्पष्टता से बदलें, जिससे परीक्षा की थकान और तनाव से बचाव हो।'
-      : 'Replace parental expectations with scientific clarity, preventing exam fatigue and student burnout.';
+  static String get groupScanTitle => tr({
+    'hi': 'ग्रुप मोड (4 उंगलियां और अंगूठे)',
+    'gu': 'ગ્રુપ મોડ (4 આંગળીઓ અને અંગૂઠો)',
+    'mr': 'ग्रुप मोड (4 बोटे आणि अंगठे)',
+    'ta': 'குழு பயன்முறை (4 விரல்கள் & பெருவிரல்கள்)',
+    'te': 'గ్రూప్ మోడ్ (4 వేళ్లు & బొటనవేళ్లు)',
+    'bn': 'গ্রুপ মোড (৪টি আঙুল এবং বুড়ো আঙুল)',
+    'en': 'Group Mode (4-Fingers & Thumbs)',
+  });
+
+  static String get groupScanSubtitle => tr({
+    'hi': '4 उंगलियां एक साथ + दोनों अंगूठे स्कैन करें (सबसे तेज़ AI स्कैन)',
+    'gu': '4 આંગળીઓ એકસાથે + બંને અંગૂઠા સ્કેન કરો (સૌથી ઝડપી AI સ્કેન)',
+    'mr': '4 बोटे एकत्र + दोन्ही अंगठे स्कॅन करा (सर्वात जलद AI स्कॅन)',
+    'ta': '4 விரல்களை ஒன்றாக + இரண்டு பெருவிரல்களை ஸ்கேன் செய்யவும் (வேகமான AI ஸ்கேன்)',
+    'te': '4 వేళ్లను కలిపి + రెండు బొటనవేళ్లను స్కాన్ చేయండి (అతి వేగవంతమైన AI స్కాన్)',
+    'en': 'Scan 4 fingers together + both thumbs (Fastest AI Scan)',
+  });
+
+  static String get scanReady => tr({
+    'hi': 'स्कैन तैयार',
+    'gu': 'સ્કેન તૈયાર',
+    'mr': 'સ્કॅन तयार',
+    'ta': 'ஸ்கேன் தயார்',
+    'te': 'స్కాన్ సిద్ధం',
+    'bn': 'স্ক্যান প্রস্তুত',
+    'kn': 'ಸ್ಕ್ಯಾನ್ ಸಿದ್ಧವಾಗಿದೆ',
+    'ml': 'സ്കാൻ തയ്യാറാണ്',
+    'en': 'SCAN READY',
+  });
+
+  static String get acceptAndBind => tr({
+    'hi': 'स्वीकार करें और बाइंड करें',
+    'gu': 'સ્વીકારો અને બાઇન્ડ કરો',
+    'mr': 'स्वीकारा आणि बाइंड करा',
+    'ta': 'ஏற்றுக்கொண்டு இணைக்கவும்',
+    'te': 'అంగీకరించి బైండ్ చేయండి',
+    'en': 'Accept & Bind',
+  });
+
+  static String get reportLoadingText => tr({
+    'hi': 'रिपोर्ट लोड हो रही है, कृपया प्रतीक्षा करें...',
+    'gu': 'રિપોર્ટ લોડ થઈ રહ્યો છે, કૃપા કરીને રાહ જુઓ...',
+    'mr': 'अहवाल लोड होत आहे, कृपया वाट पाहा...',
+    'ta': 'அறிக்கை ஏற்றப்படுகிறது, தயவுசெய்து காத்திருக்கவும்...',
+    'te': 'నివేదిక లోడ్ అవుతోంది, దయచేసి నిరీక్షించండి...',
+    'bn': 'রিপোর্ট লোড হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...',
+    'en': 'Report Loading, Please Wait...',
+  });
+
+  static String get reportGeneratingText => tr({
+    'hi': 'फ़िंगरप्रिंट सफलतापूर्वक सर्वर पर अपलोड हो गए! AI न्यूरोकोर्टेक्स रिपोर्ट तैयार हो रही है...',
+    'gu': 'ફિંગરપ્રિન્ટ સફળતાપૂર્વક અપલોડ થઈ ગયા! AI ન્યુરોકોર્ટેક્સ રિપોર્ટ તૈયાર થઈ રહ્યો છે...',
+    'mr': 'फिंगरप्रिंट यशस्वीरीत्या अपलोड झाले! AI न्यूरोकोर्टेक्स अहवाल तयार होत आहे...',
+    'ta': 'கைரேகைகள் வெற்றிகரமாக பதிவேற்றப்பட்டன! AI நரம்பியல் அறிக்கை உருவாக்கப்படுகிறது...',
+    'te': 'వేలిముద్రలు విజయవంతంగా అప్‌లోడ్ అయ్యాయి! AI న్యూరోకార్టెక్స్ నివేదిక రూపొందించబడుతోంది...',
+    'en': 'Fingerprints uploaded successfully to server! Generating AI Biometric Neocortex Report...',
+  });
+
+  static String get reportGeneratingSoon => tr({
+    'hi': ' आपकी रिपोर्ट जल्द ही तैयार हो रही है ',
+    'gu': ' તમારો રિપોર્ટ ટૂંક સમયમાં જનરેટ થઈ રહ્યો છે ',
+    'mr': ' तुमचा अहवाल लवकरच तयार होत आहे ',
+    'ta': ' உங்கள் அறிக்கை விரைவில் உருவாக்கப்படுகிறது ',
+    'te': ' మీ నివేదిక త్వరలో రూపొందించబడుతోంది ',
+    'bn': ' আপনার রিপোর্ট শীঘ্রই তৈরি হচ্ছে ',
+    'kn': ' ನಿಮ್ಮ ವರದಿ ಶೀಘ್ರದಲ್ಲೇ ಜನರೇಟ್ ಆಗುತ್ತಿದೆ ',
+    'ml': ' നിങ്ങളുടെ റിപ്പോർട്ട് ഉടൻ തയ്യാറാകുന്നു ',
+    'pa': ' ਤੁਹਾਡੀ ਰਿਪੋਰਟ ਜਲਦੀ ਹੀ ਤਿਆਰ ਹੋ ਰਹੀ ਹੈ ',
+    'or': ' ଆପଣଙ୍କ ରିପୋର୍ଟ ଶୀଘ୍ର ପ୍ରସ୍ତୁତ ହେଉଛି ',
+    'as': ' আপোনাৰ ৰিপোৰ্ট সোনকালে প্ৰস্তুত কৰা হৈছে ',
+    'ur': ' آپ کی رپورٹ جلد ہی تیار ہو رہی ہے ',
+    'en': ' Your Report is Generating Soon ',
+  });
+
+  static String get fingerprintsUploadedSuccess => tr({
+    'hi': 'फिंगरप्रिंट सफलतापूर्वक अपलोड हो गए',
+    'gu': 'ફિંગરપ્રિન્ટ સફળતાપૂર્વક અપલોડ થઈ ગયા',
+    'mr': 'फिंगरप्रिंट यशस्वीरीत्या अपलोड झाले',
+    'ta': 'கைரேகைகள் வெற்றிகரமாக பதிவேற்றப்பட்டன',
+    'te': 'వేలిముద్రలు విజయవంతంగా అప్‌లోడ్ అయ్యాయి',
+    'bn': 'ফিঙ্গারপ্রিন্ট সফলভাবে আপলোড হয়েছে',
+    'kn': 'ಫಿಂಗರ್‌ಪ್ರಿಂಟ್‌ಗಳು ಯಶಸ್ವಿಯಾಗಿ ಅಪ್‌ಲೋಡ್ ಆಗಿವೆ',
+    'ml': 'വിരലടയാളങ്ങൾ വിജയകരമായി അപ്‌ലോഡ് ചെയ്തു',
+    'pa': 'ਫਿੰਗਰਪ੍ਰਿੰਟ ਸਫਲਤਾਪੂਰਵਕ ਅੱਪਲੋਡ ਹੋ ਗਏ',
+    'or': 'ଫିଙ୍ଗରପ୍ରିଣ୍ଟ ସଫଳତାର ସହିତ ଅପଲୋଡ୍ ହୋଇଛି',
+    'en': 'Fingerprints uploaded successfully',
+  });
+
+  static String reportAnalyzingFor(String name) => tr({
+    'hi': '$name के लिए डेटा का विश्लेषण और आपकी रिपोर्ट तैयार की जा रही है...',
+    'gu': '$name માટે ડેટાનું વિશ્લેષણ અને તમારો રિપોર્ટ તૈયાર કરવામાં આવી રહ્યો છે...',
+    'mr': '$name साठी डेटाचे विश्लेषण आणि तुमचा अहवाल तयार केला जात आहे...',
+    'ta': '$name க்கான தரவு பகுப்பாய்வு செய்யப்பட்டு அறிக்கை தயாரிக்கப்படுகிறது...',
+    'te': '$name కోసం డేటా విశ్లేషించబడుతోంది మరియు మీ నివేదిక రూపొందించబడుతోంది...',
+    'bn': '$name-এর জন্য ডেটা বিশ্লেষণ করা হচ্ছে এবং রিপোর্ট তৈরি হচ্ছে...',
+    'kn': '$name ಗಾಗಿ ಡೇಟಾವನ್ನು ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ ಮತ್ತು ನಿಮ್ಮ ವರದಿಯನ್ನು ಸಿದ್ಧಪಡಿಸಲಾಗುತ್ತಿದೆ...',
+    'ml': '$name എന്നതിനായുള്ള ഡാറ്റ വിശകലനം ചെയ്യുകയും നിങ്ങളുടെ റിപ്പോർട്ട് തയ്യാറാക്കുകയും ചെയ്യുന്നു...',
+    'en': 'Analyzing data for $name and building your Report...',
+  });
+
+  static String get takesFewMoments => tr({
+    'hi': 'इसमें कुछ क्षण लग सकते हैं',
+    'gu': 'આમાં થોડો સમય લાગી શકે છે',
+    'mr': 'याला काही क्षण लागू शकतात',
+    'ta': 'இதற்கு சில நிமிடங்கள் ஆகலாம்',
+    'te': 'దీనికి కొద్ది సమయం పట్టవచ్చు',
+    'bn': 'এতে কিছু মুহূর্ত সময় লাগতে পারে',
+    'kn': 'ಇದಕ್ಕೆ ಕೆಲವು ಕ್ಷಣಗಳು పట్టవచ్చు',
+    'ml': 'ഇതിന് ചില നിമിഷങ്ങൾ എടുത്തേക്കാം',
+    'en': 'This may take a few moments',
+  });
 
   // ── FREEMIUM & UPGRADE PAYWALL ──
-  static String get freemiumTagline => isHindi ? 'फ्रीमियम योजना संरचना' : 'Freemium Plan Architecture';
-  static String get unlockFullSuiteTitle => isHindi ? 'पूर्ण संज्ञानात्मक सुइट अनलॉक करें' : 'Unlock Full Cognitive Suite';
-  static String get unlockFullSuiteSubtitle => isHindi
-      ? 'मुफ्त योजना में पर्सनालिटी टाइप शामिल है। सभी 8 बुद्धिमत्ता और मस्तिष्क संतुलन अनलॉक करने के लिए अपग्रेड करें।'
-      : 'Free plan includes full Personality Type. Unlock all 8 Intelligences, 5 Senses, Brain Dominance & Live Sessions.';
-  static String get currentFreemiumBreakdown => isHindi ? 'वर्तमान फ्रीमियम विवरण' : 'CURRENT FREEMIUM BREAKDOWN';
-  static String get basicFreeTier => isHindi ? 'बेसिक फ्री टियर' : 'BASIC FREE TIER';
-  static String get freeForever => isHindi ? 'हमेशा मुफ़्त' : 'Free Forever';
-  static String get unlocksOnPay => isHindi ? 'भुगतान पर अनलॉक' : 'Unlocks on Pay';
-  static String get familyVipPackTitle => isHindi ? 'फैमिली वीआईपी पैक (अनुशंसित)' : 'Family VIP Pack (Recommended)';
-  static String get familyVipPackSubtitle => isHindi ? '5 परिवार के सदस्यों तक • सभी रिपोर्ट + लाइव काउंसलर स्लॉट' : 'Up to 5 Family Members • All reports + Live Counselor slot';
-  static String get familyVipPrice => '₹999';
-  static String get familyVipOriginalPrice => '₹2,999';
-  static String get singleStudentPassTitle => isHindi ? 'सिंगल स्टूडेंट पास' : 'Single Student Pass';
-  static String get singleStudentPassSubtitle => isHindi ? '1 छात्र के लिए सभी रिपोर्ट का आजीवन एक्सेस' : '1 Student lifetime access to all unlocked reports';
-  static String get singleStudentPrice => '₹499';
-  static String get singleStudentOriginalPrice => '₹1,499';
-  static String get payAndUnlockNow => isHindi ? 'अभी भुगतान करें और सब कुछ अनलॉक करें ✨' : 'Pay & Unlock Everything Now ✨';
-  static String get bestValueBadge => isHindi ? 'सबसे अच्छा मूल्य' : 'Best Value';
-  static String get freeTierPreviewActive => isHindi ? 'फ्री टियर पूर्वावलोकन सक्रिय' : 'Free Tier Preview Active';
-  static String get freeTierPreviewSubtitle => isHindi
-      ? 'पर्सनालिटी टाइप 100% अनलॉक है। पूर्ण पीडीएफ निर्यात प्रीमियम तक लॉक रहेगा।'
-      : 'Personality Type is 100% unlocked. Full PDF export & multi-intelligence drilldowns lock until Premium.';
+  static String get freeTierPreviewActive => tr({
+    'hi': 'फ्री टियर पूर्वावलोकन सक्रिय',
+    'gu': 'ફ્રી ટાયર પૂર્વાવલોકન સક્રિય',
+    'mr': 'फ्री टियर पूर्वावलोकन सक्रिय',
+    'ta': 'இலவச முன்னோட்டம் செயலில் உள்ளது',
+    'te': 'ఉచిత పరిచేదన ప్రారంభించబడింది',
+    'bn': 'ফ্রি টায়ার প্রিভিউ সক্রিয়',
+    'en': 'Free Tier Preview Active',
+  });
+
+  static String get freeTierPreviewSubtitle => tr({
+    'hi': 'पर्सनालिटी टाइप 100% अनलॉक है। पूर्ण पीडीएफ निर्यात प्रीमियम तक लॉक रहेगा।',
+    'gu': 'પર્સનાલિટી ટાઇપ 100% અનલોક છે. પૂરું PDF નિકાસ પ્રીમિયમ સુધી લોક રહેશે.',
+    'mr': 'पर्सनालिटी टाईप 100% अनलॉक आहे. पूर्ण PDF एक्सपोर्ट प्रीमियमपर्यंत लॉक राहील.',
+    'ta': 'ஆளுமை வகை 100% திறக்கப்பட்டுள்ளது. முழு PDF ஏற்றுமதி பிரீமியம் வரை பூட்டப்படும்.',
+    'te': 'వ్యక్తిత్వ రకం 100% అన్‌లాక్ చేయబడింది. పూర్తి PDF ఎగుమతి ప్రీమియం వరకు లాక్ చేయబడుతుంది.',
+    'en': 'Personality Type is 100% unlocked. Full PDF export & multi-intelligence drilldowns lock until Premium.',
+  });
 
   // ── COGNITIVE ASSESSMENTS ──
-  static String get multiIntelligenceTitle => isHindi ? '8 बहु-बुद्धिमत्ता (Multiple Intelligences)' : '8 Multiple Intelligences';
-  static String get brainDominanceTitle => isHindi ? 'मस्तिष्क प्रधानता और संतुलन' : 'Brain Dominance & Balance';
-  static String get fiveSensesTitle => isHindi ? '5 इंद्रियां सीखने की शैली (VAK)' : '5 Senses Sensory Modalities';
-  static String get personalityBlendTitle => isHindi ? 'DISC पर्सनालिटी मिश्रण' : 'DISC Personality Blend';
-  static String get swotMatrixTitle => isHindi ? 'SWOT विश्लेषण और मैट्रिक्स' : 'SWOT Analysis & Matrix';
-  static String get careerMatchTitle => isHindi ? 'सटीक संकाय और करियर मैच' : 'Precision Stream & Career Matches';
-  static String get unlockPersonalizedRecommendations => isHindi ? 'व्यक्तिगत अनुशंसाएं अनलॉक करें 👑' : 'Unlock Personalized Recommendations 👑';
+  static String get multiIntelligenceTitle => tr({
+    'hi': '8 बहु-बुद्धिमत्ता (Multiple Intelligences)',
+    'gu': '8 મલ્ટીપલ ઇન્ટેલિજન્સ',
+    'mr': '8 बहु-बुद्धिमत्ता',
+    'ta': '8 பன்முக நுண்ணறிவுகள்',
+    'te': '8 బహుళ మేధస్సులు',
+    'bn': '৮টি বহুমাত্রিক বুদ্ধিমত্তা',
+    'en': '8 Multiple Intelligences',
+  });
+
+  static String get brainDominanceTitle => tr({
+    'hi': 'मस्तिष्क प्रधानता और संतुलन',
+    'gu': 'મગજનું પ્રભુત્વ અને સંતુલન',
+    'mr': 'मेंदूचे वर्चस्व आणि संतुलन',
+    'ta': 'மூளை ஆதிக்கம் & சமநிலை',
+    'te': 'మెదడు ఆధిపత్యం & సమతుల్యత',
+    'en': 'Brain Dominance & Balance',
+  });
+
+  static String get fiveSensesTitle => tr({
+    'hi': '5 इंद्रियां सीखने की शैली (VAK)',
+    'gu': '5 ઇન્દ્રિયો શીખવાની શૈલી (VAK)',
+    'mr': '5 ज्ञानेंद्रिये शिकण्याची शैली (VAK)',
+    'ta': '5 புலன்கள் கற்றல் பாணி (VAK)',
+    'te': '5 జ్ఞానేంద్రియాల అభ్యాస శైలి (VAK)',
+    'en': '5 Senses Sensory Modalities',
+  });
+
+  static String get personalityBlendTitle => tr({
+    'hi': 'DISC पर्सनालिटी मिश्रण',
+    'gu': 'DISC પર્સનાલિટી મિશ્રણ',
+    'mr': 'DISC व्यक्तिमत्त्व मिश्रण',
+    'ta': 'DISC ஆளுமை கலவை',
+    'te': 'DISC వ్యక్తిత్వ కలయిక',
+    'en': 'DISC Personality Blend',
+  });
+
+  static String get swotMatrixTitle => tr({
+    'hi': 'SWOT विश्लेषण और मैट्रिक्स',
+    'gu': 'SWOT વિશ્લેષણ અને મેટ્રિક્સ',
+    'mr': 'SWOT विश्लेषण आणि मॅट्रिक्स',
+    'ta': 'SWOT பகுப்பாய்வு & மேட்ரிக்ஸ்',
+    'te': 'SWOT విశ్లేషణ & మ్యాట్రిక్స్',
+    'en': 'SWOT Analysis & Matrix',
+  });
+
+  static String get careerMatchTitle => tr({
+    'hi': 'सटीक संकाय और करियर मैच',
+    'gu': 'ચોક્કસ ક્ષેત્ર અને કરિયર મેચ',
+    'mr': 'अचूक क्षेत्र आणि करिअर मॅच',
+    'ta': 'துல்லியமான தொழில் தேர்வு',
+    'te': 'ఖచ్చితమైన కెరీర్ మ్యాచ్',
+    'en': 'Precision Stream & Career Matches',
+  });
+
+  static String get unlockPersonalizedRecommendations => tr({
+    'hi': 'व्यक्तिगत अनुशंसाएं अनलॉक करें 👑',
+    'gu': 'વ્યક્તિગત ભલામણો અનલોક કરો 👑',
+    'mr': 'वैयक्तिक शिफारसी अनलॉक करा 👑',
+    'ta': 'தனிப்பயனாக்கப்பட்ட பரிந்துரைகளைத் திறக்கவும் 👑',
+    'te': 'వ్యక్తిగతీకరించిన సిఫార్సులను అన్‌లాక్ చేయండి 👑',
+    'en': 'Unlock Personalized Recommendations 👑',
+  });
 
   // ── DIALOGS & MESSAGES ──
-  static String get addMemberTitle => isHindi ? 'परिवार के सदस्य को जोड़ें' : 'Add Family Member';
-  static String get candidateMembers => isHindi ? 'उम्मीदवार सदस्य' : 'Candidate Members';
-  static String get noMembersYet => isHindi ? 'अभी कोई सदस्य नहीं हैं' : 'No members yet';
-  static String get nameInputLabel => isHindi ? 'पूरा नाम' : 'Full Name';
-  static String get classInputLabel => isHindi ? 'कक्षा / ग्रेड' : 'Grade / Class';
-  static String get mobileInputLabel => isHindi ? 'मोबाइल नंबर' : 'Mobile Number';
-  static String get signOutTitle => isHindi ? 'साइन आउट' : 'Sign Out';
-  static String get signOutConfirm => isHindi ? 'क्या आप साइन आउट करना और खाता बदलना चाहते हैं?' : 'Are you sure you want to sign out and switch accounts?';
-  static String get noReportFoundTitle => isHindi ? 'कोई रिपोर्ट नहीं मिली' : 'No Report Found';
-  static String get noReportFoundDesc => isHindi
-      ? 'इस सदस्य के लिए अभी तक कोई बायोमेट्रिक रिपोर्ट तैयार नहीं की गई है। कृपया रिपोर्ट तैयार करने के लिए 10-उंगली स्कैन पूरा करें।'
-      : 'No biometric report has been generated yet for this member. Please complete the 10-finger scan to generate the certified assessment report.';
-  static String get preferencesAndSupport => isHindi ? 'प्राथमिकताएं और सहायता' : 'Preferences & Support';
-  static String get dailyReminders => isHindi ? 'दैनिक AI परामर्शदाता रिमाइंडर' : 'Daily AI Counselor Reminders';
-  static String get dataPrivacy => isHindi ? 'मूल्यांकन डेटा गोपनीयता' : 'Assessment Data Privacy';
-  static String get mentorshipHotline => isHindi ? 'सहायता और छात्र मार्गदर्शन हॉटलाइन' : 'Help & Student Mentorship Hotline';
-  static String get supportText => isHindi ? 'सहायता →' : 'Support →';
-  static String get activeText => isHindi ? 'सक्रिय' : 'Active';
-  static String get adminRole => isHindi ? 'एडमिन' : 'Admin';
-  static String get lockedTag => isHindi ? 'लॉक' : 'Locked';
+  static String get addMemberTitle => tr({
+    'hi': 'परिवार के सदस्य को जोड़ें',
+    'gu': 'પરિવારના સભ્યને ઉમેરો',
+    'mr': 'कुटुंबातील सदस्य जोडा',
+    'ta': 'குடும்ப உறுப்பினரைச் சேர்க்கவும்',
+    'te': 'కుటుంబ సభ్యుడిని జోడించండి',
+    'en': 'Add Family Member',
+  });
+
+  static String get candidateMembers => tr({
+    'hi': 'उम्मीदवार सदस्य',
+    'gu': 'ઉમેદવાર સભ્યો',
+    'mr': 'उमेदवार सदस्य',
+    'ta': 'வேட்பாளர் உறுப்பினர்கள்',
+    'te': 'అభ్యర్థి సభ్యులు',
+    'en': 'Candidate Members',
+  });
+
+  static String get noMembersYet => tr({
+    'hi': 'अभी कोई सदस्य नहीं हैं',
+    'gu': 'હજી સુધી કોઈ સભ્યો નથી',
+    'mr': 'अजून कोणताही सदस्य नाही',
+    'ta': 'இன்னும் உறுப்பினர்கள் இல்லை',
+    'te': 'ఇంకా సభ్యులు లేరు',
+    'en': 'No members yet',
+  });
+
+  static String get nameInputLabel => tr({
+    'hi': 'पूरा नाम',
+    'gu': 'પૂરું નામ',
+    'mr': 'पूर्ण नाव',
+    'ta': 'முழு பெயர்',
+    'te': 'పూర్తి పేరు',
+    'en': 'Full Name',
+  });
+
+  static String get classInputLabel => tr({
+    'hi': 'कक्षा / ग्रेड',
+    'gu': 'ધોરણ / ગ્રેડ',
+    'mr': 'इयत्ता / ग्रेड',
+    'ta': 'வகுப்பு / தரம்',
+    'te': 'తరగతి / గ్రేడ్',
+    'en': 'Grade / Class',
+  });
+
+  static String get mobileInputLabel => tr({
+    'hi': 'मोबाइल नंबर',
+    'gu': 'મોબાઇલ નંબર',
+    'mr': 'मोबाईल नंबर',
+    'ta': 'கைப்பேசி எண்',
+    'te': 'మొబైల్ సంఖ్య',
+    'en': 'Mobile Number',
+  });
+
+  static String get signOutTitle => tr({
+    'hi': 'साइन आउट',
+    'gu': 'સાઇન આઉટ',
+    'mr': 'साइन आउट',
+    'ta': 'வெளியேறு',
+    'te': 'సైన్ అవుట్',
+    'en': 'Sign Out',
+  });
+
+  static String get signOutConfirm => tr({
+    'hi': 'क्या आप साइन आउट करना और खाता बदलना चाहते हैं?',
+    'gu': 'શું તમે સાઇન આઉટ કરવા અને ખાતું બદલવા માંગો છો?',
+    'mr': 'तुम्हाला साइन आउट करून खाते बदलायचे आहे का?',
+    'ta': 'நீங்கள் வெளியேறி கணக்கை மாற்ற விரும்புகிறீர்களா?',
+    'te': 'మీరు సైన్ అవుట్ చేసి ఖాతాను మార్చాలనుకుంటున్నారా?',
+    'en': 'Are you sure you want to sign out and switch accounts?',
+  });
+
+  static String get noReportFoundTitle => tr({
+    'hi': 'कोई रिपोर्ट नहीं मिली',
+    'gu': 'કોઈ રિપોર્ટ મળ્યો નથી',
+    'mr': 'कोणताही अहवाल सापडला नाही',
+    'ta': 'அறிக்கை எதுவும் கிடைக்கவில்லை',
+    'te': 'ఏ నివేదిక కనుగొనబడలేదు',
+    'en': 'No Report Found',
+  });
+
+  static String get noReportFoundDesc => tr({
+    'hi': 'इस सदस्य के लिए अभी तक कोई बायोमेट्रिक रिपोर्ट तैयार नहीं की गई है। कृपया रिपोर्ट तैयार करने के लिए 10-उंगली स्कैन पूरा करें।',
+    'gu': 'આ સભ્ય માટે હજી સુધી કોઈ રિપોર્ટ જનરેટ થયો નથી. કૃપા કરીને 10 આંગળીઓનો સ્કેન પૂરો કરો.',
+    'mr': 'या सदस्यासाठी अजून कोणताही अहवाल तयार केलेला नाही. कृपया 10 बोटांचे स्कॅन पूर्ण करा.',
+    'ta': 'இந்த உறுப்பினருக்கு இன்னும் அறிக்கை உருவாக்கப்படவில்லை. 10 விரல் ஸ்கேனை முடிக்கவும்.',
+    'te': 'ఈ సభ్యుడికి ఇంకా నివేదిక రూపొందించబడలేదు. దయచేసి 10 వేళ్ల స్కాన్‌ను పూర్తి చేయండి.',
+    'en': 'No biometric report has been generated yet for this member. Please complete the 10-finger scan to generate the certified assessment report.',
+  });
+
+  static String get preferencesAndSupport => tr({
+    'hi': 'प्राथमिकताएं और सहायता',
+    'gu': 'પસંદગીઓ અને સપોર્ટ',
+    'mr': 'प्राधान्यक्रम आणि समर्थन',
+    'ta': 'விருப்பத்தேர்வுகள் & ஆதரவு',
+    'te': 'ప్రాధాన్యతలు & మద్దతు',
+    'en': 'Preferences & Support',
+  });
+
+  static String get dailyReminders => tr({
+    'hi': 'दैनिक AI परामर्शदाता रिमाइंडर',
+    'gu': 'દૈનિક AI કાઉન્સેલર રિમાઇન્ડર',
+    'mr': 'दैनंदिन AI समुपदेशक स्मरणपत्रे',
+    'ta': 'தினசரி AI ஆலோசகர் நினைவூட்டல்கள்',
+    'te': 'రోజువారీ AI కౌన్సెలర్ రిమైండర్లు',
+    'en': 'Daily AI Counselor Reminders',
+  });
+
+  static String get dataPrivacy => tr({
+    'hi': 'मूल्यांकन डेटा गोपनीयता',
+    'gu': 'મૂલ્યાંકન ડેટા ગોપનીયતા',
+    'mr': 'मूल्यमापन डेटा गोपनीयता',
+    'ta': 'மதிப்பீட்டு தரவு গোপনীয়তা',
+    'te': 'అంచనా డేటా గోప్యత',
+    'en': 'Assessment Data Privacy',
+  });
+
+  static String get mentorshipHotline => tr({
+    'hi': 'सहायता और छात्र मार्गदर्शन हॉटलाइन',
+    'gu': 'સપોર્ટ અને વિદ્યાર્થી માર્ગદર્શન હોટલાઇન',
+    'mr': 'समर्थन आणि विद्यार्थी मार्गदर्शन हॉटलाइन',
+    'ta': 'ஆதரவு & மாணவர் வழிகாட்டுதல் உதவி எண்',
+    'te': 'మద్దతు & విద్యార్థి మార్గదర్శకత్వం హాట్‌లైన్',
+    'en': 'Help & Student Mentorship Hotline',
+  });
+
+  static String get supportText => tr({
+    'hi': 'सहायता →',
+    'gu': 'સપોર્ટ →',
+    'mr': 'समर्थन →',
+    'ta': 'ஆதரவு →',
+    'te': 'మద్దతు →',
+    'en': 'Support →',
+  });
+
+  static String get activeText => tr({
+    'hi': 'सक्रिय',
+    'gu': 'સક્રિય',
+    'mr': 'सक्रिय',
+    'ta': 'செயலில்',
+    'te': 'యాక్టివ్',
+    'en': 'Active',
+  });
+
+  static String get adminRole => tr({
+    'hi': 'एडमिन',
+    'gu': 'એડમિન',
+    'mr': 'ॲडमिन',
+    'ta': 'நிர்வாகி',
+    'te': 'అడ్మిన్',
+    'en': 'Admin',
+  });
+
+  static String get lockedTag => tr({
+    'hi': 'लॉक',
+    'gu': 'લોક',
+    'mr': 'लॉक',
+    'ta': 'பூட்டப்பட்டது',
+    'te': 'లాక్',
+    'en': 'Locked',
+  });
+
+  // ── APP UPDATE DIALOG ──
+  static String get updateRequiredTitle => tr({
+    'hi': 'अपडेट आवश्यक है 🚀',
+    'gu': 'અપડેટ જરૂરી છે 🚀',
+    'mr': 'अपडेट आवश्यक आहे 🚀',
+    'ta': 'புதுப்பிப்பு தேவை 🚀',
+    'te': 'అప్‌డేట్ అవసరం 🚀',
+    'en': 'Update Required 🚀',
+  });
+
+  static String get updateRequiredMessage => tr({
+    'hi': 'दक्ष का एक नया संस्करण प्ले स्टोर पर उपलब्ध है। ऐप का उपयोग जारी रखने के लिए कृपया अपडेट करें।',
+    'gu': 'દક્ષનું નવું વર્ઝન પ્લે સ્ટોર પર ઉપલબ્ધ છે. કૃપા કરીને એપ વાપરવા માટે અપડેટ કરો.',
+    'mr': 'दक्षची नवीन आवृत्ती प्ले स्टोअरवर उपलब्ध आहे. कृपया ॲप वापरणे सुरू ठेवण्यासाठी अपडेट करा.',
+    'ta': 'தக்ஷின் புதிய பதிப்பு ப்ளே ஸ்டோரில் கிடைக்கிறது. தயவுசெய்து புதுப்பிக்கவும்.',
+    'te': 'దక్ష్ యొక్క కొత్త వెర్షన్ ప్లే స్టోర్‌లో అందుబాటులో ఉంది. దయచేసి అప్‌డేట్ చేయండి.',
+    'en': 'A new version of Daksh is available on the Play Store. Please update to continue using the application.',
+  });
+
+  static String get enterDevTokenHint => tr({
+    'hi': 'डेवलपर टोकन दर्ज करें...',
+    'en': 'Enter Developer Token...',
+  });
+
+  static String get updateNowBtn => tr({
+    'hi': 'अभी अपडेट करें',
+    'gu': 'હવે અપડેટ કરો',
+    'mr': 'आत्ताच अपडेट करा',
+    'ta': 'இப்போது புதுப்பிக்கவும்',
+    'te': 'ఇప్పుడే అప్‌డేట్ చేయండి',
+    'en': 'Update Now',
+  });
+
+  static String get devLoginBtn => tr({
+    'hi': 'डेवलपर लॉगिन',
+    'en': 'Developer Login',
+  });
 
   // ── BUTTONS & ACTIONS ──
-  static String get unlockAll => isHindi ? 'सभी अनलॉक करें 👑' : 'Unlock All 👑';
-  static String get viewMore => isHindi ? 'और देखें' : 'View More';
-  static String get addMember => isHindi ? '+ सदस्य जोड़ें' : '+ Add Member';
-  static String get signOut => isHindi ? 'साइन आउट / खाता बदलें' : 'Sign Out / Switch Account';
-  static String get cancel => isHindi ? 'रद्द करें' : 'Cancel';
-  static String get retry => isHindi ? 'पुनः प्रयास करें' : 'Retry';
-  static String get close => isHindi ? 'बंद करें' : 'Close';
-  static String get proceedToScan => isHindi ? '10-उंगली बायोमेट्रिक स्कैन पर आगे बढ़ें' : 'Proceed to 10–Finger Biometric Scan';
-  static String get exportLocked => isHindi ? 'निर्यात (लॉक)' : 'Export (Locked)';
+  static String get unlockAll => tr({
+    'hi': 'सभी अनलॉक करें 👑',
+    'gu': 'બધા અનલોક કરો 👑',
+    'mr': 'सर्व अनलॉक करा 👑',
+    'ta': 'அனைத்தையும் திறக்கவும் 👑',
+    'te': 'అన్నీ అన్‌లాక్ చేయండి 👑',
+    'en': 'Unlock All 👑',
+  });
+
+  static String get viewMore => tr({
+    'hi': 'और देखें',
+    'gu': 'વધુ જુઓ',
+    'mr': 'અજૂન પહા',
+    'ta': 'மேலும் காண்க',
+    'te': 'మరిన్ని చూడండి',
+    'en': 'View More',
+  });
+
+  static String get proceedToScan => tr({
+    'hi': '10-उंगली बायोमेट्रिक स्कैन पर आगे बढ़ें',
+    'gu': '10-આંગળી બાયોમેટ્રિક સ્કેન પર આગળ વધો',
+    'mr': '10-बोटे बायोमेट्रिक स्कॅनवर पुढे जा',
+    'ta': '10-விரல் பயோமெட்ரிக் ஸ்கேனுக்குச் செல்லவும்',
+    'te': '10-వేళ్ల బయోమెట్రిక్ స్కాన్‌కు వెళ్లండి',
+    'en': 'Proceed to 10–Finger Biometric Scan',
+  });
 }

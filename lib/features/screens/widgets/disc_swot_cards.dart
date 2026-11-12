@@ -1,7 +1,9 @@
 import 'package:daksh/features/screens/widgets/swot_content.dart';
 import 'package:flutter/material.dart';
+import '../../../core/constants/app_strings.dart';
 import '../../../core/models/user_profile.dart';
 import '../../../data/models/personalityblenResponse.dart';
+import '../../../core/localization/app_localizations.dart';
 import '../../../shared/widgets/section_card.dart';
 import '../../../shared/widgets/status_badge.dart';
 import '../../../shared/widgets/unlock_button.dart';
@@ -135,7 +137,7 @@ class SwotAnalysisCard extends StatelessWidget {
             child: Text('🛡️', style: TextStyle(fontSize: 20)),
           ),
         ),
-        title: 'SWOT ANALYSIS',
+        title: AppLocalizations.of(context)?.swotMatrixTitle ?? AppStrings.swotMatrixTitle,
         badge: StatusBadge.completed(),
         subtitle: 'Understand strengths, weaknesses and opportunities.',
         child: Row(

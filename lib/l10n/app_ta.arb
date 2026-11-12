@@ -1,0 +1,36 @@
+{
+  "@@locale": "ta",
+  "appName": "தக்ஷ் ஸ்டூடண்ட் புரோ",
+  "appVersion": "v2.4.0",
+  "appTagline": "AI DISC & மல்டி-இன்டலிஜென்ஸ் விரிவான மதிப்பீடு",
+  "homeTitle": "டெர்மட்டோகிளிஃபிக்ஸ் நெறிமுறை",
+  "whyTakeDmit": "ஏன் DMIT எடுக்க வேண்டும்?",
+  "reportTitle": "ஒட்டுமொத்த அறிக்கை",
+  "reportSubtitle": "சான்றளிக்கப்பட்ட மதிப்பீட்டு கோப்பு",
+  "candidateTitle": "பகுப்பாய்வு செய்ய உறுப்பினரைத் தேர்ந்தெடுக்கவும்",
+  "activeCandidateLabel": "செயலில் உள்ள வேட்பாளர் சுயவிவரம்",
+  "allCandidatesTitle": "அனைத்து வேட்பாளர்களும்",
+  "searchCandidatesHint": "பெயர் அல்லது எண்ணால் தேடவும்",
+  "scan10Fingers": "பகுப்பாய்வைத் தொடங்கு (10 விரல்களை ஸ்கேன் செய்)",
+  "groupScanTitle": "குழு பயன்முறை (4 விரல்கள் & பெருவிரல்கள்)",
+  "individualScanTitle": "ஒற்றை கைரேகை பயன்முறை ⭐",
+  "scanReady": "ஸ்கேன் தயார்",
+  "reportGeneratingSoon": " உங்கள் அறிக்கை விரைவில் உருவாக்கப்படுகிறது ",
+  "fingerprintsUploadedSuccess": "கைரேகைகள் வெற்றிகரமாக பதிவேற்றப்பட்டன",
+  "reportAnalyzingFor": "{name} க்கான தரவு பகுப்பாய்வு செய்யப்பட்டு அறிக்கை தயாரிக்கப்படுகிறது...",
+  "@reportAnalyzingFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "takesFewMoments": "இதற்கு சில நிமிடங்கள் ஆகலாம்",
+  "addMember": "+ உறுப்பினரைச் சேர்",
+  "signOut": "வெளியேறு / கணக்கை மாற்று",
+  "cancel": "ரத்து செய்",
+  "retry": "மீண்டும் முயற்சிக்கவும்",
+  "close": "மூடு",
+  "unlockAll": "அனைத்தையும் திறக்கவும் 👑",
+  "exportLocked": "ஏற்றுமதி (பூட்டப்பட்டது)"
+}

@@ -1,0 +1,36 @@
+{
+  "@@locale": "bn",
+  "appName": "দক্ষ স্টুডেন্ট প্রো",
+  "appVersion": "v2.4.0",
+  "appTagline": "AI DISC এবং মাল্টি-ইন্টেলিজেন্স বিস্তৃত মূল্যায়ন",
+  "homeTitle": "ডার্মাটোগ্লিফিক্স প্রোটোকল",
+  "whyTakeDmit": "কেন DMIT নেবেন?",
+  "reportTitle": "সামগ্রিক রিপোর্ট",
+  "reportSubtitle": "সার্টিফাইড মূল্যায়ন ফাইল",
+  "candidateTitle": "বিশ্লেষণের জন্য সদস্য নির্বাচন করুন",
+  "activeCandidateLabel": "সক্রিয় প্রার্থীর প্রোফাইল",
+  "allCandidatesTitle": "সকল প্রার্থী",
+  "searchCandidatesHint": "নাম বা নম্বর দিয়ে খুঁজুন",
+  "scan10Fingers": "বিশ্লেষণ শুরু করুন (১০টি আঙুল স্ক্যান করুন)",
+  "groupScanTitle": "গ্রুপ মোড (৪টি আঙুল এবং বুড়ো আঙুল)",
+  "individualScanTitle": "একক ফিঙ্গারপ্রিন্ট মোড ⭐",
+  "scanReady": "স্ক্যান প্রস্তুত",
+  "reportGeneratingSoon": " আপনার রিপোর্ট শীঘ্রই তৈরি হচ্ছে ",
+  "fingerprintsUploadedSuccess": "ফিঙ্গারপ্রিন্ট সফলভাবে আপলোড হয়েছে",
+  "reportAnalyzingFor": "{name}-এর জন্য ডেটা বিশ্লেষণ করা হচ্ছে এবং রিপোর্ট তৈরি হচ্ছে...",
+  "@reportAnalyzingFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "takesFewMoments": "এতে কিছু মুহূর্ত সময় লাগতে পারে",
+  "addMember": "+ সদস্য যোগ করুন",
+  "signOut": "সাইন আউট / অ্যাকাউন্ট পরিবর্তন করুন",
+  "cancel": "বাতিল করুন",
+  "retry": "আবার চেষ্টা করুন",
+  "close": "বন্ধ করুন",
+  "unlockAll": "সব আনলক করুন 👑",
+  "exportLocked": "রপ্তানি (লক করা)"
+}

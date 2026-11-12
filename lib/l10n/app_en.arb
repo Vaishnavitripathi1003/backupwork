@@ -1,0 +1,45 @@
+{
+  "@@locale": "en",
+  "appName": "Daksh Student Pro",
+  "appVersion": "v2.4.0",
+  "appTagline": "AI DISC & Multi-Intelligence Comprehensive Battery",
+  "homeTitle": "DERMATOGLYPHICS PROTOCOL",
+  "whyTakeDmit": "Why Take DMIT?",
+  "reportTitle": "Holistic Report",
+  "reportSubtitle": "Certified Assessment dossier",
+  "candidateTitle": "Select Member to Analyze",
+  "activeCandidateLabel": "ACTIVE CANDIDATE PROFILE",
+  "allCandidatesTitle": "All Candidates",
+  "searchCandidatesHint": "Search by name or number",
+  "adminProfileTitle": "Admin & Profile",
+  "familyPlan": "Family Plan",
+  "candidateReportOverview": "Candidate report overview",
+  "scan10Fingers": "Start Analysis (Scan 10 Fingers)",
+  "groupScanTitle": "Group Mode (4-Fingers & Thumbs)",
+  "individualScanTitle": "Single Fingertip Mode ⭐",
+  "scanReady": "SCAN READY",
+  "reportGeneratingSoon": " Your Report is Generating Soon ",
+  "fingerprintsUploadedSuccess": "Fingerprints uploaded successfully",
+  "reportAnalyzingFor": "Analyzing data for {name} and building your Report...",
+  "@reportAnalyzingFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "takesFewMoments": "This may take a few moments",
+  "fiveSensesTitle": "5 Senses Sensory Modalities",
+  "brainDominanceTitle": "Brain Dominance & Balance",
+  "multiIntelligenceTitle": "8 Multiple Intelligences",
+  "personalityBlendTitle": "DISC Personality Blend",
+  "swotMatrixTitle": "SWOT Analysis & Matrix",
+  "careerMatchTitle": "Precision Stream & Career Matches",
+  "addMember": "+ Add Member",
+  "signOut": "Sign Out / Switch Account",
+  "cancel": "Cancel",
+  "retry": "Retry",
+  "close": "Close",
+  "unlockAll": "Unlock All 👑",
+  "exportLocked": "Export (Locked)"
+}

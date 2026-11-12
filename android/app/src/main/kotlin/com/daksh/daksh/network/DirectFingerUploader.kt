@@ -57,7 +57,6 @@ object DirectFingerUploader {
         fingerRightRing = scannedMap[ScanStep.RIGHT_RING_IND]?.toFingerDataY(),
         fingerRightLittle = scannedMap[ScanStep.RIGHT_LITTLE_IND]?.toFingerDataY(),
        isSubmitted = true
-
     )
 
 
